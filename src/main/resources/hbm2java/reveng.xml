@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC
+  "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<schema-selection match-schema="public" />
+
+	<table-filter match-schema="public" match-name="database.*" exclude="true" />
+	<table-filter match-schema="public" match-name="qrtz.*" exclude="true" />
+	<table-filter match-schema="public" match-name="revinfo" exclude="true" />
+	<table-filter match-schema="public" match-name="usuario_aud" exclude="true" />
+	<table-filter match-schema="public" match-name="oauth_.*" exclude="true" />
+	<table-filter match-schema="public" match-name="clientdetails" exclude="true" />
+	
+	<table-filter match-schema="public" match-name="reporte_cobranza_por_seguro_interno_desglosado" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_constancia_medica_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_control_citas_no_asistieron_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_control_citas_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_historia_medica_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_control_obstetrico_primer_trimestre_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_control_obstetrico_segundo_tercer_trimestre_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_descuentos_por_medico_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_estado_cuenta_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_historia_medica_cardiologia_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_evaluacion_cardiovascular_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_facturas_anuladas_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_facturas_pendientes" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_ficha_inscripcion_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_hoja_remision_seguro_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_informe_medico_cardiologia_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_informe_medico_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_informe_y_reposo_embarazadas_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_inventario_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_islr_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_movimientos_inventario_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_n_pacientes_aux_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_n_pacientes_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_pagos_pendientes_medico_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_pedidos_y_facturas_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_recibo_pago_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_relacion_honorarios_quirurgicos_por_medico_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_seniat_view" exclude="true" />
+	<table-filter match-schema="public" match-name="totalizacion_facturas_y_pagos_por_fecha" exclude="true" />
+	<table-filter match-schema="public" match-name="totalizacion_facturas_y_pagos_por_fecha_organizacion" exclude="true" />
+	<table-filter match-schema="public" match-name="ventas_terceros_por_documento" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_cobranza_por_seguro_interno_consolidado" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_cobranza_por_seguro" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_clasificacion_diagnostico_grafica" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_citas_primera_detalle_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_citas_por_medico" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_citas_atendidas_por_medico_view" exclude="true" />
+	<table-filter match-schema="public" match-name="reporte_cierre_inventario_expedientes_view" exclude="true" />
+	<table-filter match-schema="public" match-name="primeras_consultas_semanales" exclude="true" />
+	<table-filter match-schema="public" match-name="primeras_consultas_mensuales" exclude="true" />
+	<table-filter match-schema="public" match-name="primeras_consultas_anuales" exclude="true" />
+	<table-filter match-schema="public" match-name="primera_consulta_paciente" exclude="true" />
+	<table-filter match-schema="public" match-name="presupuestos_por_paciente" exclude="true" />
+	<table-filter match-schema="public" match-name="pedidos_liberados_view" exclude="true" />
+	<table-filter match-schema="public" match-name="pedido_resumen_view" exclude="true" />
+	<table-filter match-schema="public" match-name="pedido_view" exclude="true" />
+	<table-filter match-schema="public" match-name="organizacion_view" exclude="true" />
+	<table-filter match-schema="public" match-name="orden_salida_expediente_view" exclude="true" />
+	<table-filter match-schema="public" match-name="nota_debito_view" exclude="true" />
+	<table-filter match-schema="public" match-name="nota_credito_view" exclude="true" />
+	<table-filter match-schema="public" match-name="movimientos_inventario_ordered" exclude="true" />
+	<table-filter match-schema="public" match-name="libro_ventas_view" exclude="true" />
+	<table-filter match-schema="public" match-name="libro_gastos_view" exclude="true" />
+	<table-filter match-schema="public" match-name="libro_compras_view" exclude="true" />
+	<table-filter match-schema="public" match-name="totalizacion_compras_view" exclude="true" />
+	<table-filter match-schema="public" match-name="facturas_y_pagos_por_fecha_organizacion" exclude="true" />
+	<table-filter match-schema="public" match-name="lista_pagos_por_fecha_organizacion" exclude="true" />
+	<table-filter match-schema="public" match-name="lista_facturas_por_fecha_organizacion" exclude="true" />
+	<table-filter match-schema="public" match-name="facturas_y_pagos_por_fecha" exclude="true" />
+	<table-filter match-schema="public" match-name="lista_pagos_por_fecha" exclude="true" />
+	<table-filter match-schema="public" match-name="lista_facturas_por_fecha" exclude="true" />
+	<table-filter match-schema="public" match-name="libro_ventas_con_nota_credito_view" exclude="true" />
+	<table-filter match-schema="public" match-name="totalizacion_view" exclude="true" />
+	<table-filter match-schema="public" match-name="facturas_y_notas_credito" exclude="true" />
+	<table-filter match-schema="public" match-name="facturas_por_paciente" exclude="true" />
+	<table-filter match-schema="public" match-name="estados_cuenta_arqueos_caja" exclude="true" />
+	<table-filter match-schema="public" match-name="potes_view" exclude="true" />
+	<table-filter match-schema="public" match-name="documentos_con_multiples_pagos" exclude="true" />
+	<table-filter match-schema="public" match-name="documento_resumen_view" exclude="true" />
+	<table-filter match-schema="public" match-name="documento_view" exclude="true" />
+	<table-filter match-schema="public" match-name="consultas_semanales" exclude="true" />
+	<table-filter match-schema="public" match-name="consultas_mensuales" exclude="true" />
+	<table-filter match-schema="public" match-name="consultas_anuales" exclude="true" />
+	<table-filter match-schema="public" match-name="citas_resumen" exclude="true" />
+	<table-filter match-schema="public" match-name="citas_primera_resumen" exclude="true" />
+	<table-filter match-schema="public" match-name="citas_no_primera_resumen" exclude="true" />
+	
+</hibernate-reverse-engineering>

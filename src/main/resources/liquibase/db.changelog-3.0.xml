@@ -1,0 +1,110 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+	<changeSet author="hdacostac" id="addColumn-ubicacion-geografica-language">
+		<addColumn tableName="ubicacion_geografica">
+			<column name="language" type="varchar(5)"/>
+		</addColumn>
+	</changeSet>
+	<changeSet author="hdacostac" id="add-more-countrys">
+	    <insert tableName="ubicacion_geografica">
+            <column name="id" valueNumeric="26"/>
+            <column name="codigo_ubicacion_geografica" value="ca_ES"/>
+            <column name="nombre_ubicacion_geografica" value="Espanya"/>
+            <column name="nombre_abreviado_ubicacion_geografica" value="ESP"/>
+            <column name="zona_horaria_ubicacion_geografica" value="Europe/Madrid"/>
+            <column name="codigo_telefono_ubicacion_geografica" value="+34"/>
+            <column name="formato_telefono_ubicacion_geografica"/>
+            <column name="language" value="ca"/>
+            <column name="id_ubicacion_geografica_superior" value="12"/>
+            <column name="usuario_creacion" value="postgres"/>
+            <column name="fecha_creacion" valueDate="2015-03-04T03:03:53.375"/>
+            <column name="usuario_modificacion"/>
+            <column name="fecha_modificacion"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="ubicacion_geografica">
+            <column name="id" valueNumeric="27"/>
+            <column name="codigo_ubicacion_geografica" value="FR"/>
+            <column name="nombre_ubicacion_geografica" value="Francia"/>
+            <column name="nombre_abreviado_ubicacion_geografica" value="FRA"/>
+            <column name="zona_horaria_ubicacion_geografica" value="Europe/Paris"/>
+            <column name="codigo_telefono_ubicacion_geografica" value="+33"/>
+            <column name="formato_telefono_ubicacion_geografica"/>
+            <column name="language" value="fr"/>
+            <column name="id_ubicacion_geografica_superior" />
+            <column name="usuario_creacion" value="postgres" />
+            <column name="fecha_creacion" valueDate="2015-03-04T03:03:53.375" />
+            <column name="usuario_modificacion" />
+            <column name="fecha_modificacion" />
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="ubicacion_geografica">
+            <column name="id" valueNumeric="28"/>
+            <column name="codigo_ubicacion_geografica" value="PT"/>
+            <column name="nombre_ubicacion_geografica" value="Portugal"/>
+            <column name="nombre_abreviado_ubicacion_geografica" value="PRT"/>
+            <column name="zona_horaria_ubicacion_geografica" value="Europe/Lisbon"/>
+            <column name="codigo_telefono_ubicacion_geografica" value="+351"/>
+            <column name="formato_telefono_ubicacion_geografica"/>
+            <column name="language" value="pt"/>
+            <column name="id_ubicacion_geografica_superior" />
+            <column name="usuario_creacion" value="postgres" />
+            <column name="fecha_creacion" valueDate="2015-03-04T03:03:53.375" />
+            <column name="usuario_modificacion" />
+            <column name="fecha_modificacion" />
+            <column name="version" valueNumeric="0"/>
+        </insert>
+	</changeSet>
+	<changeSet author="hdacostac" id="update-languages-in-countrys">
+		<update tableName="ubicacion_geografica">
+        	<column name="language" value="es"/>
+        	<where>codigo_ubicacion_geografica = 'ES'</where>
+		</update>
+		<update tableName="ubicacion_geografica">
+        	<column name="language" value="en"/>
+        	<where>codigo_ubicacion_geografica = 'US'</where>
+		</update>
+	</changeSet>
+	<changeSet id="add-email-index-in-persons" author="hdacostac">
+        <createIndex indexName="email_index" tableName="persona">
+            <column name="e_mail_persona"/>
+        </createIndex>
+	</changeSet>
+	
+	<changeSet author="hdacostac" id="turn-on-module-pg_trgm">
+	    <sql dbms="postgresql"
+			endDelimiter="\nGO"
+			splitStatements="true"
+			stripComments="true">CREATE EXTENSION pg_trgm;
+	    </sql>
+	</changeSet>
+<!-- 	<changeSet author="hdacostac" id="add-text-search-index-persona-nombre_persona"> -->
+<!-- 	    <sql dbms="postgresql" -->
+<!-- 			endDelimiter="\nGO" -->
+<!-- 			splitStatements="true" -->
+<!-- 			stripComments="true">CREATE INDEX trgm_idx_persona_nombre_persona ON persona USING gin (nombre_persona gin_trgm_ops); -->
+<!-- 	    </sql> -->
+<!-- 	</changeSet> -->
+<!-- 	<changeSet author="hdacostac" id="add-text-search-index-persona-apellido_persona"> -->
+<!-- 	    <sql dbms="postgresql" -->
+<!-- 			endDelimiter="\nGO" -->
+<!-- 			splitStatements="true" -->
+<!-- 			stripComments="true">CREATE INDEX trgm_idx_persona_apellido_persona ON persona USING gin (apellido_persona gin_trgm_ops); -->
+<!-- 	    </sql> -->
+<!-- 	</changeSet> -->
+	
+	<changeSet author="hdacostac" id="add-text-search-index-persona-upper-nombre_persona">
+	    <sql dbms="postgresql"
+			endDelimiter="\nGO"
+			splitStatements="true"
+			stripComments="true">CREATE INDEX trgm_idx_persona_upper_nombre_persona ON persona USING gin (upper(nombre_persona) gin_trgm_ops);
+	    </sql>
+	</changeSet>
+	<changeSet author="hdacostac" id="add-text-search-index-persona-upper-apellido_persona">
+	    <sql dbms="postgresql"
+			endDelimiter="\nGO"
+			splitStatements="true"
+			stripComments="true">CREATE INDEX trgm_idx_persona_upper_apellido_persona ON persona USING gin (upper(apellido_persona) gin_trgm_ops);
+	    </sql>
+	</changeSet>
+</databaseChangeLog>
