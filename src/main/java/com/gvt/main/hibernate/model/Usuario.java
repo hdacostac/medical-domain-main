@@ -356,7 +356,7 @@ public class Usuario  implements Versionable,Seleccionable,Identificable,Fillabl
         this.codigoUsuario = codigoUsuario;
     }
     
-    @Column(name="password_usuario", nullable=false, length=32)
+    @Column(name="password_usuario", nullable=false, length=128)
     public String getPasswordUsuario() {
         return this.passwordUsuario;
     }
