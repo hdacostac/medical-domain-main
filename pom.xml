@@ -7,9 +7,12 @@
 		<groupId>swf.assent</groupId>
 		<artifactId>swf-rest-services-project</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
+		<relativePath></relativePath>
 	</parent>
 
+	<groupId>com.gvt</groupId>
 	<artifactId>medical-domain-main</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -245,7 +248,7 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>swf.assent</groupId>
 			<artifactId>swf-rest-services-core</artifactId>
@@ -254,7 +257,6 @@
 		<dependency>
 			<groupId>com.github.javafaker</groupId>
 			<artifactId>javafaker</artifactId>
-			<version>0.17.2</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
