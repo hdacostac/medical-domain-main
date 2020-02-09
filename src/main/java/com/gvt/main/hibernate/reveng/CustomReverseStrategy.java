@@ -99,12 +99,12 @@ public class CustomReverseStrategy extends DelegatingReverseEngineeringStrategy 
 		Map<String, MetaAttribute> map = new HashMap<>();
 
 		MetaAttribute extraImports = new MetaAttribute(OWN_TYPES);
-		extraImports.addValue("com.gvt.domain.types.Versionable");
-		extraImports.addValue("com.gvt.domain.types.Seleccionable");
-		extraImports.addValue("com.gvt.domain.types.Identificable");
-		extraImports.addValue("com.gvt.domain.types.Fillable");
-		extraImports.addValue("com.gvt.domain.types.Cleanable");
-		extraImports.addValue("com.gvt.domain.types.Auditable");
+		extraImports.addValue("com.gvt.core.domain.types.Versionable");
+		extraImports.addValue("com.gvt.core.domain.types.Seleccionable");
+		extraImports.addValue("com.gvt.core.domain.types.Identificable");
+		extraImports.addValue("com.gvt.core.domain.types.Fillable");
+		extraImports.addValue("com.gvt.core.domain.types.Cleanable");
+		extraImports.addValue("com.gvt.core.domain.types.Auditable");
 
 //		extraImports.addValue("javax.persistence.PrePersist");
 //		extraImports.addValue("javax.persistence.PreUpdate");

@@ -71,13 +71,31 @@
         </createIndex>
 	</changeSet>
 	
-	<changeSet author="hdacostac" id="turn-on-module-pg_trgm">
-	    <sql dbms="postgresql"
-			endDelimiter="\nGO"
-			splitStatements="true"
-			stripComments="true">CREATE EXTENSION pg_trgm;
-	    </sql>
-	</changeSet>
+	<changeSet author="Harold Da Costa" id="01112019-022">
+        <insert tableName="oauth_client_details">
+            <column name="client_id" value="clientIdPassword" />
+<!--             <column name="resource_ids" value="" /> -->
+            <column name="client_secret" value="{noop}" />
+            <column name="scope" value="read,write,trust" />
+            <column name="authorized_grant_types" value="password,refresh_token,client_credentials,authorization_code" />
+            <column name="web_server_redirect_uri" value="http://healdocs.com:7676/person/login,http://localhost:7676/person/login" />
+            <column name="authorities" value="ROLE_CLIENT,ROLE_TRUSTED_CLIENT" />
+            <column name="access_token_validity" value="300" />
+            <column name="refresh_token_validity" value="600" />
+<!--             <column name="additional_information" value="VARCHAR(4096)" /> -->
+            <column name="autoapprove" value="true" />
+            <column name="map_to_backend_id" value="generico" />
+            <column name="backend_access_token" value="f62b6872fb72974d166315d468777ff0" />
+        </insert>
+    </changeSet>
+	
+<!-- 	<changeSet author="hdacostac" id="turn-on-module-pg_trgm"> -->
+<!-- 	    <sql dbms="postgresql" -->
+<!-- 			endDelimiter="\nGO" -->
+<!-- 			splitStatements="true" -->
+<!-- 			stripComments="true">CREATE EXTENSION pg_trgm; -->
+<!-- 	    </sql> -->
+<!-- 	</changeSet> -->
 <!-- 	<changeSet author="hdacostac" id="add-text-search-index-persona-nombre_persona"> -->
 <!-- 	    <sql dbms="postgresql" -->
 <!-- 			endDelimiter="\nGO" -->
@@ -93,18 +111,18 @@
 <!-- 	    </sql> -->
 <!-- 	</changeSet> -->
 	
-	<changeSet author="hdacostac" id="add-text-search-index-persona-upper-nombre_persona">
-	    <sql dbms="postgresql"
-			endDelimiter="\nGO"
-			splitStatements="true"
-			stripComments="true">CREATE INDEX trgm_idx_persona_upper_nombre_persona ON persona USING gin (upper(nombre_persona) gin_trgm_ops);
-	    </sql>
-	</changeSet>
-	<changeSet author="hdacostac" id="add-text-search-index-persona-upper-apellido_persona">
-	    <sql dbms="postgresql"
-			endDelimiter="\nGO"
-			splitStatements="true"
-			stripComments="true">CREATE INDEX trgm_idx_persona_upper_apellido_persona ON persona USING gin (upper(apellido_persona) gin_trgm_ops);
-	    </sql>
-	</changeSet>
+<!-- 	<changeSet author="hdacostac" id="add-text-search-index-persona-upper-nombre_persona"> -->
+<!-- 	    <sql dbms="postgresql" -->
+<!-- 			endDelimiter="\nGO" -->
+<!-- 			splitStatements="true" -->
+<!-- 			stripComments="true">CREATE INDEX trgm_idx_persona_upper_nombre_persona ON persona USING gin (upper(nombre_persona) gin_trgm_ops); -->
+<!-- 	    </sql> -->
+<!-- 	</changeSet> -->
+<!-- 	<changeSet author="hdacostac" id="add-text-search-index-persona-upper-apellido_persona"> -->
+<!-- 	    <sql dbms="postgresql" -->
+<!-- 			endDelimiter="\nGO" -->
+<!-- 			splitStatements="true" -->
+<!-- 			stripComments="true">CREATE INDEX trgm_idx_persona_upper_apellido_persona ON persona USING gin (upper(apellido_persona) gin_trgm_ops); -->
+<!-- 	    </sql> -->
+<!-- 	</changeSet> -->
 </databaseChangeLog>

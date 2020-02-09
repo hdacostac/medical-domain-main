@@ -1,14 +1,14 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-oct-2019 23:40:17 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 09-feb-2020 20:04:15 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.gvt.domain.types.Auditable;
-import com.gvt.domain.types.Cleanable;
-import com.gvt.domain.types.Fillable;
-import com.gvt.domain.types.Identificable;
-import com.gvt.domain.types.Seleccionable;
-import com.gvt.domain.types.Versionable;
+import com.gvt.core.domain.types.Auditable;
+import com.gvt.core.domain.types.Cleanable;
+import com.gvt.core.domain.types.Fillable;
+import com.gvt.core.domain.types.Identificable;
+import com.gvt.core.domain.types.Seleccionable;
+import com.gvt.core.domain.types.Versionable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Date;
