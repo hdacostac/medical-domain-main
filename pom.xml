@@ -18,10 +18,10 @@
 	<properties>
 		<cglib.version>3.2.10</cglib.version>
 		<commons-collections.version>3.2.2</commons-collections.version>
-		
+
 		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
 		<liquibase-maven-plugin.version>3.6.2</liquibase-maven-plugin.version>
-		
+
 		<sonar.projectName>domain-main</sonar.projectName>
 		<sonar.exclusions>
 			**/com/gvt/main/hibernate/**/*
@@ -92,7 +92,7 @@
 				</plugins>
 			</build>
 		</profile>
-		
+
 		<profile>
 			<id>liquibase</id>
 			<build>
@@ -236,8 +236,8 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -256,14 +256,14 @@
 			<scope>provided</scope>
 		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.security</groupId> -->
-<!-- 			<artifactId>spring-security-core</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.data</groupId> -->
-<!-- 			<artifactId>spring-data-commons</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.security</groupId> -->
+		<!-- <artifactId>spring-security-core</artifactId> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.data</groupId> -->
+		<!-- <artifactId>spring-data-commons</artifactId> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
