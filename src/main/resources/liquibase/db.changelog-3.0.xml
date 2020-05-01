@@ -88,6 +88,79 @@
             <column name="backend_access_token" value="f62b6872fb72974d166315d468777ff0" />
         </insert>
     </changeSet>
+    
+    <changeSet author="harold (generated)" id="30042020-1">
+        <createTable tableName="provincia">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="pk_provincia"/>
+            </column>
+            <column name="codigo_provincia" type="VARCHAR(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nombre_provincia" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="&quot;current_user&quot;()" name="usuario_creacion" type="VARCHAR(64)"/>
+            <column defaultValueComputed="now()" name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_modificacion" type="VARCHAR(64)"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column defaultValueNumeric="0" name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="harold (generated)" id="30042020-2">
+        <createTable tableName="poblacion">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="pk_poblacion"/>
+            </column>
+            <column name="codigo_poblacion" type="VARCHAR(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nombre_poblacion" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="&quot;current_user&quot;()" name="usuario_creacion" type="VARCHAR(64)"/>
+            <column defaultValueComputed="now()" name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_modificacion" type="VARCHAR(64)"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column defaultValueNumeric="0" name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="harold (generated)" id="30042020-3">
+        <createTable tableName="codigo_postal">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="pk_codigo_postal"/>
+            </column>
+			<column name="codigo_postal" type="VARCHAR(16)" />
+            <column name="id_ubicacion_geografica" type="BIGINT"/>
+			<column name="id_provincia" type="BIGINT"/>
+			<column name="id_poblacion" type="BIGINT"/>
+            <column defaultValue="&quot;current_user&quot;()" name="usuario_creacion" type="VARCHAR(64)"/>
+            <column defaultValueComputed="now()" name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_modificacion" type="VARCHAR(64)"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column defaultValueNumeric="0" name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="id_ubicacion_geografica" baseTableName="codigo_postal" 
+        	constraintName="fk_id_ubicacion_geografica" deferrable="false" initiallyDeferred="false" 
+        	onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="ubicacion_geografica" 
+        	validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="id_provincia" baseTableName="codigo_postal" 
+        	constraintName="fk_id_provincia" deferrable="false" initiallyDeferred="false" 
+        	onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="provincia" 
+        	validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="id_poblacion" baseTableName="codigo_postal" 
+        	constraintName="fk_id_poblacion" deferrable="false" initiallyDeferred="false" 
+        	onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="poblacion" 
+        	validate="true"/>
+    </changeSet>
 	
 <!-- 	<changeSet author="hdacostac" id="turn-on-module-pg_trgm"> -->
 <!-- 	    <sql dbms="postgresql" -->

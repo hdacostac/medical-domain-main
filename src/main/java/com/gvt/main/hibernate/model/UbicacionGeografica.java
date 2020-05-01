@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 09-feb-2020 20:04:15 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 01-may-2020 12:20:32 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -80,6 +80,8 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
  	
  	private Set<UbicacionGeografica> ubicacionGeograficas = new HashSet<UbicacionGeografica>(0);
  	
+ 	private Set<CodigoPostal> codigoPostals = new HashSet<CodigoPostal>(0);
+ 	
  	private Set<Persona> personasForIdEstado = new HashSet<Persona>(0);
  	
  	private Set<Persona> personasForIdPais = new HashSet<Persona>(0);
@@ -104,7 +106,7 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
         this.nombreUbicacionGeografica = nombreUbicacionGeografica;
         this.nombreAbreviadoUbicacionGeografica = nombreAbreviadoUbicacionGeografica;
     }
-    public UbicacionGeografica(UbicacionGeografica ubicacionGeografica, String codigoUbicacionGeografica, String nombreUbicacionGeografica, String nombreAbreviadoUbicacionGeografica, String zonaHorariaUbicacionGeografica, String codigoTelefonoUbicacionGeografica, String formatoTelefonoUbicacionGeografica, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, String language, Set<UbicacionGeografica> ubicacionGeograficas, Set<Persona> personasForIdEstado, Set<Persona> personasForIdPais, Set<Persona> personasForIdUbicacionGeograficaNacimiento, Set<Usuario> usuarios, Set<Persona> personasForIdCiudad, Set<Organizacion> organizacionsForIdUbicacionGeograficaPais, Set<Organizacion> organizacionsForIdUbicacionGeograficaEstado) {
+    public UbicacionGeografica(UbicacionGeografica ubicacionGeografica, String codigoUbicacionGeografica, String nombreUbicacionGeografica, String nombreAbreviadoUbicacionGeografica, String zonaHorariaUbicacionGeografica, String codigoTelefonoUbicacionGeografica, String formatoTelefonoUbicacionGeografica, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, String language, Set<UbicacionGeografica> ubicacionGeograficas, Set<CodigoPostal> codigoPostals, Set<Persona> personasForIdEstado, Set<Persona> personasForIdPais, Set<Persona> personasForIdUbicacionGeograficaNacimiento, Set<Usuario> usuarios, Set<Persona> personasForIdCiudad, Set<Organizacion> organizacionsForIdUbicacionGeograficaPais, Set<Organizacion> organizacionsForIdUbicacionGeograficaEstado) {
        this.ubicacionGeografica = ubicacionGeografica;
        this.codigoUbicacionGeografica = codigoUbicacionGeografica;
        this.nombreUbicacionGeografica = nombreUbicacionGeografica;
@@ -118,6 +120,7 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
        this.fechaModificacion = fechaModificacion;
        this.language = language;
        this.ubicacionGeograficas = ubicacionGeograficas;
+       this.codigoPostals = codigoPostals;
        this.personasForIdEstado = personasForIdEstado;
        this.personasForIdPais = personasForIdPais;
        this.personasForIdUbicacionGeograficaNacimiento = personasForIdUbicacionGeograficaNacimiento;
@@ -273,6 +276,16 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
     }
 	@XmlTransient
 	@JsonIgnore
+@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="ubicacionGeografica")
+    public Set<CodigoPostal> getCodigoPostals() {
+        return this.codigoPostals;
+    }
+    
+    public void setCodigoPostals(Set<CodigoPostal> codigoPostals) {
+        this.codigoPostals = codigoPostals;
+    }
+	@XmlTransient
+	@JsonIgnore
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="ubicacionGeograficaByIdEstado")
     public Set<Persona> getPersonasForIdEstado() {
         return this.personasForIdEstado;
@@ -393,6 +406,7 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
          
          result = 37 * result + ( getId() == null ? 0 : this.getId().hashCode() );
          result = 37 * result + (int) this.getVersion();
+         
          
          
          

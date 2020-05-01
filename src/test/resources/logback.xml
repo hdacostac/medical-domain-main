@@ -6,7 +6,7 @@
     	</encoder>
 	</appender>
 	
-    <logger name="com.gvt" level="DEBUG" />
+    <logger name="com.gvt" level="TRACE" />
     <!-- <logger name="com.gvt.core.util.PojoUtil" level="TRACE" /> -->
     
 	<root level="INFO"> 

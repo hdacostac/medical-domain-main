@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 09-feb-2020 20:04:15 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 01-may-2020 12:20:32 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
