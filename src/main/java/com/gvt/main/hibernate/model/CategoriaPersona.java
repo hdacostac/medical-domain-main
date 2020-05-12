@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 01-may-2020 12:20:32 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -64,7 +64,7 @@ public class CategoriaPersona  implements Versionable,Seleccionable,Identificabl
  	@LastModifiedDate
  	private Date fechaModificacion;
  	
- 	private Set<Persona> personas = new HashSet<Persona>(0);
+ 	private Set<PersonaOrganizacion> personaOrganizacions = new HashSet<PersonaOrganizacion>(0);
 
     public CategoriaPersona() {
     	// default constructor
@@ -75,14 +75,14 @@ public class CategoriaPersona  implements Versionable,Seleccionable,Identificabl
         this.codigoCategoriaPersona = codigoCategoriaPersona;
         this.nombreCategoriaPersona = nombreCategoriaPersona;
     }
-    public CategoriaPersona(String codigoCategoriaPersona, String nombreCategoriaPersona, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<Persona> personas) {
+    public CategoriaPersona(String codigoCategoriaPersona, String nombreCategoriaPersona, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<PersonaOrganizacion> personaOrganizacions) {
        this.codigoCategoriaPersona = codigoCategoriaPersona;
        this.nombreCategoriaPersona = nombreCategoriaPersona;
        this.usuarioCreacion = usuarioCreacion;
        this.fechaCreacion = fechaCreacion;
        this.usuarioModificacion = usuarioModificacion;
        this.fechaModificacion = fechaModificacion;
-       this.personas = personas;
+       this.personaOrganizacions = personaOrganizacions;
     }
    
   @GenericGenerator(name = "categoria_persona_seq_gen", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
@@ -168,12 +168,12 @@ public class CategoriaPersona  implements Versionable,Seleccionable,Identificabl
 	@XmlTransient
 	@JsonIgnore
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="categoriaPersona")
-    public Set<Persona> getPersonas() {
-        return this.personas;
+    public Set<PersonaOrganizacion> getPersonaOrganizacions() {
+        return this.personaOrganizacions;
     }
     
-    public void setPersonas(Set<Persona> personas) {
-        this.personas = personas;
+    public void setPersonaOrganizacions(Set<PersonaOrganizacion> personaOrganizacions) {
+        this.personaOrganizacions = personaOrganizacions;
     }
 
     /**

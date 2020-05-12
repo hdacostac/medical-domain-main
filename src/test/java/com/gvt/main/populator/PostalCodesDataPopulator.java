@@ -163,7 +163,7 @@ public class PostalCodesDataPopulator implements Runnable {
 	private static BasicDataSource loadDataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/hr_test_1_0_0");
+		dataSource.setUrl("jdbc:postgresql://localhost:5432/hr_liquibase_test_1_0_0");
 		dataSource.setUsername("gvtmain");
 		dataSource.setPassword("gvtmain");
 

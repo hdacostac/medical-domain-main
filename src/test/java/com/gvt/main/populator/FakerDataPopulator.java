@@ -36,14 +36,14 @@ public class FakerDataPopulator implements Runnable {
 	private void populate() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/hr_test_1_0_0");
+		dataSource.setUrl("jdbc:postgresql://localhost:5432/hr_liquibase_test_1_0_0");
 		dataSource.setUsername("gvtmain");
 		dataSource.setPassword("gvtmain");
 
 		int prevPercentDone = 0;
 		QueryRunner run = new QueryRunner(dataSource);
 		Faker faker = new Faker(new Locale("es", "ES"));
-		Long idOrganizacion = 4L;
+		Long idOrganizacion = 7L;
 
 		for (int x = 0, total = 10000; x <= total; ++x) {
 			try {

@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 01-may-2020 12:20:32 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -196,6 +196,8 @@ public class Organizacion  implements Versionable,Seleccionable,Identificable,Fi
  	
  	private Set<ExternalDataSource> externalDataSources = new HashSet<ExternalDataSource>(0);
  	
+ 	private Set<PersonaOrganizacion> personaOrganizacions = new HashSet<PersonaOrganizacion>(0);
+ 	
  	private Set<HorarioMedico> horarioMedicosForIdSedeInicio3 = new HashSet<HorarioMedico>(0);
  	
  	private Set<HorarioMedico> horarioMedicosForIdSedeInicio8 = new HashSet<HorarioMedico>(0);
@@ -223,8 +225,6 @@ public class Organizacion  implements Versionable,Seleccionable,Identificable,Fi
  	private Set<Compras> comprases = new HashSet<Compras>(0);
  	
  	private Set<HorarioMedico> horarioMedicosForIdSedeInicio7 = new HashSet<HorarioMedico>(0);
- 	
- 	private Set<Persona> personas = new HashSet<Persona>(0);
  	
  	private Set<HorarioMedico> horarioMedicosForIdSedeInicio2 = new HashSet<HorarioMedico>(0);
  	
@@ -270,7 +270,7 @@ public class Organizacion  implements Versionable,Seleccionable,Identificable,Fi
         this.rifOrganizacion = rifOrganizacion;
         this.razonOrganizacion = razonOrganizacion;
     }
-    public Organizacion(TipoOrganizacion tipoOrganizacion, OpcionSino opcionSinoByEsConfiguradoPapeleria, OpcionSino opcionSinoByNotaDebitoUsesSeparator, UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaPais, OpcionSino opcionSinoByEsConfiguradoPagos, OpcionSino opcionSinoByPrintTicketCita, OpcionSino opcionSinoByDocumentoUsesSeparator, OpcionSino opcionSinoByEsCasoActivo, OpcionSino opcionSinoByEsCondicionPacienteRequired, OpcionSino opcionSinoByEsHabilitado, OpcionSino opcionSinoByIdInventoryControl, Organizacion organizacion, OpcionSino opcionSinoByEsDoctorPrincipalRequired, OpcionSino opcionSinoByNotaCreditoUsesSeparator, OpcionSino opcionSinoByEsPersonaContactoRequired, UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaEstado, OpcionSino opcionSinoByControlUsesSeparator, Almacen almacen, String rifOrganizacion, String nitOrganizacion, String razonOrganizacion, String telefonoFijoOrganizacion, String telefonoSecundarioOrganizacion, String EMailOrganizacion, String direccionOrganizacion, String cabecera, Integer rellenoCerosDocumento, Integer rellenoCerosControl, Integer rellenoCerosPrefijoDocumento, Integer rellenoCerosPrefijoControl, String url1, String url1FileName, Double url1FileSize, String formatoCabecera, String formatoPiePagina, String formatoFirma, Long nextNroPedido, Long nextNroHistoria, Long nextNroCaso, Long nextNroOrdenSalidaExpediente, Long nextNroSolicitudExpediente, Long nextNroEmpleado, Long nextNroAcreedor, Long nextNroMiscelaneo, Long nextNroCompra, String numeroImpFiscal, Integer prefijoControlOrganizacion, Integer prefijoTd001Organizacion, Integer prefijoTd002Organizacion, Integer prefijoTd003Organizacion, Integer prefijoTd004Organizacion, Integer prefijoTd005Organizacion, Integer prefijoTd006Organizacion, Integer prefijoTd007Organizacion, Integer prefijoTd008Organizacion, Integer prefijoTd009Organizacion, Integer prefijoTd010Organizacion, Integer prefijoTd011Organizacion, Integer prefijoTd012Organizacion, Integer prefijoTd013Organizacion, Integer prefijoTd014Organizacion, Integer prefijoTd015Organizacion, Long idClienteAdminpanel, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<Almacen> almacens, Set<HorarioMedico> horarioMedicosForIdSedeInicio6, Set<Pedido> pedidos, Set<ExternalDataSource> externalDataSources, Set<HorarioMedico> horarioMedicosForIdSedeInicio3, Set<HorarioMedico> horarioMedicosForIdSedeInicio8, Set<UsuarioOrganizacion> usuarioOrganizacionsForIdSede, Set<HorarioExtra> horarioExtras, Set<UsuarioOrganizacion> usuarioOrganizacionsForIdOrganizacion, Set<Recipe> recipes, Set<Rol> rols, Set<HorarioMedico> horarioMedicosForIdSedeInicio5, Set<VademecumIndicacion> vademecumIndicacions, Set<UsuarioOrganizacion> usuarioOrganizacionsForIdSedeDefault, Set<CalendarioIncidencias> calendarioIncidenciases, Set<PatologiaOrganizacion> patologiaOrganizacions, Set<Compras> comprases, Set<HorarioMedico> horarioMedicosForIdSedeInicio7, Set<Persona> personas, Set<HorarioMedico> horarioMedicosForIdSedeInicio2, Set<Vademecum> vademecums, Set<CitasPendientes> citasPendienteses, Set<Calendario> calendarios, Set<Caja> cajas, Set<ReporteContenido> reporteContenidos, Set<CategoriaProducto> categoriaProductos, Set<HorarioMedico> horarioMedicosForIdSedeInicio4, Set<Documento> documentos, Set<HorarioMedico> horarioMedicosForIdSedeInicio1, Set<TipoProductoOrganizacion> tipoProductoOrganizacions, Set<AusenciasMedico> ausenciasMedicos, Set<MotivoCalendarioOrganizacion> motivoCalendarioOrganizacions, Set<PlantillaReporteOrganizacion> plantillaReporteOrganizacions, Set<TipoProducto> tipoProductos, Set<GastosAdministrativos> gastosAdministrativoses, Set<Organizacion> organizacions) {
+    public Organizacion(TipoOrganizacion tipoOrganizacion, OpcionSino opcionSinoByEsConfiguradoPapeleria, OpcionSino opcionSinoByNotaDebitoUsesSeparator, UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaPais, OpcionSino opcionSinoByEsConfiguradoPagos, OpcionSino opcionSinoByPrintTicketCita, OpcionSino opcionSinoByDocumentoUsesSeparator, OpcionSino opcionSinoByEsCasoActivo, OpcionSino opcionSinoByEsCondicionPacienteRequired, OpcionSino opcionSinoByEsHabilitado, OpcionSino opcionSinoByIdInventoryControl, Organizacion organizacion, OpcionSino opcionSinoByEsDoctorPrincipalRequired, OpcionSino opcionSinoByNotaCreditoUsesSeparator, OpcionSino opcionSinoByEsPersonaContactoRequired, UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaEstado, OpcionSino opcionSinoByControlUsesSeparator, Almacen almacen, String rifOrganizacion, String nitOrganizacion, String razonOrganizacion, String telefonoFijoOrganizacion, String telefonoSecundarioOrganizacion, String EMailOrganizacion, String direccionOrganizacion, String cabecera, Integer rellenoCerosDocumento, Integer rellenoCerosControl, Integer rellenoCerosPrefijoDocumento, Integer rellenoCerosPrefijoControl, String url1, String url1FileName, Double url1FileSize, String formatoCabecera, String formatoPiePagina, String formatoFirma, Long nextNroPedido, Long nextNroHistoria, Long nextNroCaso, Long nextNroOrdenSalidaExpediente, Long nextNroSolicitudExpediente, Long nextNroEmpleado, Long nextNroAcreedor, Long nextNroMiscelaneo, Long nextNroCompra, String numeroImpFiscal, Integer prefijoControlOrganizacion, Integer prefijoTd001Organizacion, Integer prefijoTd002Organizacion, Integer prefijoTd003Organizacion, Integer prefijoTd004Organizacion, Integer prefijoTd005Organizacion, Integer prefijoTd006Organizacion, Integer prefijoTd007Organizacion, Integer prefijoTd008Organizacion, Integer prefijoTd009Organizacion, Integer prefijoTd010Organizacion, Integer prefijoTd011Organizacion, Integer prefijoTd012Organizacion, Integer prefijoTd013Organizacion, Integer prefijoTd014Organizacion, Integer prefijoTd015Organizacion, Long idClienteAdminpanel, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<Almacen> almacens, Set<HorarioMedico> horarioMedicosForIdSedeInicio6, Set<Pedido> pedidos, Set<ExternalDataSource> externalDataSources, Set<PersonaOrganizacion> personaOrganizacions, Set<HorarioMedico> horarioMedicosForIdSedeInicio3, Set<HorarioMedico> horarioMedicosForIdSedeInicio8, Set<UsuarioOrganizacion> usuarioOrganizacionsForIdSede, Set<HorarioExtra> horarioExtras, Set<UsuarioOrganizacion> usuarioOrganizacionsForIdOrganizacion, Set<Recipe> recipes, Set<Rol> rols, Set<HorarioMedico> horarioMedicosForIdSedeInicio5, Set<VademecumIndicacion> vademecumIndicacions, Set<UsuarioOrganizacion> usuarioOrganizacionsForIdSedeDefault, Set<CalendarioIncidencias> calendarioIncidenciases, Set<PatologiaOrganizacion> patologiaOrganizacions, Set<Compras> comprases, Set<HorarioMedico> horarioMedicosForIdSedeInicio7, Set<HorarioMedico> horarioMedicosForIdSedeInicio2, Set<Vademecum> vademecums, Set<CitasPendientes> citasPendienteses, Set<Calendario> calendarios, Set<Caja> cajas, Set<ReporteContenido> reporteContenidos, Set<CategoriaProducto> categoriaProductos, Set<HorarioMedico> horarioMedicosForIdSedeInicio4, Set<Documento> documentos, Set<HorarioMedico> horarioMedicosForIdSedeInicio1, Set<TipoProductoOrganizacion> tipoProductoOrganizacions, Set<AusenciasMedico> ausenciasMedicos, Set<MotivoCalendarioOrganizacion> motivoCalendarioOrganizacions, Set<PlantillaReporteOrganizacion> plantillaReporteOrganizacions, Set<TipoProducto> tipoProductos, Set<GastosAdministrativos> gastosAdministrativoses, Set<Organizacion> organizacions) {
        this.tipoOrganizacion = tipoOrganizacion;
        this.opcionSinoByEsConfiguradoPapeleria = opcionSinoByEsConfiguradoPapeleria;
        this.opcionSinoByNotaDebitoUsesSeparator = opcionSinoByNotaDebitoUsesSeparator;
@@ -342,6 +342,7 @@ public class Organizacion  implements Versionable,Seleccionable,Identificable,Fi
        this.horarioMedicosForIdSedeInicio6 = horarioMedicosForIdSedeInicio6;
        this.pedidos = pedidos;
        this.externalDataSources = externalDataSources;
+       this.personaOrganizacions = personaOrganizacions;
        this.horarioMedicosForIdSedeInicio3 = horarioMedicosForIdSedeInicio3;
        this.horarioMedicosForIdSedeInicio8 = horarioMedicosForIdSedeInicio8;
        this.usuarioOrganizacionsForIdSede = usuarioOrganizacionsForIdSede;
@@ -356,7 +357,6 @@ public class Organizacion  implements Versionable,Seleccionable,Identificable,Fi
        this.patologiaOrganizacions = patologiaOrganizacions;
        this.comprases = comprases;
        this.horarioMedicosForIdSedeInicio7 = horarioMedicosForIdSedeInicio7;
-       this.personas = personas;
        this.horarioMedicosForIdSedeInicio2 = horarioMedicosForIdSedeInicio2;
        this.vademecums = vademecums;
        this.citasPendienteses = citasPendienteses;
@@ -1047,6 +1047,16 @@ public class Organizacion  implements Versionable,Seleccionable,Identificable,Fi
     }
 	@XmlTransient
 	@JsonIgnore
+@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="organizacion")
+    public Set<PersonaOrganizacion> getPersonaOrganizacions() {
+        return this.personaOrganizacions;
+    }
+    
+    public void setPersonaOrganizacions(Set<PersonaOrganizacion> personaOrganizacions) {
+        this.personaOrganizacions = personaOrganizacions;
+    }
+	@XmlTransient
+	@JsonIgnore
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="organizacionByIdSedeInicio3")
     public Set<HorarioMedico> getHorarioMedicosForIdSedeInicio3() {
         return this.horarioMedicosForIdSedeInicio3;
@@ -1184,16 +1194,6 @@ public class Organizacion  implements Versionable,Seleccionable,Identificable,Fi
     
     public void setHorarioMedicosForIdSedeInicio7(Set<HorarioMedico> horarioMedicosForIdSedeInicio7) {
         this.horarioMedicosForIdSedeInicio7 = horarioMedicosForIdSedeInicio7;
-    }
-	@XmlTransient
-	@JsonIgnore
-@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="organizacion")
-    public Set<Persona> getPersonas() {
-        return this.personas;
-    }
-    
-    public void setPersonas(Set<Persona> personas) {
-        this.personas = personas;
     }
 	@XmlTransient
 	@JsonIgnore

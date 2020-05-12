@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 01-may-2020 12:20:32 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -26,7 +26,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
 import org.hibernate.annotations.GenericGenerator;
@@ -44,7 +43,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners({ AuditingEntityListener.class })
 @Table(name="persona"
     ,schema="public"
-    , uniqueConstraints = {@UniqueConstraint(columnNames={"codigo_persona", "id_organizacion"}), @UniqueConstraint(columnNames={"cedula_persona", "id_categoria_persona", "id_organizacion"})} 
 )
 public class Persona  implements Versionable,Seleccionable,Identificable,Fillable,Cleanable,Auditable,java.io.Serializable {
 
@@ -53,8 +51,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
  	private Long id;
  	
  	private long version;
- 	
- 	private CategoriaPersona categoriaPersona;
  	
  	private DistintivoPersona distintivoPersona;
  	
@@ -85,8 +81,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
  	private UbicacionGeografica ubicacionGeograficaByIdPais;
  	
  	private OpcionSino opcionSinoByEsPublica;
- 	
- 	private Organizacion organizacion;
  	
  	private String codigoPersona;
  	
@@ -210,6 +204,8 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
  	
  	private Set<Timeline> timelines = new HashSet<Timeline>(0);
  	
+ 	private Set<PersonaOrganizacion> personaOrganizacions = new HashSet<PersonaOrganizacion>(0);
+ 	
  	private Set<UsuarioOrganizacion> usuarioOrganizacions = new HashSet<UsuarioOrganizacion>(0);
  	
  	private Set<PersonaAntecedentesFitnessNutricion> personaAntecedentesFitnessNutricions = new HashSet<PersonaAntecedentesFitnessNutricion>(0);
@@ -233,17 +229,14 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
     }
 
 	
-    public Persona(CategoriaPersona categoriaPersona, Organizacion organizacion, String codigoPersona, String cedulaPersona, String nombrePersona, String telefonoFijoPersona, String direccionPersona) {
-        this.categoriaPersona = categoriaPersona;
-        this.organizacion = organizacion;
+    public Persona(String codigoPersona, String cedulaPersona, String nombrePersona, String telefonoFijoPersona, String direccionPersona) {
         this.codigoPersona = codigoPersona;
         this.cedulaPersona = cedulaPersona;
         this.nombrePersona = nombrePersona;
         this.telefonoFijoPersona = telefonoFijoPersona;
         this.direccionPersona = direccionPersona;
     }
-    public Persona(CategoriaPersona categoriaPersona, DistintivoPersona distintivoPersona, TipoPersona tipoPersona, EstadoCivil estadoCivil, Sexo sexo, OpcionSino opcionSinoByEsEmbarazada, Profesion profesion, TipoSangre tipoSangre, OpcionSino opcionSinoByEsActiva, NivelEducativo nivelEducativo, UbicacionGeografica ubicacionGeograficaByIdCiudad, Nacionalidad nacionalidad, UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaNacimiento, UbicacionGeografica ubicacionGeograficaByIdEstado, UbicacionGeografica ubicacionGeograficaByIdPais, OpcionSino opcionSinoByEsPublica, Organizacion organizacion, String codigoPersona, String cedulaPersona, String nombrePersona, String apellidoPersona, String rifPersona, String numeroMsas, Date fechaNacimientoPersona, Date fechaDefuncionPersona, Date fechaVencimientoRif, String telefonoMovilPersona, String telefonoFijoPersona, String EMailPersona, String direccionPersona, String nombreContactoUno, String telefonoContactoUno, String telefonoMovilContactoUno, String emailContactoUno, String parentescoContactoUno, String nombreContactoDos, String telefonoContactoDos, String telefonoMovilContactoDos, String emailContactoDos, String parentescoContactoDos, Float edad, String url1, String url1FileName, Double url1FileSize, String comentariosAdicionales, String nombreDoctorReferencia, String telefonoContactoDoctorReferencia, String telefonoMovilDoctorReferencia, String emailDoctorReferencia, String lugarNacimientoOtro, String direccionPersonaCalleAvenida, String direccionPersonaEdificio, String direccionPersonaConsultorio, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<ConsultaMedicaFitnessNutricion> consultaMedicaFitnessNutricions, Set<PersonaAntecedentesObstetrica> personaAntecedentesObstetricas, Set<CalendarioIncidencias> calendarioIncidenciasesForIdPersona, Set<CitasPendientes> citasPendientesesForIdPersona, Set<Documento> documentos, Set<AusenciasMedico> ausenciasMedicos, Set<Gastos> gastoses, Set<ReporteContenido> reporteContenidos, Set<TimelineProtocoloCie10> timelineProtocoloCie10s, Set<Calendario> calendariosForIdDoctor, Set<TiempoEstimadoAtencion> tiempoEstimadoAtencions, Set<TimelineImagen> timelineImagens, Set<ConsultaMedicaObstetricia> consultaMedicaObstetricias, Set<HorarioExtra> horarioExtras, Set<Recipe> recipes, Set<CitasPendientes> citasPendientesesForIdDoctor, Set<ConsultaMedica> consultaMedicas, Set<HorarioMedico> horarioMedicos, Set<CartaAval> cartaAvals, Set<ReferenciaInstitucionPersona> referenciaInstitucionPersonas, Set<Timeline> timelines, Set<UsuarioOrganizacion> usuarioOrganizacions, Set<PersonaAntecedentesFitnessNutricion> personaAntecedentesFitnessNutricions, Set<ConsultaMedicaCardiologia> consultaMedicaCardiologias, Set<CalendarioIncidencias> calendarioIncidenciasesForIdDoctor, Set<PersonaAntecedentesDermatoestetica> personaAntecedentesDermatoesteticas, Set<Calendario> calendariosForIdPersona, Set<ConsultaMedicaOdontologica> consultaMedicaOdontologicas, Set<PersonaAntecedentes> personaAntecedenteses, Set<ConsultaMedicaCirugiaPlasticaReconstructiva> consultaMedicaCirugiaPlasticaReconstructivas) {
-       this.categoriaPersona = categoriaPersona;
+    public Persona(DistintivoPersona distintivoPersona, TipoPersona tipoPersona, EstadoCivil estadoCivil, Sexo sexo, OpcionSino opcionSinoByEsEmbarazada, Profesion profesion, TipoSangre tipoSangre, OpcionSino opcionSinoByEsActiva, NivelEducativo nivelEducativo, UbicacionGeografica ubicacionGeograficaByIdCiudad, Nacionalidad nacionalidad, UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaNacimiento, UbicacionGeografica ubicacionGeograficaByIdEstado, UbicacionGeografica ubicacionGeograficaByIdPais, OpcionSino opcionSinoByEsPublica, String codigoPersona, String cedulaPersona, String nombrePersona, String apellidoPersona, String rifPersona, String numeroMsas, Date fechaNacimientoPersona, Date fechaDefuncionPersona, Date fechaVencimientoRif, String telefonoMovilPersona, String telefonoFijoPersona, String EMailPersona, String direccionPersona, String nombreContactoUno, String telefonoContactoUno, String telefonoMovilContactoUno, String emailContactoUno, String parentescoContactoUno, String nombreContactoDos, String telefonoContactoDos, String telefonoMovilContactoDos, String emailContactoDos, String parentescoContactoDos, Float edad, String url1, String url1FileName, Double url1FileSize, String comentariosAdicionales, String nombreDoctorReferencia, String telefonoContactoDoctorReferencia, String telefonoMovilDoctorReferencia, String emailDoctorReferencia, String lugarNacimientoOtro, String direccionPersonaCalleAvenida, String direccionPersonaEdificio, String direccionPersonaConsultorio, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<ConsultaMedicaFitnessNutricion> consultaMedicaFitnessNutricions, Set<PersonaAntecedentesObstetrica> personaAntecedentesObstetricas, Set<CalendarioIncidencias> calendarioIncidenciasesForIdPersona, Set<CitasPendientes> citasPendientesesForIdPersona, Set<Documento> documentos, Set<AusenciasMedico> ausenciasMedicos, Set<Gastos> gastoses, Set<ReporteContenido> reporteContenidos, Set<TimelineProtocoloCie10> timelineProtocoloCie10s, Set<Calendario> calendariosForIdDoctor, Set<TiempoEstimadoAtencion> tiempoEstimadoAtencions, Set<TimelineImagen> timelineImagens, Set<ConsultaMedicaObstetricia> consultaMedicaObstetricias, Set<HorarioExtra> horarioExtras, Set<Recipe> recipes, Set<CitasPendientes> citasPendientesesForIdDoctor, Set<ConsultaMedica> consultaMedicas, Set<HorarioMedico> horarioMedicos, Set<CartaAval> cartaAvals, Set<ReferenciaInstitucionPersona> referenciaInstitucionPersonas, Set<Timeline> timelines, Set<PersonaOrganizacion> personaOrganizacions, Set<UsuarioOrganizacion> usuarioOrganizacions, Set<PersonaAntecedentesFitnessNutricion> personaAntecedentesFitnessNutricions, Set<ConsultaMedicaCardiologia> consultaMedicaCardiologias, Set<CalendarioIncidencias> calendarioIncidenciasesForIdDoctor, Set<PersonaAntecedentesDermatoestetica> personaAntecedentesDermatoesteticas, Set<Calendario> calendariosForIdPersona, Set<ConsultaMedicaOdontologica> consultaMedicaOdontologicas, Set<PersonaAntecedentes> personaAntecedenteses, Set<ConsultaMedicaCirugiaPlasticaReconstructiva> consultaMedicaCirugiaPlasticaReconstructivas) {
        this.distintivoPersona = distintivoPersona;
        this.tipoPersona = tipoPersona;
        this.estadoCivil = estadoCivil;
@@ -259,7 +252,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
        this.ubicacionGeograficaByIdEstado = ubicacionGeograficaByIdEstado;
        this.ubicacionGeograficaByIdPais = ubicacionGeograficaByIdPais;
        this.opcionSinoByEsPublica = opcionSinoByEsPublica;
-       this.organizacion = organizacion;
        this.codigoPersona = codigoPersona;
        this.cedulaPersona = cedulaPersona;
        this.nombrePersona = nombrePersona;
@@ -321,6 +313,7 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
        this.cartaAvals = cartaAvals;
        this.referenciaInstitucionPersonas = referenciaInstitucionPersonas;
        this.timelines = timelines;
+       this.personaOrganizacions = personaOrganizacions;
        this.usuarioOrganizacions = usuarioOrganizacions;
        this.personaAntecedentesFitnessNutricions = personaAntecedentesFitnessNutricions;
        this.consultaMedicaCardiologias = consultaMedicaCardiologias;
@@ -357,15 +350,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
     
     public void setVersion(long version) {
         this.version = version;
-    }
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="id_categoria_persona", nullable=false)
-    public CategoriaPersona getCategoriaPersona() {
-        return this.categoriaPersona;
-    }
-    
-    public void setCategoriaPersona(CategoriaPersona categoriaPersona) {
-        this.categoriaPersona = categoriaPersona;
     }
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="id_distintivo_persona")
@@ -501,15 +485,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
     
     public void setOpcionSinoByEsPublica(OpcionSino opcionSinoByEsPublica) {
         this.opcionSinoByEsPublica = opcionSinoByEsPublica;
-    }
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="id_organizacion", nullable=false)
-    public Organizacion getOrganizacion() {
-        return this.organizacion;
-    }
-    
-    public void setOrganizacion(Organizacion organizacion) {
-        this.organizacion = organizacion;
     }
     
     @Column(name="codigo_persona", nullable=false, length=16)
@@ -1084,6 +1059,16 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
 	@XmlTransient
 	@JsonIgnore
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="persona")
+    public Set<PersonaOrganizacion> getPersonaOrganizacions() {
+        return this.personaOrganizacions;
+    }
+    
+    public void setPersonaOrganizacions(Set<PersonaOrganizacion> personaOrganizacions) {
+        this.personaOrganizacions = personaOrganizacions;
+    }
+	@XmlTransient
+	@JsonIgnore
+@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="persona")
     public Set<UsuarioOrganizacion> getUsuarioOrganizacions() {
         return this.usuarioOrganizacions;
     }
@@ -1183,7 +1168,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
       buffer.append(getClass().getName()).append("@").append(Integer.toHexString(hashCode())).append(" [");
       buffer.append("id").append("='").append(getId()).append("' ");			
       buffer.append("version").append("='").append(getVersion()).append("' ");			
-      buffer.append("categoriaPersona").append("='").append(getCategoriaPersona()).append("' ");			
       buffer.append("distintivoPersona").append("='").append(getDistintivoPersona()).append("' ");			
       buffer.append("tipoPersona").append("='").append(getTipoPersona()).append("' ");			
       buffer.append("estadoCivil").append("='").append(getEstadoCivil()).append("' ");			
@@ -1199,7 +1183,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
       buffer.append("ubicacionGeograficaByIdEstado").append("='").append(getUbicacionGeograficaByIdEstado()).append("' ");			
       buffer.append("ubicacionGeograficaByIdPais").append("='").append(getUbicacionGeograficaByIdPais()).append("' ");			
       buffer.append("opcionSinoByEsPublica").append("='").append(getOpcionSinoByEsPublica()).append("' ");			
-      buffer.append("organizacion").append("='").append(getOrganizacion()).append("' ");			
       buffer.append("codigoPersona").append("='").append(getCodigoPersona()).append("' ");			
       buffer.append("cedulaPersona").append("='").append(getCedulaPersona()).append("' ");			
       buffer.append("nombrePersona").append("='").append(getNombrePersona()).append("' ");			
@@ -1354,7 +1337,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
          
          
          
-         
          return result;
    }   
 
@@ -1382,10 +1364,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
     }
     
     public void cleanPOJO() {
-		if(this.categoriaPersona != null &&
-			(categoriaPersona.getId() == null || this.categoriaPersona.getId().longValue() == 0)) {
-			categoriaPersona = null;
-		}
 		if(this.distintivoPersona != null &&
 			(distintivoPersona.getId() == null || this.distintivoPersona.getId().longValue() == 0)) {
 			distintivoPersona = null;
@@ -1446,16 +1424,9 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
 			(opcionSinoByEsPublica.getId() == null || this.opcionSinoByEsPublica.getId().longValue() == 0)) {
 			opcionSinoByEsPublica = null;
 		}
-		if(this.organizacion != null &&
-			(organizacion.getId() == null || this.organizacion.getId().longValue() == 0)) {
-			organizacion = null;
-		}
     }
     
     public void fillPOJO() {
-		if(this.categoriaPersona == null) {
-			categoriaPersona = new CategoriaPersona();
-		}
 		if(this.distintivoPersona == null) {
 			distintivoPersona = new DistintivoPersona();
 		}
@@ -1500,9 +1471,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
 		}
 		if(this.opcionSinoByEsPublica == null) {
 			opcionSinoByEsPublica = new OpcionSino();
-		}
-		if(this.organizacion == null) {
-			organizacion = new Organizacion();
 		}
     }
     
