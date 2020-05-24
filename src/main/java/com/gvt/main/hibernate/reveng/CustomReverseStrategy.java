@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.cfg.reveng.DelegatingReverseEngineeringStrategy;
 import org.hibernate.cfg.reveng.ReverseEngineeringStrategy;
 import org.hibernate.cfg.reveng.TableIdentifier;
@@ -32,15 +33,15 @@ public class CustomReverseStrategy extends DelegatingReverseEngineeringStrategy 
 		String preferredHibernateType = super.columnToHibernateTypeName(table, columnName, sqlType, length, precision,
 				scale, nullable, generatedIdentifier);
 
-//		if (StringUtils.isNotBlank(preferredHibernateType)) {
-//			if ("timestamp".equalsIgnoreCase(preferredHibernateType)) {
-//				return "java.time.LocalDateTime";
-//			} else if ("date".equalsIgnoreCase(preferredHibernateType)) {
-//				return "java.time.LocalDate";
-//			} else if ("time".equalsIgnoreCase(preferredHibernateType)) {
-//				return "java.time.LocalTime";
-//			}
-//		}
+		if (StringUtils.isNotBlank(preferredHibernateType)) {
+			if ("timestamp".equalsIgnoreCase(preferredHibernateType)) {
+				return "java.time.LocalDateTime";
+			} else if ("date".equalsIgnoreCase(preferredHibernateType)) {
+				return "java.time.LocalDate";
+			} else if ("time".equalsIgnoreCase(preferredHibernateType)) {
+				return "java.time.LocalTime";
+			}
+		}
 
 		return preferredHibernateType;
 	}

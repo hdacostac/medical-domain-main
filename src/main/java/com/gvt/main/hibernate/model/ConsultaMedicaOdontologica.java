@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -24,8 +24,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -62,7 +60,7 @@ public class ConsultaMedicaOdontologica  implements Versionable,Seleccionable,Id
  	
  	private OpcionSino opcionSinoByEsPublica;
  	
- 	private Date fechaConsultaMedica;
+ 	private LocalDateTime fechaConsultaMedica;
  	
  	private String motivoConsulta;
  	
@@ -192,11 +190,11 @@ public class ConsultaMedicaOdontologica  implements Versionable,Seleccionable,Id
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
  	
  	private Set<Diente> dientes = new HashSet<Diente>(0);
 
@@ -205,12 +203,12 @@ public class ConsultaMedicaOdontologica  implements Versionable,Seleccionable,Id
     }
 
 	
-    public ConsultaMedicaOdontologica(OpcionSino opcionSinoByEsActiva, Persona persona, Date fechaConsultaMedica) {
+    public ConsultaMedicaOdontologica(OpcionSino opcionSinoByEsActiva, Persona persona, LocalDateTime fechaConsultaMedica) {
         this.opcionSinoByEsActiva = opcionSinoByEsActiva;
         this.persona = persona;
         this.fechaConsultaMedica = fechaConsultaMedica;
     }
-    public ConsultaMedicaOdontologica(OpcionSino opcionSinoByEsActiva, OpcionSino opcionSinoByEsAdulto, Persona persona, OpcionSino opcionSinoByEsPublica, Date fechaConsultaMedica, String motivoConsulta, String enfermedadActual, String tensionArterial, String frecuenciaCardiaca, String temperatura, String frecuenciaRespiratoria, String peso, String talla, String estatura, String examenesParaclinicos, String diagnostico, String tratamiento, String evolucion, String codigoDoctor, String cedulaDoctor, String nombreDoctor, String apellidoDoctor, String url1, String url2, String url3, String url4, String url5, String url6, String url7, String url8, String url9, String url10, String url11, String url12, String url13, String url14, String url15, String url16, String url17, String url18, String url19, String url20, String observaciones, String labHb, String labHcto, String labGb, String labSeg, String labLinf, String labMono, String labEos, Long labGrupo, Long labRh, String labPlaquetas, String labGlicemia, String labUrea, String labCreatinina, String labHierroSerico, String labAcidoUrico, String labVdrl, String labHiv, String labHepatitisB, String labOrina, String labCultivos, String labToxoplasmosis, String labRubeola, String labProtTotales, String labScreeningPrenatal, String labOtro, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<Diente> dientes) {
+    public ConsultaMedicaOdontologica(OpcionSino opcionSinoByEsActiva, OpcionSino opcionSinoByEsAdulto, Persona persona, OpcionSino opcionSinoByEsPublica, LocalDateTime fechaConsultaMedica, String motivoConsulta, String enfermedadActual, String tensionArterial, String frecuenciaCardiaca, String temperatura, String frecuenciaRespiratoria, String peso, String talla, String estatura, String examenesParaclinicos, String diagnostico, String tratamiento, String evolucion, String codigoDoctor, String cedulaDoctor, String nombreDoctor, String apellidoDoctor, String url1, String url2, String url3, String url4, String url5, String url6, String url7, String url8, String url9, String url10, String url11, String url12, String url13, String url14, String url15, String url16, String url17, String url18, String url19, String url20, String observaciones, String labHb, String labHcto, String labGb, String labSeg, String labLinf, String labMono, String labEos, Long labGrupo, Long labRh, String labPlaquetas, String labGlicemia, String labUrea, String labCreatinina, String labHierroSerico, String labAcidoUrico, String labVdrl, String labHiv, String labHepatitisB, String labOrina, String labCultivos, String labToxoplasmosis, String labRubeola, String labProtTotales, String labScreeningPrenatal, String labOtro, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<Diente> dientes) {
        this.opcionSinoByEsActiva = opcionSinoByEsActiva;
        this.opcionSinoByEsAdulto = opcionSinoByEsAdulto;
        this.persona = persona;
@@ -348,13 +346,13 @@ public class ConsultaMedicaOdontologica  implements Versionable,Seleccionable,Id
     public void setOpcionSinoByEsPublica(OpcionSino opcionSinoByEsPublica) {
         this.opcionSinoByEsPublica = opcionSinoByEsPublica;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_consulta_medica", nullable=false, length=29)
-    public Date getFechaConsultaMedica() {
+    public LocalDateTime getFechaConsultaMedica() {
         return this.fechaConsultaMedica;
     }
     
-    public void setFechaConsultaMedica(Date fechaConsultaMedica) {
+    public void setFechaConsultaMedica(LocalDateTime fechaConsultaMedica) {
         this.fechaConsultaMedica = fechaConsultaMedica;
     }
     
@@ -933,13 +931,13 @@ public class ConsultaMedicaOdontologica  implements Versionable,Seleccionable,Id
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -951,13 +949,13 @@ public class ConsultaMedicaOdontologica  implements Versionable,Seleccionable,Id
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 	@XmlTransient

@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -24,8 +24,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -64,17 +62,17 @@ public class ConsultaMedicaObstetricia  implements Versionable,Seleccionable,Ide
  	
  	private OpcionSino opcionSinoByEsPublica;
  	
- 	private Date fechaConsultaMedica;
+ 	private LocalDateTime fechaConsultaMedica;
  	
  	private String motivoConsulta;
  	
- 	private Date fechaUltimaRegla;
+ 	private LocalDateTime fechaUltimaRegla;
  	
  	private Double edadGestacional;
  	
- 	private Date fechaPosibleParto;
+ 	private LocalDateTime fechaPosibleParto;
  	
- 	private Date fechaUltimaMenstruacion;
+ 	private LocalDateTime fechaUltimaMenstruacion;
  	
  	private String tensionArterial;
  	
@@ -98,11 +96,11 @@ public class ConsultaMedicaObstetricia  implements Versionable,Seleccionable,Ide
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
  	
  	private Set<ConsultaMedicaProtocoloCie10> consultaMedicaProtocoloCie10s = new HashSet<ConsultaMedicaProtocoloCie10>(0);
  	
@@ -113,12 +111,12 @@ public class ConsultaMedicaObstetricia  implements Versionable,Seleccionable,Ide
     }
 
 	
-    public ConsultaMedicaObstetricia(OpcionSino opcionSinoByEsActiva, Persona persona, Date fechaConsultaMedica) {
+    public ConsultaMedicaObstetricia(OpcionSino opcionSinoByEsActiva, Persona persona, LocalDateTime fechaConsultaMedica) {
         this.opcionSinoByEsActiva = opcionSinoByEsActiva;
         this.persona = persona;
         this.fechaConsultaMedica = fechaConsultaMedica;
     }
-    public ConsultaMedicaObstetricia(OpcionSino opcionSinoByEsEmbarazada, OpcionSino opcionSinoByEsActiva, Laboratorio laboratorio, Persona persona, OpcionSino opcionSinoByEsPublica, Date fechaConsultaMedica, String motivoConsulta, Date fechaUltimaRegla, Double edadGestacional, Date fechaPosibleParto, Date fechaUltimaMenstruacion, String tensionArterial, String frecuenciaCardiaca, String temperatura, String peso, String estatura, String diagnostico, String tratamiento, String evolucion, String examenFisicoOtros, String observacionesControlObstetrico, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<ConsultaMedicaProtocoloCie10> consultaMedicaProtocoloCie10s, Set<ConsultaMedicaImagen> consultaMedicaImagens) {
+    public ConsultaMedicaObstetricia(OpcionSino opcionSinoByEsEmbarazada, OpcionSino opcionSinoByEsActiva, Laboratorio laboratorio, Persona persona, OpcionSino opcionSinoByEsPublica, LocalDateTime fechaConsultaMedica, String motivoConsulta, LocalDateTime fechaUltimaRegla, Double edadGestacional, LocalDateTime fechaPosibleParto, LocalDateTime fechaUltimaMenstruacion, String tensionArterial, String frecuenciaCardiaca, String temperatura, String peso, String estatura, String diagnostico, String tratamiento, String evolucion, String examenFisicoOtros, String observacionesControlObstetrico, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<ConsultaMedicaProtocoloCie10> consultaMedicaProtocoloCie10s, Set<ConsultaMedicaImagen> consultaMedicaImagens) {
        this.opcionSinoByEsEmbarazada = opcionSinoByEsEmbarazada;
        this.opcionSinoByEsActiva = opcionSinoByEsActiva;
        this.laboratorio = laboratorio;
@@ -219,13 +217,13 @@ public class ConsultaMedicaObstetricia  implements Versionable,Seleccionable,Ide
     public void setOpcionSinoByEsPublica(OpcionSino opcionSinoByEsPublica) {
         this.opcionSinoByEsPublica = opcionSinoByEsPublica;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_consulta_medica", nullable=false, length=29)
-    public Date getFechaConsultaMedica() {
+    public LocalDateTime getFechaConsultaMedica() {
         return this.fechaConsultaMedica;
     }
     
-    public void setFechaConsultaMedica(Date fechaConsultaMedica) {
+    public void setFechaConsultaMedica(LocalDateTime fechaConsultaMedica) {
         this.fechaConsultaMedica = fechaConsultaMedica;
     }
     
@@ -237,13 +235,13 @@ public class ConsultaMedicaObstetricia  implements Versionable,Seleccionable,Ide
     public void setMotivoConsulta(String motivoConsulta) {
         this.motivoConsulta = motivoConsulta;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_ultima_regla", length=29)
-    public Date getFechaUltimaRegla() {
+    public LocalDateTime getFechaUltimaRegla() {
         return this.fechaUltimaRegla;
     }
     
-    public void setFechaUltimaRegla(Date fechaUltimaRegla) {
+    public void setFechaUltimaRegla(LocalDateTime fechaUltimaRegla) {
         this.fechaUltimaRegla = fechaUltimaRegla;
     }
     
@@ -255,22 +253,22 @@ public class ConsultaMedicaObstetricia  implements Versionable,Seleccionable,Ide
     public void setEdadGestacional(Double edadGestacional) {
         this.edadGestacional = edadGestacional;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_posible_parto", length=29)
-    public Date getFechaPosibleParto() {
+    public LocalDateTime getFechaPosibleParto() {
         return this.fechaPosibleParto;
     }
     
-    public void setFechaPosibleParto(Date fechaPosibleParto) {
+    public void setFechaPosibleParto(LocalDateTime fechaPosibleParto) {
         this.fechaPosibleParto = fechaPosibleParto;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_ultima_menstruacion", length=29)
-    public Date getFechaUltimaMenstruacion() {
+    public LocalDateTime getFechaUltimaMenstruacion() {
         return this.fechaUltimaMenstruacion;
     }
     
-    public void setFechaUltimaMenstruacion(Date fechaUltimaMenstruacion) {
+    public void setFechaUltimaMenstruacion(LocalDateTime fechaUltimaMenstruacion) {
         this.fechaUltimaMenstruacion = fechaUltimaMenstruacion;
     }
     
@@ -372,13 +370,13 @@ public class ConsultaMedicaObstetricia  implements Versionable,Seleccionable,Ide
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -390,13 +388,13 @@ public class ConsultaMedicaObstetricia  implements Versionable,Seleccionable,Ide
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 	@XmlTransient

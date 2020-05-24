@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -24,8 +24,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -114,15 +112,15 @@ public class Usuario  implements Versionable,Seleccionable,Identificable,Fillabl
  	
  	private Integer refreshUsuarioContextLobby;
  	
- 	private Date fechaUltimoLogin;
+ 	private LocalDateTime fechaUltimoLogin;
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
  	
  	private Set<UsuarioAgendarUsuario> usuarioAgendarUsuariosForIdUsuarioAAgendarCalendario = new HashSet<UsuarioAgendarUsuario>(0);
  	
@@ -162,7 +160,7 @@ public class Usuario  implements Versionable,Seleccionable,Identificable,Fillabl
         this.apellidoUsuario = apellidoUsuario;
         this.EMailUsuario = EMailUsuario;
     }
-    public Usuario(DistintivoPersona distintivoPersona, OpcionSino opcionSinoByEsCuentaExpirada, OpcionSino opcionSinoByEsPinHabilitado, OpcionSino opcionSinoByEsConfiguradoPerfil, Profesion profesion, OpcionSino opcionSinoByEsCredencialesExpiradas, OpcionSino opcionSinoByEsActiva, UbicacionGeografica ubicacionGeografica, OpcionSino opcionSinoByEsCuentaBloqueada, Especialidad especialidad, OpcionSino opcionSinoByPrintTicketCita, TipoUsuario tipoUsuario, String codigoUsuario, String passwordUsuario, String passwordHintUsuario, String cedulaUsuario, String nombreUsuario, String apellidoUsuario, String EMailUsuario, String url1, String textoArribaDerecha, String textoPieDePagina, String formatoFirma, String contextParam, Integer refreshEditorContext, Integer refreshConsultaContext, Integer refreshLobbyContext, Integer refreshUsuarioContextEditor, Integer refreshUsuarioContextConsulta, Integer refreshUsuarioContextLobby, Date fechaUltimoLogin, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<UsuarioAgendarUsuario> usuarioAgendarUsuariosForIdUsuarioAAgendarCalendario, Set<UsuarioGestion> usuarioGestionsForIdUsuarioGestionador, Set<TimelineImagen> timelineImagens, Set<UsuarioConfigurarUsuario> usuarioConfigurarUsuariosForIdUsuarioAConfigurarCalendario, Set<UsuarioConfigurarUsuario> usuarioConfigurarUsuariosForIdUsuarioConfigurador, Set<UsuarioOrganizacion> usuarioOrganizacionsForIdUsuarioTrabajaCon, Set<UsuarioOrganizacion> usuarioOrganizacionsForIdUsuario, Set<UsuarioGestion> usuarioGestionsForIdUsuarioGestionado, Set<Timeline> timelines, Set<TimelineProtocoloCie10> timelineProtocoloCie10s, Set<UsuarioAgendarUsuario> usuarioAgendarUsuariosForIdUsuarioAgendador, Set<RolUsuario> rolUsuarios) {
+    public Usuario(DistintivoPersona distintivoPersona, OpcionSino opcionSinoByEsCuentaExpirada, OpcionSino opcionSinoByEsPinHabilitado, OpcionSino opcionSinoByEsConfiguradoPerfil, Profesion profesion, OpcionSino opcionSinoByEsCredencialesExpiradas, OpcionSino opcionSinoByEsActiva, UbicacionGeografica ubicacionGeografica, OpcionSino opcionSinoByEsCuentaBloqueada, Especialidad especialidad, OpcionSino opcionSinoByPrintTicketCita, TipoUsuario tipoUsuario, String codigoUsuario, String passwordUsuario, String passwordHintUsuario, String cedulaUsuario, String nombreUsuario, String apellidoUsuario, String EMailUsuario, String url1, String textoArribaDerecha, String textoPieDePagina, String formatoFirma, String contextParam, Integer refreshEditorContext, Integer refreshConsultaContext, Integer refreshLobbyContext, Integer refreshUsuarioContextEditor, Integer refreshUsuarioContextConsulta, Integer refreshUsuarioContextLobby, LocalDateTime fechaUltimoLogin, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<UsuarioAgendarUsuario> usuarioAgendarUsuariosForIdUsuarioAAgendarCalendario, Set<UsuarioGestion> usuarioGestionsForIdUsuarioGestionador, Set<TimelineImagen> timelineImagens, Set<UsuarioConfigurarUsuario> usuarioConfigurarUsuariosForIdUsuarioAConfigurarCalendario, Set<UsuarioConfigurarUsuario> usuarioConfigurarUsuariosForIdUsuarioConfigurador, Set<UsuarioOrganizacion> usuarioOrganizacionsForIdUsuarioTrabajaCon, Set<UsuarioOrganizacion> usuarioOrganizacionsForIdUsuario, Set<UsuarioGestion> usuarioGestionsForIdUsuarioGestionado, Set<Timeline> timelines, Set<TimelineProtocoloCie10> timelineProtocoloCie10s, Set<UsuarioAgendarUsuario> usuarioAgendarUsuariosForIdUsuarioAgendador, Set<RolUsuario> rolUsuarios) {
        this.distintivoPersona = distintivoPersona;
        this.opcionSinoByEsCuentaExpirada = opcionSinoByEsCuentaExpirada;
        this.opcionSinoByEsPinHabilitado = opcionSinoByEsPinHabilitado;
@@ -508,13 +506,13 @@ public class Usuario  implements Versionable,Seleccionable,Identificable,Fillabl
     public void setRefreshUsuarioContextLobby(Integer refreshUsuarioContextLobby) {
         this.refreshUsuarioContextLobby = refreshUsuarioContextLobby;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_ultimo_login", length=29)
-    public Date getFechaUltimoLogin() {
+    public LocalDateTime getFechaUltimoLogin() {
         return this.fechaUltimoLogin;
     }
     
-    public void setFechaUltimoLogin(Date fechaUltimoLogin) {
+    public void setFechaUltimoLogin(LocalDateTime fechaUltimoLogin) {
         this.fechaUltimoLogin = fechaUltimoLogin;
     }
     
@@ -526,13 +524,13 @@ public class Usuario  implements Versionable,Seleccionable,Identificable,Fillabl
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -544,13 +542,13 @@ public class Usuario  implements Versionable,Seleccionable,Identificable,Fillabl
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 	@XmlTransient

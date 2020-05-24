@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -20,8 +20,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -188,9 +186,9 @@ public class PersonaAntecedentesDermatoestetica  implements Versionable,Seleccio
  	
  	private Long fumaCuantoDescripcion;
  	
- 	private Date fumaFechaDesde;
+ 	private LocalDateTime fumaFechaDesde;
  	
- 	private Date fumaFechaHasta;
+ 	private LocalDateTime fumaFechaHasta;
  	
  	private Double cigarroPaqueteDia;
  	
@@ -228,11 +226,11 @@ public class PersonaAntecedentesDermatoestetica  implements Versionable,Seleccio
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
 
     public PersonaAntecedentesDermatoestetica() {
     	// default constructor
@@ -242,7 +240,7 @@ public class PersonaAntecedentesDermatoestetica  implements Versionable,Seleccio
     public PersonaAntecedentesDermatoestetica(Persona persona) {
         this.persona = persona;
     }
-    public PersonaAntecedentesDermatoestetica(TipoTratamiento tipoTratamientoByIdTipoTratamientoProtesisMamarias, OpcionSino opcionSinoByEsCirugiaDermolipectomia, TipoTratamiento tipoTratamientoByIdTipoTratamientoPlasmaRicoPlaqueta, OpcionSino opcionSinoByEsFamiliaCalviciePaterno, OpcionSino opcionSinoByEsLaserVbeam, OpcionSino opcionSinoByEsSop, Fototipo fototipo, OpcionSino opcionSinoByEsUltracavitacion, OpcionSino opcionSinoByEsFuma, OpcionSino opcionSinoByEsAlergiaYodo, OpcionSino opcionSinoByEsIntervencionQuirurgica, Persona persona, TipoTratamiento tipoTratamientoByIdTipoTratamientoRadiofrecuencia, OpcionSino opcionSinoByEsAcnePapa, OpcionSino opcionSinoByEsAcneMama, OpcionSino opcionSinoByEsDolorPeriodoMenstrual, OpcionSino opcionSinoByEsProtesisMamarias, FrecuenciaActividad frecuenciaActividad, OpcionSino opcionSinoByEsFamiliaCalvicieMaterno, OpcionSino opcionSinoByEsHipotiroidismo, TipoTratamiento tipoTratamientoByIdTipoTratamientoVelashape, OpcionSino opcionSinoByEsPlasmaRicoPlaqueta, TipoTratamiento tipoTratamientoByIdTipoTratamientoLaserVbeam, OpcionSino opcionSinoByEsLaserGalaxy, OpcionSino opcionSinoByEsLaserQswitch, TipoTratamiento tipoTratamientoByIdTipoTratamientoLaserGalaxy, OpcionSino opcionSinoByEsLaserCo2, OpcionSino opcionSinoByEsMenopausia, TipoTratamiento tipoTratamientoByIdTipoTratamientoCirugiaDermolipectomia, TipoTratamiento tipoTratamientoByIdTipoTratamientoQuimioexfoliacion, OpcionSino opcionSinoByEsTomaLicor, ActividadFisica actividadFisica, OpcionSino opcionSinoByEsHipertiroidismo, OpcionSino opcionSinoByEsIpl, OpcionSino opcionSinoByEsAcidoHialuronico, EscalaEvaluacion escalaEvaluacion, OpcionSino opcionSinoByEsTomaCafe, OpcionSino opcionSinoByEsAlergiaMedicamento, OpcionSino opcionSinoByEsTensionArterial, TipoTratamiento tipoTratamientoByIdTipoTratamientoAcidoHialuronico, OpcionSino opcionSinoByEsAlergiaHuevo, TipoTratamiento tipoTratamientoByIdTipoTratamientoLimpiezaFacial, TipoTratamiento tipoTratamientoByIdTipoTratamientoLaserQswitch, Fotoenvejecimiento fotoenvejecimiento, OpcionSino opcionSinoByEsDiabetes, OpcionSino opcionSinoByEsAnticonceptivosOrales, TipoTratamiento tipoTratamientoByIdTipoTratamientoIpl, TipoTratamiento tipoTratamientoByIdTipoTratamientoMasajeDrenajeLinfatico, TipoTratamiento tipoTratamientoByIdTipoTratamientoUltracavitacion, OpcionSino opcionSinoByEsQuimioexfoliacion, OpcionSino opcionSinoByEsMasajeDrenajeLinfatico, TipoTratamiento tipoTratamientoByIdTipoTratamientoDepilacionLaser, OpcionSino opcionSinoByEsVelashape, OpcionSino opcionSinoByEsLaserErbium, TipoTratamiento tipoTratamientoByIdTipoTratamientoLaserCo2, OpcionSino opcionSinoByEsAsma, OpcionSino opcionSinoByEsLimpiezaFacial, OpcionSino opcionSinoByEsDepilacionLaser, TipoTratamiento tipoTratamientoByIdTipoTratamientoLaserErbium, OpcionSino opcionSinoByEsRadiofrecuencia, String tensionArterialTto, String diabetesTto, String asmaTto, String alergiaHuevoTto, String alergiaMedicamentoTto, String alergiaYodoTto, String hipotiroidismoTto, String hipertiroidismoTto, Long fumaCuantoDescripcion, Date fumaFechaDesde, Date fumaFechaHasta, Double cigarroPaqueteDia, String licorCuantoDescripcion, String cafeCuantoDescripcion, String intervencionQuirurgicaDescripcion, String evacuacionesDiarias, String otrasAlergias, String medicamentosConsume, String edadMenarquia, String duracionPeriodoMenstrual, String frecuenciaPeriodoMenstrual, String edadMenopausia, Long numeroGestas, Long numeroPartos, Long numeroAbortos, Long numeroCesareas, String edadUltimoEmbarazo, String edadAcneAdolescencia, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion) {
+    public PersonaAntecedentesDermatoestetica(TipoTratamiento tipoTratamientoByIdTipoTratamientoProtesisMamarias, OpcionSino opcionSinoByEsCirugiaDermolipectomia, TipoTratamiento tipoTratamientoByIdTipoTratamientoPlasmaRicoPlaqueta, OpcionSino opcionSinoByEsFamiliaCalviciePaterno, OpcionSino opcionSinoByEsLaserVbeam, OpcionSino opcionSinoByEsSop, Fototipo fototipo, OpcionSino opcionSinoByEsUltracavitacion, OpcionSino opcionSinoByEsFuma, OpcionSino opcionSinoByEsAlergiaYodo, OpcionSino opcionSinoByEsIntervencionQuirurgica, Persona persona, TipoTratamiento tipoTratamientoByIdTipoTratamientoRadiofrecuencia, OpcionSino opcionSinoByEsAcnePapa, OpcionSino opcionSinoByEsAcneMama, OpcionSino opcionSinoByEsDolorPeriodoMenstrual, OpcionSino opcionSinoByEsProtesisMamarias, FrecuenciaActividad frecuenciaActividad, OpcionSino opcionSinoByEsFamiliaCalvicieMaterno, OpcionSino opcionSinoByEsHipotiroidismo, TipoTratamiento tipoTratamientoByIdTipoTratamientoVelashape, OpcionSino opcionSinoByEsPlasmaRicoPlaqueta, TipoTratamiento tipoTratamientoByIdTipoTratamientoLaserVbeam, OpcionSino opcionSinoByEsLaserGalaxy, OpcionSino opcionSinoByEsLaserQswitch, TipoTratamiento tipoTratamientoByIdTipoTratamientoLaserGalaxy, OpcionSino opcionSinoByEsLaserCo2, OpcionSino opcionSinoByEsMenopausia, TipoTratamiento tipoTratamientoByIdTipoTratamientoCirugiaDermolipectomia, TipoTratamiento tipoTratamientoByIdTipoTratamientoQuimioexfoliacion, OpcionSino opcionSinoByEsTomaLicor, ActividadFisica actividadFisica, OpcionSino opcionSinoByEsHipertiroidismo, OpcionSino opcionSinoByEsIpl, OpcionSino opcionSinoByEsAcidoHialuronico, EscalaEvaluacion escalaEvaluacion, OpcionSino opcionSinoByEsTomaCafe, OpcionSino opcionSinoByEsAlergiaMedicamento, OpcionSino opcionSinoByEsTensionArterial, TipoTratamiento tipoTratamientoByIdTipoTratamientoAcidoHialuronico, OpcionSino opcionSinoByEsAlergiaHuevo, TipoTratamiento tipoTratamientoByIdTipoTratamientoLimpiezaFacial, TipoTratamiento tipoTratamientoByIdTipoTratamientoLaserQswitch, Fotoenvejecimiento fotoenvejecimiento, OpcionSino opcionSinoByEsDiabetes, OpcionSino opcionSinoByEsAnticonceptivosOrales, TipoTratamiento tipoTratamientoByIdTipoTratamientoIpl, TipoTratamiento tipoTratamientoByIdTipoTratamientoMasajeDrenajeLinfatico, TipoTratamiento tipoTratamientoByIdTipoTratamientoUltracavitacion, OpcionSino opcionSinoByEsQuimioexfoliacion, OpcionSino opcionSinoByEsMasajeDrenajeLinfatico, TipoTratamiento tipoTratamientoByIdTipoTratamientoDepilacionLaser, OpcionSino opcionSinoByEsVelashape, OpcionSino opcionSinoByEsLaserErbium, TipoTratamiento tipoTratamientoByIdTipoTratamientoLaserCo2, OpcionSino opcionSinoByEsAsma, OpcionSino opcionSinoByEsLimpiezaFacial, OpcionSino opcionSinoByEsDepilacionLaser, TipoTratamiento tipoTratamientoByIdTipoTratamientoLaserErbium, OpcionSino opcionSinoByEsRadiofrecuencia, String tensionArterialTto, String diabetesTto, String asmaTto, String alergiaHuevoTto, String alergiaMedicamentoTto, String alergiaYodoTto, String hipotiroidismoTto, String hipertiroidismoTto, Long fumaCuantoDescripcion, LocalDateTime fumaFechaDesde, LocalDateTime fumaFechaHasta, Double cigarroPaqueteDia, String licorCuantoDescripcion, String cafeCuantoDescripcion, String intervencionQuirurgicaDescripcion, String evacuacionesDiarias, String otrasAlergias, String medicamentosConsume, String edadMenarquia, String duracionPeriodoMenstrual, String frecuenciaPeriodoMenstrual, String edadMenopausia, Long numeroGestas, Long numeroPartos, Long numeroAbortos, Long numeroCesareas, String edadUltimoEmbarazo, String edadAcneAdolescencia, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion) {
        this.tipoTratamientoByIdTipoTratamientoProtesisMamarias = tipoTratamientoByIdTipoTratamientoProtesisMamarias;
        this.opcionSinoByEsCirugiaDermolipectomia = opcionSinoByEsCirugiaDermolipectomia;
        this.tipoTratamientoByIdTipoTratamientoPlasmaRicoPlaqueta = tipoTratamientoByIdTipoTratamientoPlasmaRicoPlaqueta;
@@ -984,22 +982,22 @@ public class PersonaAntecedentesDermatoestetica  implements Versionable,Seleccio
     public void setFumaCuantoDescripcion(Long fumaCuantoDescripcion) {
         this.fumaCuantoDescripcion = fumaCuantoDescripcion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fuma_fecha_desde", length=29)
-    public Date getFumaFechaDesde() {
+    public LocalDateTime getFumaFechaDesde() {
         return this.fumaFechaDesde;
     }
     
-    public void setFumaFechaDesde(Date fumaFechaDesde) {
+    public void setFumaFechaDesde(LocalDateTime fumaFechaDesde) {
         this.fumaFechaDesde = fumaFechaDesde;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fuma_fecha_hasta", length=29)
-    public Date getFumaFechaHasta() {
+    public LocalDateTime getFumaFechaHasta() {
         return this.fumaFechaHasta;
     }
     
-    public void setFumaFechaHasta(Date fumaFechaHasta) {
+    public void setFumaFechaHasta(LocalDateTime fumaFechaHasta) {
         this.fumaFechaHasta = fumaFechaHasta;
     }
     
@@ -1164,13 +1162,13 @@ public class PersonaAntecedentesDermatoestetica  implements Versionable,Seleccio
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -1182,13 +1180,13 @@ public class PersonaAntecedentesDermatoestetica  implements Versionable,Seleccio
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 

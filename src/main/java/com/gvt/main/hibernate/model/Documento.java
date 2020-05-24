@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,7 +11,7 @@ import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -25,8 +25,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -77,13 +75,13 @@ public class Documento  implements Versionable,Seleccionable,Identificable,Filla
  	
  	private String serieIdentificacion;
  	
- 	private Date fechaElaboracionDocumento;
+ 	private LocalDateTime fechaElaboracionDocumento;
  	
- 	private Date fechaPagadoDocumento;
+ 	private LocalDateTime fechaPagadoDocumento;
  	
- 	private Date fechaVencimientoDocumento;
+ 	private LocalDateTime fechaVencimientoDocumento;
  	
- 	private Date fechaAnuladoDocumento;
+ 	private LocalDateTime fechaAnuladoDocumento;
  	
  	private BigDecimal montoSubtotalPedido;
  	
@@ -169,11 +167,11 @@ public class Documento  implements Versionable,Seleccionable,Identificable,Filla
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
  	
  	private Set<RegistroPagoDocumento> registroPagoDocumentos = new HashSet<RegistroPagoDocumento>(0);
  	
@@ -184,7 +182,7 @@ public class Documento  implements Versionable,Seleccionable,Identificable,Filla
     }
 
 	
-    public Documento(OpcionSino opcionSinoByEsImpresa, Pedido pedido, OpcionSino opcionSinoByEsAnulado, OpcionSino opcionSinoByEsPagada, Organizacion organizacion, String numeroDocumento, String numeroControlDocumento, Date fechaElaboracionDocumento, BigDecimal montoSubtotalPedido, BigDecimal montoExentoPedido, BigDecimal montoTotalPedido, String codigoCliente, String cedulaCliente, String nombreCliente, String telefonoCliente, String direccionCliente, String codigoCategoriaCliente, String nombreCategoriaCliente, String codigoTipoDocumento, String nombreTipoDocumento, String codigoUbicacionGeograficaEmision, String nombreUbicacionGeograficaEmision) {
+    public Documento(OpcionSino opcionSinoByEsImpresa, Pedido pedido, OpcionSino opcionSinoByEsAnulado, OpcionSino opcionSinoByEsPagada, Organizacion organizacion, String numeroDocumento, String numeroControlDocumento, LocalDateTime fechaElaboracionDocumento, BigDecimal montoSubtotalPedido, BigDecimal montoExentoPedido, BigDecimal montoTotalPedido, String codigoCliente, String cedulaCliente, String nombreCliente, String telefonoCliente, String direccionCliente, String codigoCategoriaCliente, String nombreCategoriaCliente, String codigoTipoDocumento, String nombreTipoDocumento, String codigoUbicacionGeograficaEmision, String nombreUbicacionGeograficaEmision) {
         this.opcionSinoByEsImpresa = opcionSinoByEsImpresa;
         this.pedido = pedido;
         this.opcionSinoByEsAnulado = opcionSinoByEsAnulado;
@@ -208,7 +206,7 @@ public class Documento  implements Versionable,Seleccionable,Identificable,Filla
         this.codigoUbicacionGeograficaEmision = codigoUbicacionGeograficaEmision;
         this.nombreUbicacionGeograficaEmision = nombreUbicacionGeograficaEmision;
     }
-    public Documento(OpcionSino opcionSinoByEsImpresa, Persona persona, Pedido pedido, StatusDocumento statusDocumento, OpcionSino opcionSinoByEsAnulado, OpcionSino opcionSinoByEsPagada, Documento documento, Organizacion organizacion, String numeroDocumento, String numeroControlDocumento, String serieIdentificacion, Date fechaElaboracionDocumento, Date fechaPagadoDocumento, Date fechaVencimientoDocumento, Date fechaAnuladoDocumento, BigDecimal montoSubtotalPedido, BigDecimal montoExentoPedido, BigDecimal montoGravablePedido1, Float porcentajeIvaPedido1, BigDecimal montoIvaPedido1, BigDecimal montoGravablePedido2, Float porcentajeIvaPedido2, BigDecimal montoIvaPedido2, BigDecimal montoGravablePedido3, Float porcentajeIvaPedido3, BigDecimal montoIvaPedido3, BigDecimal montoGravablePedido4, Float porcentajeIvaPedido4, BigDecimal montoIvaPedido4, BigDecimal montoGravablePedido5, Float porcentajeIvaPedido5, BigDecimal montoIvaPedido5, BigDecimal montoTotalPedido, String codigoCliente, String cedulaCliente, String nombreCliente, String apellidoCliente, String telefonoCliente, String direccionCliente, String codigoCategoriaCliente, String nombreCategoriaCliente, String codigoResponsablePago, String cedulaResponsablePago, String nombreResponsablePago, String apellidoResponsablePago, String telefonoResponsablePago, String direccionResponsablePago, String codigoCategoriaResponsablePago, String nombreCategoriaResponsablePago, String codigoCondicionPago, String nombreCondicionPago, String codigoTipoDocumento, String nombreTipoDocumento, String codigoUbicacionGeograficaEmision, String nombreUbicacionGeograficaEmision, String observacionesPagoDocumento, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<RegistroPagoDocumento> registroPagoDocumentos, Set<Documento> documentos) {
+    public Documento(OpcionSino opcionSinoByEsImpresa, Persona persona, Pedido pedido, StatusDocumento statusDocumento, OpcionSino opcionSinoByEsAnulado, OpcionSino opcionSinoByEsPagada, Documento documento, Organizacion organizacion, String numeroDocumento, String numeroControlDocumento, String serieIdentificacion, LocalDateTime fechaElaboracionDocumento, LocalDateTime fechaPagadoDocumento, LocalDateTime fechaVencimientoDocumento, LocalDateTime fechaAnuladoDocumento, BigDecimal montoSubtotalPedido, BigDecimal montoExentoPedido, BigDecimal montoGravablePedido1, Float porcentajeIvaPedido1, BigDecimal montoIvaPedido1, BigDecimal montoGravablePedido2, Float porcentajeIvaPedido2, BigDecimal montoIvaPedido2, BigDecimal montoGravablePedido3, Float porcentajeIvaPedido3, BigDecimal montoIvaPedido3, BigDecimal montoGravablePedido4, Float porcentajeIvaPedido4, BigDecimal montoIvaPedido4, BigDecimal montoGravablePedido5, Float porcentajeIvaPedido5, BigDecimal montoIvaPedido5, BigDecimal montoTotalPedido, String codigoCliente, String cedulaCliente, String nombreCliente, String apellidoCliente, String telefonoCliente, String direccionCliente, String codigoCategoriaCliente, String nombreCategoriaCliente, String codigoResponsablePago, String cedulaResponsablePago, String nombreResponsablePago, String apellidoResponsablePago, String telefonoResponsablePago, String direccionResponsablePago, String codigoCategoriaResponsablePago, String nombreCategoriaResponsablePago, String codigoCondicionPago, String nombreCondicionPago, String codigoTipoDocumento, String nombreTipoDocumento, String codigoUbicacionGeograficaEmision, String nombreUbicacionGeograficaEmision, String observacionesPagoDocumento, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<RegistroPagoDocumento> registroPagoDocumentos, Set<Documento> documentos) {
        this.opcionSinoByEsImpresa = opcionSinoByEsImpresa;
        this.persona = persona;
        this.pedido = pedido;
@@ -398,40 +396,40 @@ public class Documento  implements Versionable,Seleccionable,Identificable,Filla
     public void setSerieIdentificacion(String serieIdentificacion) {
         this.serieIdentificacion = serieIdentificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_elaboracion_documento", nullable=false, length=29)
-    public Date getFechaElaboracionDocumento() {
+    public LocalDateTime getFechaElaboracionDocumento() {
         return this.fechaElaboracionDocumento;
     }
     
-    public void setFechaElaboracionDocumento(Date fechaElaboracionDocumento) {
+    public void setFechaElaboracionDocumento(LocalDateTime fechaElaboracionDocumento) {
         this.fechaElaboracionDocumento = fechaElaboracionDocumento;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_pagado_documento", length=29)
-    public Date getFechaPagadoDocumento() {
+    public LocalDateTime getFechaPagadoDocumento() {
         return this.fechaPagadoDocumento;
     }
     
-    public void setFechaPagadoDocumento(Date fechaPagadoDocumento) {
+    public void setFechaPagadoDocumento(LocalDateTime fechaPagadoDocumento) {
         this.fechaPagadoDocumento = fechaPagadoDocumento;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_vencimiento_documento", length=29)
-    public Date getFechaVencimientoDocumento() {
+    public LocalDateTime getFechaVencimientoDocumento() {
         return this.fechaVencimientoDocumento;
     }
     
-    public void setFechaVencimientoDocumento(Date fechaVencimientoDocumento) {
+    public void setFechaVencimientoDocumento(LocalDateTime fechaVencimientoDocumento) {
         this.fechaVencimientoDocumento = fechaVencimientoDocumento;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_anulado_documento", length=29)
-    public Date getFechaAnuladoDocumento() {
+    public LocalDateTime getFechaAnuladoDocumento() {
         return this.fechaAnuladoDocumento;
     }
     
-    public void setFechaAnuladoDocumento(Date fechaAnuladoDocumento) {
+    public void setFechaAnuladoDocumento(LocalDateTime fechaAnuladoDocumento) {
         this.fechaAnuladoDocumento = fechaAnuladoDocumento;
     }
     
@@ -812,13 +810,13 @@ public class Documento  implements Versionable,Seleccionable,Identificable,Filla
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -830,13 +828,13 @@ public class Documento  implements Versionable,Seleccionable,Identificable,Filla
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 	@XmlTransient

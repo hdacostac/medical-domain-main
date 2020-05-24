@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,7 +11,7 @@ import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -21,8 +21,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -57,7 +55,7 @@ public class Gastos  implements Versionable,Seleccionable,Identificable,Fillable
  	
  	private String numeroControlFactura;
  	
- 	private Date fechaElaboracionFactura;
+ 	private LocalDateTime fechaElaboracionFactura;
  	
  	private String descripcionCompra;
  	
@@ -81,11 +79,11 @@ public class Gastos  implements Versionable,Seleccionable,Identificable,Fillable
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
 
     public Gastos() {
     	// default constructor
@@ -99,7 +97,7 @@ public class Gastos  implements Versionable,Seleccionable,Identificable,Fillable
         this.totalBaseImponible = totalBaseImponible;
         this.totalGasto = totalGasto;
     }
-    public Gastos(Persona persona, String numeroFactura, String numeroControlFactura, Date fechaElaboracionFactura, String descripcionCompra, BigDecimal totalBaseImponible, BigDecimal totalExento, BigDecimal totalImpuesto, BigDecimal porcentajeImpuesto, BigDecimal totalGasto, String rifProveedor, String nombreProveedor, String telefonoFijoProveedor, String direccionProveedor, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion) {
+    public Gastos(Persona persona, String numeroFactura, String numeroControlFactura, LocalDateTime fechaElaboracionFactura, String descripcionCompra, BigDecimal totalBaseImponible, BigDecimal totalExento, BigDecimal totalImpuesto, BigDecimal porcentajeImpuesto, BigDecimal totalGasto, String rifProveedor, String nombreProveedor, String telefonoFijoProveedor, String direccionProveedor, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion) {
        this.persona = persona;
        this.numeroFactura = numeroFactura;
        this.numeroControlFactura = numeroControlFactura;
@@ -173,13 +171,13 @@ public class Gastos  implements Versionable,Seleccionable,Identificable,Fillable
     public void setNumeroControlFactura(String numeroControlFactura) {
         this.numeroControlFactura = numeroControlFactura;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_elaboracion_factura", length=29)
-    public Date getFechaElaboracionFactura() {
+    public LocalDateTime getFechaElaboracionFactura() {
         return this.fechaElaboracionFactura;
     }
     
-    public void setFechaElaboracionFactura(Date fechaElaboracionFactura) {
+    public void setFechaElaboracionFactura(LocalDateTime fechaElaboracionFactura) {
         this.fechaElaboracionFactura = fechaElaboracionFactura;
     }
     
@@ -281,13 +279,13 @@ public class Gastos  implements Versionable,Seleccionable,Identificable,Fillable
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -299,13 +297,13 @@ public class Gastos  implements Versionable,Seleccionable,Identificable,Fillable
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 

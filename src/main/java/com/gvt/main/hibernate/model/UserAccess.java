@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,15 +10,13 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
 import org.hibernate.annotations.GenericGenerator;
@@ -51,26 +49,26 @@ public class UserAccess  implements Versionable,Seleccionable,Identificable,Fill
  	
  	private String acceso;
  	
- 	private Date fecha;
+ 	private LocalDateTime fecha;
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
 
     public UserAccess() {
     	// default constructor
     }
 
 	
-    public UserAccess(String codigoUsuario, Date fecha) {
+    public UserAccess(String codigoUsuario, LocalDateTime fecha) {
         this.codigoUsuario = codigoUsuario;
         this.fecha = fecha;
     }
-    public UserAccess(String codigoUsuario, String razonOrganizacion, String acceso, Date fecha, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion) {
+    public UserAccess(String codigoUsuario, String razonOrganizacion, String acceso, LocalDateTime fecha, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion) {
        this.codigoUsuario = codigoUsuario;
        this.razonOrganizacion = razonOrganizacion;
        this.acceso = acceso;
@@ -134,13 +132,13 @@ public class UserAccess  implements Versionable,Seleccionable,Identificable,Fill
     public void setAcceso(String acceso) {
         this.acceso = acceso;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha", nullable=false, length=29)
-    public Date getFecha() {
+    public LocalDateTime getFecha() {
         return this.fecha;
     }
     
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
     
@@ -152,13 +150,13 @@ public class UserAccess  implements Versionable,Seleccionable,Identificable,Fill
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -170,13 +168,13 @@ public class UserAccess  implements Versionable,Seleccionable,Identificable,Fill
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 

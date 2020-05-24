@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -24,8 +24,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -66,11 +64,11 @@ public class PlantillaReporteOrganizacion  implements Versionable,Seleccionable,
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
  	
  	private Set<ReporteContenido> reporteContenidos = new HashSet<ReporteContenido>(0);
 
@@ -85,7 +83,7 @@ public class PlantillaReporteOrganizacion  implements Versionable,Seleccionable,
         this.tipoReporte = tipoReporte;
         this.codigo = codigo;
     }
-    public PlantillaReporteOrganizacion(PlantillaReporte plantillaReporte, OpcionSino opcionSino, TipoReporte tipoReporte, Organizacion organizacion, String codigo, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<ReporteContenido> reporteContenidos) {
+    public PlantillaReporteOrganizacion(PlantillaReporte plantillaReporte, OpcionSino opcionSino, TipoReporte tipoReporte, Organizacion organizacion, String codigo, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<ReporteContenido> reporteContenidos) {
        this.plantillaReporte = plantillaReporte;
        this.opcionSino = opcionSino;
        this.tipoReporte = tipoReporte;
@@ -178,13 +176,13 @@ public class PlantillaReporteOrganizacion  implements Versionable,Seleccionable,
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -196,13 +194,13 @@ public class PlantillaReporteOrganizacion  implements Versionable,Seleccionable,
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 	@XmlTransient

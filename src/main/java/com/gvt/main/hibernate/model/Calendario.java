@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -20,8 +20,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
 import org.hibernate.annotations.GenericGenerator;
@@ -60,37 +58,37 @@ public class Calendario  implements Versionable,Seleccionable,Identificable,Fill
  	
  	private OpcionSino opcionSinoByEsEliminado;
  	
- 	private Date fechaDesde;
+ 	private LocalDateTime fechaDesde;
  	
- 	private Date fechaHasta;
+ 	private LocalDateTime fechaHasta;
  	
  	private Integer orden;
  	
- 	private Date horaLlegadaPersona;
+ 	private LocalDateTime horaLlegadaPersona;
  	
- 	private Date horaAtecionPersona;
+ 	private LocalDateTime horaAtecionPersona;
  	
  	private String observaciones;
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
 
     public Calendario() {
     	// default constructor
     }
 
 	
-    public Calendario(Persona personaByIdPersona, Date fechaDesde, Date fechaHasta) {
+    public Calendario(Persona personaByIdPersona, LocalDateTime fechaDesde, LocalDateTime fechaHasta) {
         this.personaByIdPersona = personaByIdPersona;
         this.fechaDesde = fechaDesde;
         this.fechaHasta = fechaHasta;
     }
-    public Calendario(Organizacion organizacion, MotivoCalendario motivoCalendario, Persona personaByIdDoctor, OpcionSino opcionSinoByEsRevisado, Persona personaByIdPersona, OpcionSino opcionSinoByEsEliminado, Date fechaDesde, Date fechaHasta, Integer orden, Date horaLlegadaPersona, Date horaAtecionPersona, String observaciones, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion) {
+    public Calendario(Organizacion organizacion, MotivoCalendario motivoCalendario, Persona personaByIdDoctor, OpcionSino opcionSinoByEsRevisado, Persona personaByIdPersona, OpcionSino opcionSinoByEsEliminado, LocalDateTime fechaDesde, LocalDateTime fechaHasta, Integer orden, LocalDateTime horaLlegadaPersona, LocalDateTime horaAtecionPersona, String observaciones, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion) {
        this.organizacion = organizacion;
        this.motivoCalendario = motivoCalendario;
        this.personaByIdDoctor = personaByIdDoctor;
@@ -189,22 +187,22 @@ public class Calendario  implements Versionable,Seleccionable,Identificable,Fill
     public void setOpcionSinoByEsEliminado(OpcionSino opcionSinoByEsEliminado) {
         this.opcionSinoByEsEliminado = opcionSinoByEsEliminado;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_desde", nullable=false, length=29)
-    public Date getFechaDesde() {
+    public LocalDateTime getFechaDesde() {
         return this.fechaDesde;
     }
     
-    public void setFechaDesde(Date fechaDesde) {
+    public void setFechaDesde(LocalDateTime fechaDesde) {
         this.fechaDesde = fechaDesde;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_hasta", nullable=false, length=29)
-    public Date getFechaHasta() {
+    public LocalDateTime getFechaHasta() {
         return this.fechaHasta;
     }
     
-    public void setFechaHasta(Date fechaHasta) {
+    public void setFechaHasta(LocalDateTime fechaHasta) {
         this.fechaHasta = fechaHasta;
     }
     
@@ -216,22 +214,22 @@ public class Calendario  implements Versionable,Seleccionable,Identificable,Fill
     public void setOrden(Integer orden) {
         this.orden = orden;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="hora_llegada_persona", length=29)
-    public Date getHoraLlegadaPersona() {
+    public LocalDateTime getHoraLlegadaPersona() {
         return this.horaLlegadaPersona;
     }
     
-    public void setHoraLlegadaPersona(Date horaLlegadaPersona) {
+    public void setHoraLlegadaPersona(LocalDateTime horaLlegadaPersona) {
         this.horaLlegadaPersona = horaLlegadaPersona;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="hora_atecion_persona", length=29)
-    public Date getHoraAtecionPersona() {
+    public LocalDateTime getHoraAtecionPersona() {
         return this.horaAtecionPersona;
     }
     
-    public void setHoraAtecionPersona(Date horaAtecionPersona) {
+    public void setHoraAtecionPersona(LocalDateTime horaAtecionPersona) {
         this.horaAtecionPersona = horaAtecionPersona;
     }
     
@@ -252,13 +250,13 @@ public class Calendario  implements Versionable,Seleccionable,Identificable,Fill
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -270,13 +268,13 @@ public class Calendario  implements Versionable,Seleccionable,Identificable,Fill
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 

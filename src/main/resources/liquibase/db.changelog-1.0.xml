@@ -2035,9 +2035,9 @@
             <column name="apellido_persona" type="VARCHAR(64)"/>
             <column name="rif_persona" type="VARCHAR(64)"/>
             <column name="numero_msas" type="VARCHAR"/>
-            <column name="fecha_nacimiento_persona" type="TIMESTAMP WITHOUT TIME ZONE"/>
-            <column name="fecha_defuncion_persona" type="TIMESTAMP WITHOUT TIME ZONE"/>
-            <column name="fecha_vencimiento_rif" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_nacimiento_persona" type="DATE"/>
+            <column name="fecha_defuncion_persona" type="DATE"/>
+            <column name="fecha_vencimiento_rif" type="DATE"/>
             <column name="telefono_movil_persona" type="VARCHAR(32)"/>
             <column name="telefono_fijo_persona" type="VARCHAR(32)">
                 <constraints nullable="false"/>

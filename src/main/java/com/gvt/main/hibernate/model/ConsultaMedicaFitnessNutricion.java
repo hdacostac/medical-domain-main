@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -24,8 +24,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -60,7 +58,7 @@ public class ConsultaMedicaFitnessNutricion  implements Versionable,Seleccionabl
  	
  	private OpcionSino opcionSinoByEsPublica;
  	
- 	private Date fechaConsultaMedica;
+ 	private LocalDateTime fechaConsultaMedica;
  	
  	private String motivoConsulta;
  	
@@ -86,11 +84,11 @@ public class ConsultaMedicaFitnessNutricion  implements Versionable,Seleccionabl
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
  	
  	private Set<ConsultaMedicaProtocoloCie10> consultaMedicaProtocoloCie10s = new HashSet<ConsultaMedicaProtocoloCie10>(0);
  	
@@ -101,12 +99,12 @@ public class ConsultaMedicaFitnessNutricion  implements Versionable,Seleccionabl
     }
 
 	
-    public ConsultaMedicaFitnessNutricion(OpcionSino opcionSinoByEsActiva, Persona persona, Date fechaConsultaMedica) {
+    public ConsultaMedicaFitnessNutricion(OpcionSino opcionSinoByEsActiva, Persona persona, LocalDateTime fechaConsultaMedica) {
         this.opcionSinoByEsActiva = opcionSinoByEsActiva;
         this.persona = persona;
         this.fechaConsultaMedica = fechaConsultaMedica;
     }
-    public ConsultaMedicaFitnessNutricion(OpcionSino opcionSinoByEsActiva, Persona persona, OpcionSino opcionSinoByEsPublica, Date fechaConsultaMedica, String motivoConsulta, String tensionArterial, String frecuenciaCardiaca, String temperatura, String peso, String estatura, String diagnostico, String tratamiento, String evolucion, String examenFisicoOtros, String descripcionEntrenamiento, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<ConsultaMedicaProtocoloCie10> consultaMedicaProtocoloCie10s, Set<ConsultaMedicaImagen> consultaMedicaImagens) {
+    public ConsultaMedicaFitnessNutricion(OpcionSino opcionSinoByEsActiva, Persona persona, OpcionSino opcionSinoByEsPublica, LocalDateTime fechaConsultaMedica, String motivoConsulta, String tensionArterial, String frecuenciaCardiaca, String temperatura, String peso, String estatura, String diagnostico, String tratamiento, String evolucion, String examenFisicoOtros, String descripcionEntrenamiento, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<ConsultaMedicaProtocoloCie10> consultaMedicaProtocoloCie10s, Set<ConsultaMedicaImagen> consultaMedicaImagens) {
        this.opcionSinoByEsActiva = opcionSinoByEsActiva;
        this.persona = persona;
        this.opcionSinoByEsPublica = opcionSinoByEsPublica;
@@ -183,13 +181,13 @@ public class ConsultaMedicaFitnessNutricion  implements Versionable,Seleccionabl
     public void setOpcionSinoByEsPublica(OpcionSino opcionSinoByEsPublica) {
         this.opcionSinoByEsPublica = opcionSinoByEsPublica;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_consulta_medica", nullable=false, length=29)
-    public Date getFechaConsultaMedica() {
+    public LocalDateTime getFechaConsultaMedica() {
         return this.fechaConsultaMedica;
     }
     
-    public void setFechaConsultaMedica(Date fechaConsultaMedica) {
+    public void setFechaConsultaMedica(LocalDateTime fechaConsultaMedica) {
         this.fechaConsultaMedica = fechaConsultaMedica;
     }
     
@@ -300,13 +298,13 @@ public class ConsultaMedicaFitnessNutricion  implements Versionable,Seleccionabl
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -318,13 +316,13 @@ public class ConsultaMedicaFitnessNutricion  implements Versionable,Seleccionabl
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 	@XmlTransient

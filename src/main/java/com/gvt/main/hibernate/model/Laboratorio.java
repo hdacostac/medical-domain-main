@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -22,8 +22,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
 import org.hibernate.annotations.GenericGenerator;
@@ -116,11 +114,11 @@ public class Laboratorio  implements Versionable,Seleccionable,Identificable,Fil
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
  	
  	private Set<ConsultaMedicaObstetricia> consultaMedicaObstetricias = new HashSet<ConsultaMedicaObstetricia>(0);
 
@@ -128,7 +126,7 @@ public class Laboratorio  implements Versionable,Seleccionable,Identificable,Fil
     	// default constructor
     }
 
-    public Laboratorio(String labHb, String labHcto, String labSeg, String labLinf, String labMono, String labEos, String labPlaquetas, String labGlicemia, String labUrea, String labCreatinina, String labHierroSerico, String labAcidoUrico, String labVdrl, String labHiv, String labHepatitisB, String labOrina, String labCultivos, String labToxoplasmosis, String labRubeola, String labProtTotales, String labLeucocitos, String labGlobulosRojos, String labUroana, String labHeces, String labVhbS, String labVhbCo, String labTrigliceridos, String labColesterol, String labScreeningGenetico, String labCargaGlucosada50, String labCitologia, String labOtro, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<ConsultaMedicaObstetricia> consultaMedicaObstetricias) {
+    public Laboratorio(String labHb, String labHcto, String labSeg, String labLinf, String labMono, String labEos, String labPlaquetas, String labGlicemia, String labUrea, String labCreatinina, String labHierroSerico, String labAcidoUrico, String labVdrl, String labHiv, String labHepatitisB, String labOrina, String labCultivos, String labToxoplasmosis, String labRubeola, String labProtTotales, String labLeucocitos, String labGlobulosRojos, String labUroana, String labHeces, String labVhbS, String labVhbCo, String labTrigliceridos, String labColesterol, String labScreeningGenetico, String labCargaGlucosada50, String labCitologia, String labOtro, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<ConsultaMedicaObstetricia> consultaMedicaObstetricias) {
        this.labHb = labHb;
        this.labHcto = labHcto;
        this.labSeg = labSeg;
@@ -491,13 +489,13 @@ public class Laboratorio  implements Versionable,Seleccionable,Identificable,Fil
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -509,13 +507,13 @@ public class Laboratorio  implements Versionable,Seleccionable,Identificable,Fil
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 	@XmlTransient

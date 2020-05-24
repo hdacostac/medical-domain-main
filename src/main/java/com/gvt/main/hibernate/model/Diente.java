@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -24,8 +24,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -82,11 +80,11 @@ public class Diente  implements Versionable,Seleccionable,Identificable,Fillable
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
  	
  	private Set<ParteDiente> parteDientes = new HashSet<ParteDiente>(0);
 
@@ -99,7 +97,7 @@ public class Diente  implements Versionable,Seleccionable,Identificable,Fillable
         this.consultaMedicaOdontologica = consultaMedicaOdontologica;
         this.numeroDiente = numeroDiente;
     }
-    public Diente(Patologia patologiaByIdPatologia10, Patologia patologiaByIdPatologia1, Patologia patologiaByIdPatologia3, Patologia patologiaByIdPatologia2, Patologia patologiaByIdPatologia5, Patologia patologiaByIdPatologia4, Patologia patologiaByIdPatologia7, Patologia patologiaByIdPatologia6, ConsultaMedicaOdontologica consultaMedicaOdontologica, Patologia patologiaByIdPatologia9, Patologia patologiaByIdPatologia8, short numeroDiente, String observaciones, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<ParteDiente> parteDientes) {
+    public Diente(Patologia patologiaByIdPatologia10, Patologia patologiaByIdPatologia1, Patologia patologiaByIdPatologia3, Patologia patologiaByIdPatologia2, Patologia patologiaByIdPatologia5, Patologia patologiaByIdPatologia4, Patologia patologiaByIdPatologia7, Patologia patologiaByIdPatologia6, ConsultaMedicaOdontologica consultaMedicaOdontologica, Patologia patologiaByIdPatologia9, Patologia patologiaByIdPatologia8, short numeroDiente, String observaciones, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<ParteDiente> parteDientes) {
        this.patologiaByIdPatologia10 = patologiaByIdPatologia10;
        this.patologiaByIdPatologia1 = patologiaByIdPatologia1;
        this.patologiaByIdPatologia3 = patologiaByIdPatologia3;
@@ -272,13 +270,13 @@ public class Diente  implements Versionable,Seleccionable,Identificable,Fillable
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -290,13 +288,13 @@ public class Diente  implements Versionable,Seleccionable,Identificable,Fillable
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 	@XmlTransient

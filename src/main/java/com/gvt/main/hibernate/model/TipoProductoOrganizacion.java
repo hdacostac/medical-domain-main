@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,7 +11,7 @@ import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -21,8 +21,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -123,11 +121,11 @@ public class TipoProductoOrganizacion  implements Versionable,Seleccionable,Iden
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
 
     public TipoProductoOrganizacion() {
     	// default constructor
@@ -143,7 +141,7 @@ public class TipoProductoOrganizacion  implements Versionable,Seleccionable,Iden
         this.cantidadMinimaStock = cantidadMinimaStock;
         this.cantidadMaximaStock = cantidadMaximaStock;
     }
-    public TipoProductoOrganizacion(OpcionSino opcionSino, TipoProducto tipoProducto, Organizacion organizacion, BigDecimal precioTipoProducto, BigDecimal precioTipoProducto1, BigDecimal precioTipoProducto2, BigDecimal precioTipoProducto3, BigDecimal precioTipoProducto4, BigDecimal precioTipoProducto5, BigDecimal precioTipoProducto6, BigDecimal precioTipoProducto7, BigDecimal precioTipoProducto8, BigDecimal precioTipoProducto9, double utilidadTipoProducto, Double utilidadTipoProducto1, Double utilidadTipoProducto2, Double utilidadTipoProducto3, Double utilidadTipoProducto4, Double utilidadTipoProducto5, Double utilidadTipoProducto6, Double utilidadTipoProducto7, Double utilidadTipoProducto8, Double utilidadTipoProducto9, Float porcentajeComision, Float porcentajeComision1, Float porcentajeComision2, Float porcentajeComision3, Float porcentajeComision4, Float porcentajeComision5, Float porcentajeComision6, Float porcentajeComision7, Float porcentajeComision8, Float porcentajeComision9, BigDecimal cantidadMinimaStock, BigDecimal cantidadMaximaStock, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion) {
+    public TipoProductoOrganizacion(OpcionSino opcionSino, TipoProducto tipoProducto, Organizacion organizacion, BigDecimal precioTipoProducto, BigDecimal precioTipoProducto1, BigDecimal precioTipoProducto2, BigDecimal precioTipoProducto3, BigDecimal precioTipoProducto4, BigDecimal precioTipoProducto5, BigDecimal precioTipoProducto6, BigDecimal precioTipoProducto7, BigDecimal precioTipoProducto8, BigDecimal precioTipoProducto9, double utilidadTipoProducto, Double utilidadTipoProducto1, Double utilidadTipoProducto2, Double utilidadTipoProducto3, Double utilidadTipoProducto4, Double utilidadTipoProducto5, Double utilidadTipoProducto6, Double utilidadTipoProducto7, Double utilidadTipoProducto8, Double utilidadTipoProducto9, Float porcentajeComision, Float porcentajeComision1, Float porcentajeComision2, Float porcentajeComision3, Float porcentajeComision4, Float porcentajeComision5, Float porcentajeComision6, Float porcentajeComision7, Float porcentajeComision8, Float porcentajeComision9, BigDecimal cantidadMinimaStock, BigDecimal cantidadMaximaStock, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion) {
        this.opcionSino = opcionSino;
        this.tipoProducto = tipoProducto;
        this.organizacion = organizacion;
@@ -535,13 +533,13 @@ public class TipoProductoOrganizacion  implements Versionable,Seleccionable,Iden
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -553,13 +551,13 @@ public class TipoProductoOrganizacion  implements Versionable,Seleccionable,Iden
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 

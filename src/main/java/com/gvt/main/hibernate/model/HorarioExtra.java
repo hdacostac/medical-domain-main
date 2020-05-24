@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -20,8 +20,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
 import org.hibernate.annotations.GenericGenerator;
@@ -52,19 +50,19 @@ public class HorarioExtra  implements Versionable,Seleccionable,Identificable,Fi
  	
  	private Organizacion organizacion;
  	
- 	private Date fechaInicio;
+ 	private LocalDateTime fechaInicio;
  	
- 	private Date fechaFin;
+ 	private LocalDateTime fechaFin;
  	
  	private String observaciones;
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
 
     public HorarioExtra() {
     	// default constructor
@@ -74,7 +72,7 @@ public class HorarioExtra  implements Versionable,Seleccionable,Identificable,Fi
     public HorarioExtra(Persona persona) {
         this.persona = persona;
     }
-    public HorarioExtra(Persona persona, Organizacion organizacion, Date fechaInicio, Date fechaFin, String observaciones, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion) {
+    public HorarioExtra(Persona persona, Organizacion organizacion, LocalDateTime fechaInicio, LocalDateTime fechaFin, String observaciones, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion) {
        this.persona = persona;
        this.organizacion = organizacion;
        this.fechaInicio = fechaInicio;
@@ -130,22 +128,22 @@ public class HorarioExtra  implements Versionable,Seleccionable,Identificable,Fi
     public void setOrganizacion(Organizacion organizacion) {
         this.organizacion = organizacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_inicio", length=29)
-    public Date getFechaInicio() {
+    public LocalDateTime getFechaInicio() {
         return this.fechaInicio;
     }
     
-    public void setFechaInicio(Date fechaInicio) {
+    public void setFechaInicio(LocalDateTime fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_fin", length=29)
-    public Date getFechaFin() {
+    public LocalDateTime getFechaFin() {
         return this.fechaFin;
     }
     
-    public void setFechaFin(Date fechaFin) {
+    public void setFechaFin(LocalDateTime fechaFin) {
         this.fechaFin = fechaFin;
     }
     
@@ -166,13 +164,13 @@ public class HorarioExtra  implements Versionable,Seleccionable,Identificable,Fi
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -184,13 +182,13 @@ public class HorarioExtra  implements Versionable,Seleccionable,Identificable,Fi
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 

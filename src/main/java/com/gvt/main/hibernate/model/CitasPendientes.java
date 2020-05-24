@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -20,8 +20,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
 import org.hibernate.annotations.GenericGenerator;
@@ -56,26 +54,26 @@ public class CitasPendientes  implements Versionable,Seleccionable,Identificable
  	
  	private Organizacion organizacion;
  	
- 	private Date fecha;
+ 	private LocalDateTime fecha;
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
 
     public CitasPendientes() {
     	// default constructor
     }
 
 	
-    public CitasPendientes(Persona personaByIdPersona, Date fecha) {
+    public CitasPendientes(Persona personaByIdPersona, LocalDateTime fecha) {
         this.personaByIdPersona = personaByIdPersona;
         this.fecha = fecha;
     }
-    public CitasPendientes(MotivoCalendario motivoCalendario, Persona personaByIdDoctor, Persona personaByIdPersona, Organizacion organizacion, Date fecha, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion) {
+    public CitasPendientes(MotivoCalendario motivoCalendario, Persona personaByIdDoctor, Persona personaByIdPersona, Organizacion organizacion, LocalDateTime fecha, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion) {
        this.motivoCalendario = motivoCalendario;
        this.personaByIdDoctor = personaByIdDoctor;
        this.personaByIdPersona = personaByIdPersona;
@@ -149,13 +147,13 @@ public class CitasPendientes  implements Versionable,Seleccionable,Identificable
     public void setOrganizacion(Organizacion organizacion) {
         this.organizacion = organizacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha", nullable=false, length=29)
-    public Date getFecha() {
+    public LocalDateTime getFecha() {
         return this.fecha;
     }
     
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
     
@@ -167,13 +165,13 @@ public class CitasPendientes  implements Versionable,Seleccionable,Identificable
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -185,13 +183,13 @@ public class CitasPendientes  implements Versionable,Seleccionable,Identificable
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 

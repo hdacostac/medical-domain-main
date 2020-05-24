@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,8 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -24,8 +25,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
 import org.hibernate.annotations.GenericGenerator;
@@ -94,11 +93,11 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
  	
  	private String numeroMsas;
  	
- 	private Date fechaNacimientoPersona;
+ 	private LocalDate fechaNacimientoPersona;
  	
- 	private Date fechaDefuncionPersona;
+ 	private LocalDate fechaDefuncionPersona;
  	
- 	private Date fechaVencimientoRif;
+ 	private LocalDate fechaVencimientoRif;
  	
  	private String telefonoMovilPersona;
  	
@@ -156,11 +155,11 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
  	
  	private Set<ConsultaMedicaFitnessNutricion> consultaMedicaFitnessNutricions = new HashSet<ConsultaMedicaFitnessNutricion>(0);
  	
@@ -236,7 +235,7 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
         this.telefonoFijoPersona = telefonoFijoPersona;
         this.direccionPersona = direccionPersona;
     }
-    public Persona(DistintivoPersona distintivoPersona, TipoPersona tipoPersona, EstadoCivil estadoCivil, Sexo sexo, OpcionSino opcionSinoByEsEmbarazada, Profesion profesion, TipoSangre tipoSangre, OpcionSino opcionSinoByEsActiva, NivelEducativo nivelEducativo, UbicacionGeografica ubicacionGeograficaByIdCiudad, Nacionalidad nacionalidad, UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaNacimiento, UbicacionGeografica ubicacionGeograficaByIdEstado, UbicacionGeografica ubicacionGeograficaByIdPais, OpcionSino opcionSinoByEsPublica, String codigoPersona, String cedulaPersona, String nombrePersona, String apellidoPersona, String rifPersona, String numeroMsas, Date fechaNacimientoPersona, Date fechaDefuncionPersona, Date fechaVencimientoRif, String telefonoMovilPersona, String telefonoFijoPersona, String EMailPersona, String direccionPersona, String nombreContactoUno, String telefonoContactoUno, String telefonoMovilContactoUno, String emailContactoUno, String parentescoContactoUno, String nombreContactoDos, String telefonoContactoDos, String telefonoMovilContactoDos, String emailContactoDos, String parentescoContactoDos, Float edad, String url1, String url1FileName, Double url1FileSize, String comentariosAdicionales, String nombreDoctorReferencia, String telefonoContactoDoctorReferencia, String telefonoMovilDoctorReferencia, String emailDoctorReferencia, String lugarNacimientoOtro, String direccionPersonaCalleAvenida, String direccionPersonaEdificio, String direccionPersonaConsultorio, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<ConsultaMedicaFitnessNutricion> consultaMedicaFitnessNutricions, Set<PersonaAntecedentesObstetrica> personaAntecedentesObstetricas, Set<CalendarioIncidencias> calendarioIncidenciasesForIdPersona, Set<CitasPendientes> citasPendientesesForIdPersona, Set<Documento> documentos, Set<AusenciasMedico> ausenciasMedicos, Set<Gastos> gastoses, Set<ReporteContenido> reporteContenidos, Set<TimelineProtocoloCie10> timelineProtocoloCie10s, Set<Calendario> calendariosForIdDoctor, Set<TiempoEstimadoAtencion> tiempoEstimadoAtencions, Set<TimelineImagen> timelineImagens, Set<ConsultaMedicaObstetricia> consultaMedicaObstetricias, Set<HorarioExtra> horarioExtras, Set<Recipe> recipes, Set<CitasPendientes> citasPendientesesForIdDoctor, Set<ConsultaMedica> consultaMedicas, Set<HorarioMedico> horarioMedicos, Set<CartaAval> cartaAvals, Set<ReferenciaInstitucionPersona> referenciaInstitucionPersonas, Set<Timeline> timelines, Set<PersonaOrganizacion> personaOrganizacions, Set<UsuarioOrganizacion> usuarioOrganizacions, Set<PersonaAntecedentesFitnessNutricion> personaAntecedentesFitnessNutricions, Set<ConsultaMedicaCardiologia> consultaMedicaCardiologias, Set<CalendarioIncidencias> calendarioIncidenciasesForIdDoctor, Set<PersonaAntecedentesDermatoestetica> personaAntecedentesDermatoesteticas, Set<Calendario> calendariosForIdPersona, Set<ConsultaMedicaOdontologica> consultaMedicaOdontologicas, Set<PersonaAntecedentes> personaAntecedenteses, Set<ConsultaMedicaCirugiaPlasticaReconstructiva> consultaMedicaCirugiaPlasticaReconstructivas) {
+    public Persona(DistintivoPersona distintivoPersona, TipoPersona tipoPersona, EstadoCivil estadoCivil, Sexo sexo, OpcionSino opcionSinoByEsEmbarazada, Profesion profesion, TipoSangre tipoSangre, OpcionSino opcionSinoByEsActiva, NivelEducativo nivelEducativo, UbicacionGeografica ubicacionGeograficaByIdCiudad, Nacionalidad nacionalidad, UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaNacimiento, UbicacionGeografica ubicacionGeograficaByIdEstado, UbicacionGeografica ubicacionGeograficaByIdPais, OpcionSino opcionSinoByEsPublica, String codigoPersona, String cedulaPersona, String nombrePersona, String apellidoPersona, String rifPersona, String numeroMsas, LocalDate fechaNacimientoPersona, LocalDate fechaDefuncionPersona, LocalDate fechaVencimientoRif, String telefonoMovilPersona, String telefonoFijoPersona, String EMailPersona, String direccionPersona, String nombreContactoUno, String telefonoContactoUno, String telefonoMovilContactoUno, String emailContactoUno, String parentescoContactoUno, String nombreContactoDos, String telefonoContactoDos, String telefonoMovilContactoDos, String emailContactoDos, String parentescoContactoDos, Float edad, String url1, String url1FileName, Double url1FileSize, String comentariosAdicionales, String nombreDoctorReferencia, String telefonoContactoDoctorReferencia, String telefonoMovilDoctorReferencia, String emailDoctorReferencia, String lugarNacimientoOtro, String direccionPersonaCalleAvenida, String direccionPersonaEdificio, String direccionPersonaConsultorio, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<ConsultaMedicaFitnessNutricion> consultaMedicaFitnessNutricions, Set<PersonaAntecedentesObstetrica> personaAntecedentesObstetricas, Set<CalendarioIncidencias> calendarioIncidenciasesForIdPersona, Set<CitasPendientes> citasPendientesesForIdPersona, Set<Documento> documentos, Set<AusenciasMedico> ausenciasMedicos, Set<Gastos> gastoses, Set<ReporteContenido> reporteContenidos, Set<TimelineProtocoloCie10> timelineProtocoloCie10s, Set<Calendario> calendariosForIdDoctor, Set<TiempoEstimadoAtencion> tiempoEstimadoAtencions, Set<TimelineImagen> timelineImagens, Set<ConsultaMedicaObstetricia> consultaMedicaObstetricias, Set<HorarioExtra> horarioExtras, Set<Recipe> recipes, Set<CitasPendientes> citasPendientesesForIdDoctor, Set<ConsultaMedica> consultaMedicas, Set<HorarioMedico> horarioMedicos, Set<CartaAval> cartaAvals, Set<ReferenciaInstitucionPersona> referenciaInstitucionPersonas, Set<Timeline> timelines, Set<PersonaOrganizacion> personaOrganizacions, Set<UsuarioOrganizacion> usuarioOrganizacions, Set<PersonaAntecedentesFitnessNutricion> personaAntecedentesFitnessNutricions, Set<ConsultaMedicaCardiologia> consultaMedicaCardiologias, Set<CalendarioIncidencias> calendarioIncidenciasesForIdDoctor, Set<PersonaAntecedentesDermatoestetica> personaAntecedentesDermatoesteticas, Set<Calendario> calendariosForIdPersona, Set<ConsultaMedicaOdontologica> consultaMedicaOdontologicas, Set<PersonaAntecedentes> personaAntecedenteses, Set<ConsultaMedicaCirugiaPlasticaReconstructiva> consultaMedicaCirugiaPlasticaReconstructivas) {
        this.distintivoPersona = distintivoPersona;
        this.tipoPersona = tipoPersona;
        this.estadoCivil = estadoCivil;
@@ -540,31 +539,31 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
     public void setNumeroMsas(String numeroMsas) {
         this.numeroMsas = numeroMsas;
     }
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="fecha_nacimiento_persona", length=29)
-    public Date getFechaNacimientoPersona() {
+    
+    @Column(name="fecha_nacimiento_persona", length=13)
+    public LocalDate getFechaNacimientoPersona() {
         return this.fechaNacimientoPersona;
     }
     
-    public void setFechaNacimientoPersona(Date fechaNacimientoPersona) {
+    public void setFechaNacimientoPersona(LocalDate fechaNacimientoPersona) {
         this.fechaNacimientoPersona = fechaNacimientoPersona;
     }
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="fecha_defuncion_persona", length=29)
-    public Date getFechaDefuncionPersona() {
+    
+    @Column(name="fecha_defuncion_persona", length=13)
+    public LocalDate getFechaDefuncionPersona() {
         return this.fechaDefuncionPersona;
     }
     
-    public void setFechaDefuncionPersona(Date fechaDefuncionPersona) {
+    public void setFechaDefuncionPersona(LocalDate fechaDefuncionPersona) {
         this.fechaDefuncionPersona = fechaDefuncionPersona;
     }
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="fecha_vencimiento_rif", length=29)
-    public Date getFechaVencimientoRif() {
+    
+    @Column(name="fecha_vencimiento_rif", length=13)
+    public LocalDate getFechaVencimientoRif() {
         return this.fechaVencimientoRif;
     }
     
-    public void setFechaVencimientoRif(Date fechaVencimientoRif) {
+    public void setFechaVencimientoRif(LocalDate fechaVencimientoRif) {
         this.fechaVencimientoRif = fechaVencimientoRif;
     }
     
@@ -819,13 +818,13 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -837,13 +836,13 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 	@XmlTransient

@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -20,8 +20,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -58,7 +56,7 @@ public class ConsultaMedicaCardiologia  implements Versionable,Seleccionable,Ide
  	
  	private OpcionSino opcionSinoByEsPublica;
  	
- 	private Date fechaConsultaMedica;
+ 	private LocalDateTime fechaConsultaMedica;
  	
  	private String motivoConsulta;
  	
@@ -226,23 +224,23 @@ public class ConsultaMedicaCardiologia  implements Versionable,Seleccionable,Ide
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
 
     public ConsultaMedicaCardiologia() {
     	// default constructor
     }
 
 	
-    public ConsultaMedicaCardiologia(OpcionSino opcionSinoByEsActiva, Persona persona, Date fechaConsultaMedica) {
+    public ConsultaMedicaCardiologia(OpcionSino opcionSinoByEsActiva, Persona persona, LocalDateTime fechaConsultaMedica) {
         this.opcionSinoByEsActiva = opcionSinoByEsActiva;
         this.persona = persona;
         this.fechaConsultaMedica = fechaConsultaMedica;
     }
-    public ConsultaMedicaCardiologia(OpcionSino opcionSinoByEsActiva, Persona persona, Patologia patologia, OpcionSino opcionSinoByEsPublica, Date fechaConsultaMedica, String motivoConsulta, String enfermedadActual, String tensionArterial, String tensionArterialCubito, String tensionArterialPie, String frecuenciaCardiaca, String temperatura, String frecuenciaRespiratoria, String pulso, String peso, String talla, String estatura, String ecgTopeA, String rspeiApex5eii, String rspeiApexLmc, String rsCsRsUnico, String rsCsRsR2, String miembrosEdema, String ecgRs, String ecgAqrs, String trazo, String laboratorio, String rxSilueta, String rxAorta, String rxArteriaPulmonar, String rxHiliosCamposPulmonares, String examenesParaclinicos, String diagnostico, String tratamiento, String evolucion, String conclusion, String sugerencias, String codigoDoctor, String cedulaDoctor, String nombreDoctor, String apellidoDoctor, String url1, String url2, String url3, String url4, String url5, String url6, String url7, String url8, String url9, String url10, String url11, String url12, String url13, String url14, String url15, String url16, String url17, String url18, String url19, String url20, String observaciones, String labHb, String labHcto, String labGb, String labSeg, String labLinf, String labMono, String labEos, Long labGrupo, Long labRh, String labPlaquetas, String labGlicemia, String labUrea, String labCreatinina, String labHierroSerico, String labAcidoUrico, String labVdrl, String labHiv, String labHepatitisB, String labOrina, String labCultivos, String labToxoplasmosis, String labRubeola, String labProtTotales, String labScreeningPrenatal, String labOtro, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion) {
+    public ConsultaMedicaCardiologia(OpcionSino opcionSinoByEsActiva, Persona persona, Patologia patologia, OpcionSino opcionSinoByEsPublica, LocalDateTime fechaConsultaMedica, String motivoConsulta, String enfermedadActual, String tensionArterial, String tensionArterialCubito, String tensionArterialPie, String frecuenciaCardiaca, String temperatura, String frecuenciaRespiratoria, String pulso, String peso, String talla, String estatura, String ecgTopeA, String rspeiApex5eii, String rspeiApexLmc, String rsCsRsUnico, String rsCsRsR2, String miembrosEdema, String ecgRs, String ecgAqrs, String trazo, String laboratorio, String rxSilueta, String rxAorta, String rxArteriaPulmonar, String rxHiliosCamposPulmonares, String examenesParaclinicos, String diagnostico, String tratamiento, String evolucion, String conclusion, String sugerencias, String codigoDoctor, String cedulaDoctor, String nombreDoctor, String apellidoDoctor, String url1, String url2, String url3, String url4, String url5, String url6, String url7, String url8, String url9, String url10, String url11, String url12, String url13, String url14, String url15, String url16, String url17, String url18, String url19, String url20, String observaciones, String labHb, String labHcto, String labGb, String labSeg, String labLinf, String labMono, String labEos, Long labGrupo, Long labRh, String labPlaquetas, String labGlicemia, String labUrea, String labCreatinina, String labHierroSerico, String labAcidoUrico, String labVdrl, String labHiv, String labHepatitisB, String labOrina, String labCultivos, String labToxoplasmosis, String labRubeola, String labProtTotales, String labScreeningPrenatal, String labOtro, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion) {
        this.opcionSinoByEsActiva = opcionSinoByEsActiva;
        this.persona = persona;
        this.patologia = patologia;
@@ -398,13 +396,13 @@ public class ConsultaMedicaCardiologia  implements Versionable,Seleccionable,Ide
     public void setOpcionSinoByEsPublica(OpcionSino opcionSinoByEsPublica) {
         this.opcionSinoByEsPublica = opcionSinoByEsPublica;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_consulta_medica", nullable=false, length=29)
-    public Date getFechaConsultaMedica() {
+    public LocalDateTime getFechaConsultaMedica() {
         return this.fechaConsultaMedica;
     }
     
-    public void setFechaConsultaMedica(Date fechaConsultaMedica) {
+    public void setFechaConsultaMedica(LocalDateTime fechaConsultaMedica) {
         this.fechaConsultaMedica = fechaConsultaMedica;
     }
     
@@ -1154,13 +1152,13 @@ public class ConsultaMedicaCardiologia  implements Versionable,Seleccionable,Ide
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -1172,13 +1170,13 @@ public class ConsultaMedicaCardiologia  implements Versionable,Seleccionable,Ide
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 

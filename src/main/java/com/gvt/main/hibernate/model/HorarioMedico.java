@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,8 @@ import com.gvt.core.domain.types.Identificable;
 import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -24,8 +25,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -74,45 +73,45 @@ public class HorarioMedico  implements Versionable,Seleccionable,Identificable,F
  	
  	private String diaSemana;
  	
- 	private Date fechaInicio1;
+ 	private LocalTime fechaInicio1;
  	
- 	private Date fechaInicio2;
+ 	private LocalTime fechaInicio2;
  	
- 	private Date fechaInicio3;
+ 	private LocalTime fechaInicio3;
  	
- 	private Date fechaInicio4;
+ 	private LocalTime fechaInicio4;
  	
- 	private Date fechaInicio5;
+ 	private LocalTime fechaInicio5;
  	
- 	private Date fechaInicio6;
+ 	private LocalTime fechaInicio6;
  	
- 	private Date fechaInicio7;
+ 	private LocalTime fechaInicio7;
  	
- 	private Date fechaInicio8;
+ 	private LocalTime fechaInicio8;
  	
- 	private Date fechaFin1;
+ 	private LocalTime fechaFin1;
  	
- 	private Date fechaFin2;
+ 	private LocalTime fechaFin2;
  	
- 	private Date fechaFin3;
+ 	private LocalTime fechaFin3;
  	
- 	private Date fechaFin4;
+ 	private LocalTime fechaFin4;
  	
- 	private Date fechaFin5;
+ 	private LocalTime fechaFin5;
  	
- 	private Date fechaFin6;
+ 	private LocalTime fechaFin6;
  	
- 	private Date fechaFin7;
+ 	private LocalTime fechaFin7;
  	
- 	private Date fechaFin8;
+ 	private LocalTime fechaFin8;
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
  	
  	private Set<HorarioMedicoCota> horarioMedicoCotas = new HashSet<HorarioMedicoCota>(0);
 
@@ -124,7 +123,7 @@ public class HorarioMedico  implements Versionable,Seleccionable,Identificable,F
     public HorarioMedico(Persona persona) {
         this.persona = persona;
     }
-    public HorarioMedico(Organizacion organizacionByIdSedeInicio5, Organizacion organizacionByIdSedeInicio4, Organizacion organizacionByIdSedeInicio7, Organizacion organizacionByIdSedeInicio6, Organizacion organizacionByIdSedeInicio8, Persona persona, Organizacion organizacionByIdSedeInicio1, Organizacion organizacionByIdSedeInicio3, Organizacion organizacionByIdSedeInicio2, String diaSemana, Date fechaInicio1, Date fechaInicio2, Date fechaInicio3, Date fechaInicio4, Date fechaInicio5, Date fechaInicio6, Date fechaInicio7, Date fechaInicio8, Date fechaFin1, Date fechaFin2, Date fechaFin3, Date fechaFin4, Date fechaFin5, Date fechaFin6, Date fechaFin7, Date fechaFin8, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<HorarioMedicoCota> horarioMedicoCotas) {
+    public HorarioMedico(Organizacion organizacionByIdSedeInicio5, Organizacion organizacionByIdSedeInicio4, Organizacion organizacionByIdSedeInicio7, Organizacion organizacionByIdSedeInicio6, Organizacion organizacionByIdSedeInicio8, Persona persona, Organizacion organizacionByIdSedeInicio1, Organizacion organizacionByIdSedeInicio3, Organizacion organizacionByIdSedeInicio2, String diaSemana, LocalTime fechaInicio1, LocalTime fechaInicio2, LocalTime fechaInicio3, LocalTime fechaInicio4, LocalTime fechaInicio5, LocalTime fechaInicio6, LocalTime fechaInicio7, LocalTime fechaInicio8, LocalTime fechaFin1, LocalTime fechaFin2, LocalTime fechaFin3, LocalTime fechaFin4, LocalTime fechaFin5, LocalTime fechaFin6, LocalTime fechaFin7, LocalTime fechaFin8, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<HorarioMedicoCota> horarioMedicoCotas) {
        this.organizacionByIdSedeInicio5 = organizacionByIdSedeInicio5;
        this.organizacionByIdSedeInicio4 = organizacionByIdSedeInicio4;
        this.organizacionByIdSedeInicio7 = organizacionByIdSedeInicio7;
@@ -274,148 +273,148 @@ public class HorarioMedico  implements Versionable,Seleccionable,Identificable,F
     public void setDiaSemana(String diaSemana) {
         this.diaSemana = diaSemana;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_inicio_1", length=15)
-    public Date getFechaInicio1() {
+    public LocalTime getFechaInicio1() {
         return this.fechaInicio1;
     }
     
-    public void setFechaInicio1(Date fechaInicio1) {
+    public void setFechaInicio1(LocalTime fechaInicio1) {
         this.fechaInicio1 = fechaInicio1;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_inicio_2", length=15)
-    public Date getFechaInicio2() {
+    public LocalTime getFechaInicio2() {
         return this.fechaInicio2;
     }
     
-    public void setFechaInicio2(Date fechaInicio2) {
+    public void setFechaInicio2(LocalTime fechaInicio2) {
         this.fechaInicio2 = fechaInicio2;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_inicio_3", length=15)
-    public Date getFechaInicio3() {
+    public LocalTime getFechaInicio3() {
         return this.fechaInicio3;
     }
     
-    public void setFechaInicio3(Date fechaInicio3) {
+    public void setFechaInicio3(LocalTime fechaInicio3) {
         this.fechaInicio3 = fechaInicio3;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_inicio_4", length=15)
-    public Date getFechaInicio4() {
+    public LocalTime getFechaInicio4() {
         return this.fechaInicio4;
     }
     
-    public void setFechaInicio4(Date fechaInicio4) {
+    public void setFechaInicio4(LocalTime fechaInicio4) {
         this.fechaInicio4 = fechaInicio4;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_inicio_5", length=15)
-    public Date getFechaInicio5() {
+    public LocalTime getFechaInicio5() {
         return this.fechaInicio5;
     }
     
-    public void setFechaInicio5(Date fechaInicio5) {
+    public void setFechaInicio5(LocalTime fechaInicio5) {
         this.fechaInicio5 = fechaInicio5;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_inicio_6", length=15)
-    public Date getFechaInicio6() {
+    public LocalTime getFechaInicio6() {
         return this.fechaInicio6;
     }
     
-    public void setFechaInicio6(Date fechaInicio6) {
+    public void setFechaInicio6(LocalTime fechaInicio6) {
         this.fechaInicio6 = fechaInicio6;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_inicio_7", length=15)
-    public Date getFechaInicio7() {
+    public LocalTime getFechaInicio7() {
         return this.fechaInicio7;
     }
     
-    public void setFechaInicio7(Date fechaInicio7) {
+    public void setFechaInicio7(LocalTime fechaInicio7) {
         this.fechaInicio7 = fechaInicio7;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_inicio_8", length=15)
-    public Date getFechaInicio8() {
+    public LocalTime getFechaInicio8() {
         return this.fechaInicio8;
     }
     
-    public void setFechaInicio8(Date fechaInicio8) {
+    public void setFechaInicio8(LocalTime fechaInicio8) {
         this.fechaInicio8 = fechaInicio8;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_fin_1", length=15)
-    public Date getFechaFin1() {
+    public LocalTime getFechaFin1() {
         return this.fechaFin1;
     }
     
-    public void setFechaFin1(Date fechaFin1) {
+    public void setFechaFin1(LocalTime fechaFin1) {
         this.fechaFin1 = fechaFin1;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_fin_2", length=15)
-    public Date getFechaFin2() {
+    public LocalTime getFechaFin2() {
         return this.fechaFin2;
     }
     
-    public void setFechaFin2(Date fechaFin2) {
+    public void setFechaFin2(LocalTime fechaFin2) {
         this.fechaFin2 = fechaFin2;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_fin_3", length=15)
-    public Date getFechaFin3() {
+    public LocalTime getFechaFin3() {
         return this.fechaFin3;
     }
     
-    public void setFechaFin3(Date fechaFin3) {
+    public void setFechaFin3(LocalTime fechaFin3) {
         this.fechaFin3 = fechaFin3;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_fin_4", length=15)
-    public Date getFechaFin4() {
+    public LocalTime getFechaFin4() {
         return this.fechaFin4;
     }
     
-    public void setFechaFin4(Date fechaFin4) {
+    public void setFechaFin4(LocalTime fechaFin4) {
         this.fechaFin4 = fechaFin4;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_fin_5", length=15)
-    public Date getFechaFin5() {
+    public LocalTime getFechaFin5() {
         return this.fechaFin5;
     }
     
-    public void setFechaFin5(Date fechaFin5) {
+    public void setFechaFin5(LocalTime fechaFin5) {
         this.fechaFin5 = fechaFin5;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_fin_6", length=15)
-    public Date getFechaFin6() {
+    public LocalTime getFechaFin6() {
         return this.fechaFin6;
     }
     
-    public void setFechaFin6(Date fechaFin6) {
+    public void setFechaFin6(LocalTime fechaFin6) {
         this.fechaFin6 = fechaFin6;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_fin_7", length=15)
-    public Date getFechaFin7() {
+    public LocalTime getFechaFin7() {
         return this.fechaFin7;
     }
     
-    public void setFechaFin7(Date fechaFin7) {
+    public void setFechaFin7(LocalTime fechaFin7) {
         this.fechaFin7 = fechaFin7;
     }
-    @Temporal(TemporalType.TIME)
+    
     @Column(name="fecha_fin_8", length=15)
-    public Date getFechaFin8() {
+    public LocalTime getFechaFin8() {
         return this.fechaFin8;
     }
     
-    public void setFechaFin8(Date fechaFin8) {
+    public void setFechaFin8(LocalTime fechaFin8) {
         this.fechaFin8 = fechaFin8;
     }
     
@@ -427,13 +426,13 @@ public class HorarioMedico  implements Versionable,Seleccionable,Identificable,F
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -445,13 +444,13 @@ public class HorarioMedico  implements Versionable,Seleccionable,Identificable,F
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 	@XmlTransient

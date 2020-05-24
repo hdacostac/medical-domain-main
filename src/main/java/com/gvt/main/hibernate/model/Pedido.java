@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,7 +11,7 @@ import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -25,8 +25,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -71,7 +69,7 @@ public class Pedido  implements Versionable,Seleccionable,Identificable,Fillable
  	
  	private String codigoPedido;
  	
- 	private Date fechaElaboracionPedido;
+ 	private LocalDateTime fechaElaboracionPedido;
  	
  	private BigDecimal montoSubtotalPedido;
  	
@@ -131,11 +129,11 @@ public class Pedido  implements Versionable,Seleccionable,Identificable,Fillable
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
  	
  	private Set<Documento> documentos = new HashSet<Documento>(0);
  	
@@ -148,7 +146,7 @@ public class Pedido  implements Versionable,Seleccionable,Identificable,Fillable
     }
 
 	
-    public Pedido(OpcionSino opcionSinoByEsImpresa, TipoDocumento tipoDocumento, OpcionSino opcionSinoByEsPote, StatusDocumento statusDocumento, String codigoPedido, Date fechaElaboracionPedido, BigDecimal montoSubtotalPedido, BigDecimal montoExentoPedido, BigDecimal montoTotalPedido, String codigoUbicacionGeograficaEmision, String nombreUbicacionGeograficaEmision, String codigoPersona, String cedulaCliente, String nombreCliente, String telefonoCliente, String direccionCliente) {
+    public Pedido(OpcionSino opcionSinoByEsImpresa, TipoDocumento tipoDocumento, OpcionSino opcionSinoByEsPote, StatusDocumento statusDocumento, String codigoPedido, LocalDateTime fechaElaboracionPedido, BigDecimal montoSubtotalPedido, BigDecimal montoExentoPedido, BigDecimal montoTotalPedido, String codigoUbicacionGeograficaEmision, String nombreUbicacionGeograficaEmision, String codigoPersona, String cedulaCliente, String nombreCliente, String telefonoCliente, String direccionCliente) {
         this.opcionSinoByEsImpresa = opcionSinoByEsImpresa;
         this.tipoDocumento = tipoDocumento;
         this.opcionSinoByEsPote = opcionSinoByEsPote;
@@ -166,7 +164,7 @@ public class Pedido  implements Versionable,Seleccionable,Identificable,Fillable
         this.telefonoCliente = telefonoCliente;
         this.direccionCliente = direccionCliente;
     }
-    public Pedido(OpcionSino opcionSinoByEsImpresa, OpcionSino opcionSinoByEsDespachado, TipoDocumento tipoDocumento, OpcionSino opcionSinoByEsPote, StatusDocumento statusDocumento, OpcionSino opcionSinoByEsLiberado, Organizacion organizacion, String codigoPedido, Date fechaElaboracionPedido, BigDecimal montoSubtotalPedido, BigDecimal montoExentoPedido, BigDecimal montoGravablePedido1, Float porcentajeIvaPedido1, BigDecimal montoIvaPedido1, BigDecimal montoGravablePedido2, Float porcentajeIvaPedido2, BigDecimal montoIvaPedido2, BigDecimal montoGravablePedido3, Float porcentajeIvaPedido3, BigDecimal montoIvaPedido3, BigDecimal montoGravablePedido4, Float porcentajeIvaPedido4, BigDecimal montoIvaPedido4, BigDecimal montoGravablePedido5, Float porcentajeIvaPedido5, BigDecimal montoIvaPedido5, BigDecimal montoTotalPedido, String codigoUbicacionGeograficaEmision, String nombreUbicacionGeograficaEmision, String observaciones, String codigoPersona, String cedulaCliente, String nombreCliente, String apellidoCliente, String telefonoCliente, String direccionCliente, String procedimientoRealizar, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<Documento> documentos, Set<RenglonPedido> renglonPedidos, Set<CartaAval> cartaAvals) {
+    public Pedido(OpcionSino opcionSinoByEsImpresa, OpcionSino opcionSinoByEsDespachado, TipoDocumento tipoDocumento, OpcionSino opcionSinoByEsPote, StatusDocumento statusDocumento, OpcionSino opcionSinoByEsLiberado, Organizacion organizacion, String codigoPedido, LocalDateTime fechaElaboracionPedido, BigDecimal montoSubtotalPedido, BigDecimal montoExentoPedido, BigDecimal montoGravablePedido1, Float porcentajeIvaPedido1, BigDecimal montoIvaPedido1, BigDecimal montoGravablePedido2, Float porcentajeIvaPedido2, BigDecimal montoIvaPedido2, BigDecimal montoGravablePedido3, Float porcentajeIvaPedido3, BigDecimal montoIvaPedido3, BigDecimal montoGravablePedido4, Float porcentajeIvaPedido4, BigDecimal montoIvaPedido4, BigDecimal montoGravablePedido5, Float porcentajeIvaPedido5, BigDecimal montoIvaPedido5, BigDecimal montoTotalPedido, String codigoUbicacionGeograficaEmision, String nombreUbicacionGeograficaEmision, String observaciones, String codigoPersona, String cedulaCliente, String nombreCliente, String apellidoCliente, String telefonoCliente, String direccionCliente, String procedimientoRealizar, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<Documento> documentos, Set<RenglonPedido> renglonPedidos, Set<CartaAval> cartaAvals) {
        this.opcionSinoByEsImpresa = opcionSinoByEsImpresa;
        this.opcionSinoByEsDespachado = opcionSinoByEsDespachado;
        this.tipoDocumento = tipoDocumento;
@@ -311,13 +309,13 @@ public class Pedido  implements Versionable,Seleccionable,Identificable,Fillable
     public void setCodigoPedido(String codigoPedido) {
         this.codigoPedido = codigoPedido;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_elaboracion_pedido", nullable=false, length=29)
-    public Date getFechaElaboracionPedido() {
+    public LocalDateTime getFechaElaboracionPedido() {
         return this.fechaElaboracionPedido;
     }
     
-    public void setFechaElaboracionPedido(Date fechaElaboracionPedido) {
+    public void setFechaElaboracionPedido(LocalDateTime fechaElaboracionPedido) {
         this.fechaElaboracionPedido = fechaElaboracionPedido;
     }
     
@@ -581,13 +579,13 @@ public class Pedido  implements Versionable,Seleccionable,Identificable,Fillable
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -599,13 +597,13 @@ public class Pedido  implements Versionable,Seleccionable,Identificable,Fillable
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 	@XmlTransient

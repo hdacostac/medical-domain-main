@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 12-may-2020 16:27:19 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,7 +11,7 @@ import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -25,8 +25,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -73,9 +71,9 @@ public class Compras  implements Versionable,Seleccionable,Identificable,Fillabl
  	
  	private String numeroControlFacturaProveedor;
  	
- 	private Date fechaElaboracionFactura;
+ 	private LocalDateTime fechaElaboracionFactura;
  	
- 	private Date fechaVencimientoFactura;
+ 	private LocalDateTime fechaVencimientoFactura;
  	
  	private String codigoProveedor;
  	
@@ -89,7 +87,7 @@ public class Compras  implements Versionable,Seleccionable,Identificable,Fillabl
  	
  	private String numeroComprobanteRetencion;
  	
- 	private Date fechaComprobanteRetencion;
+ 	private LocalDateTime fechaComprobanteRetencion;
  	
  	private String numeroPlanillaImportacion;
  	
@@ -137,11 +135,11 @@ public class Compras  implements Versionable,Seleccionable,Identificable,Fillabl
  	@CreatedBy
  	private String usuarioCreacion;
  	@CreatedDate
- 	private Date fechaCreacion;
+ 	private LocalDateTime fechaCreacion;
  	@LastModifiedBy
  	private String usuarioModificacion;
  	@LastModifiedDate
- 	private Date fechaModificacion;
+ 	private LocalDateTime fechaModificacion;
  	
  	private Set<RenglonCompras> renglonComprases = new HashSet<RenglonCompras>(0);
  	
@@ -163,7 +161,7 @@ public class Compras  implements Versionable,Seleccionable,Identificable,Fillabl
         this.montoExento = montoExento;
         this.montoTotal = montoTotal;
     }
-    public Compras(OpcionSino opcionSinoByEsCargadoInventario, OpcionSino opcionSinoByEsBloqueada, StatusDocumento statusDocumento, Almacen almacen, OpcionSino opcionSinoByEsPagada, Organizacion organizacion, String numeroDocumento, String numeroFacturaProveedor, String numeroControlFacturaProveedor, Date fechaElaboracionFactura, Date fechaVencimientoFactura, String codigoProveedor, String rifProveedor, String nombreProveedor, String telefonoFijoProveedor, String direccionProveedor, String numeroComprobanteRetencion, Date fechaComprobanteRetencion, String numeroPlanillaImportacion, String numeroExpedienteImportacion, BigDecimal montoSubtotal, BigDecimal montoExento, BigDecimal montoGravable1, Float porcentajeIva1, BigDecimal montoIva1, BigDecimal montoGravable2, Float porcentajeIva2, BigDecimal montoIva2, BigDecimal montoGravable3, Float porcentajeIva3, BigDecimal montoIva3, BigDecimal montoGravable4, Float porcentajeIva4, BigDecimal montoIva4, BigDecimal montoGravable5, Float porcentajeIva5, BigDecimal montoIva5, BigDecimal montoTotal, Float descuento, String responsableCompras, String usuarioCreacion, Date fechaCreacion, String usuarioModificacion, Date fechaModificacion, Set<RenglonCompras> renglonComprases, Set<ComprasFormaPago> comprasFormaPagos) {
+    public Compras(OpcionSino opcionSinoByEsCargadoInventario, OpcionSino opcionSinoByEsBloqueada, StatusDocumento statusDocumento, Almacen almacen, OpcionSino opcionSinoByEsPagada, Organizacion organizacion, String numeroDocumento, String numeroFacturaProveedor, String numeroControlFacturaProveedor, LocalDateTime fechaElaboracionFactura, LocalDateTime fechaVencimientoFactura, String codigoProveedor, String rifProveedor, String nombreProveedor, String telefonoFijoProveedor, String direccionProveedor, String numeroComprobanteRetencion, LocalDateTime fechaComprobanteRetencion, String numeroPlanillaImportacion, String numeroExpedienteImportacion, BigDecimal montoSubtotal, BigDecimal montoExento, BigDecimal montoGravable1, Float porcentajeIva1, BigDecimal montoIva1, BigDecimal montoGravable2, Float porcentajeIva2, BigDecimal montoIva2, BigDecimal montoGravable3, Float porcentajeIva3, BigDecimal montoIva3, BigDecimal montoGravable4, Float porcentajeIva4, BigDecimal montoIva4, BigDecimal montoGravable5, Float porcentajeIva5, BigDecimal montoIva5, BigDecimal montoTotal, Float descuento, String responsableCompras, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<RenglonCompras> renglonComprases, Set<ComprasFormaPago> comprasFormaPagos) {
        this.opcionSinoByEsCargadoInventario = opcionSinoByEsCargadoInventario;
        this.opcionSinoByEsBloqueada = opcionSinoByEsBloqueada;
        this.statusDocumento = statusDocumento;
@@ -319,22 +317,22 @@ public class Compras  implements Versionable,Seleccionable,Identificable,Fillabl
     public void setNumeroControlFacturaProveedor(String numeroControlFacturaProveedor) {
         this.numeroControlFacturaProveedor = numeroControlFacturaProveedor;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_elaboracion_factura", length=29)
-    public Date getFechaElaboracionFactura() {
+    public LocalDateTime getFechaElaboracionFactura() {
         return this.fechaElaboracionFactura;
     }
     
-    public void setFechaElaboracionFactura(Date fechaElaboracionFactura) {
+    public void setFechaElaboracionFactura(LocalDateTime fechaElaboracionFactura) {
         this.fechaElaboracionFactura = fechaElaboracionFactura;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_vencimiento_factura", length=29)
-    public Date getFechaVencimientoFactura() {
+    public LocalDateTime getFechaVencimientoFactura() {
         return this.fechaVencimientoFactura;
     }
     
-    public void setFechaVencimientoFactura(Date fechaVencimientoFactura) {
+    public void setFechaVencimientoFactura(LocalDateTime fechaVencimientoFactura) {
         this.fechaVencimientoFactura = fechaVencimientoFactura;
     }
     
@@ -391,13 +389,13 @@ public class Compras  implements Versionable,Seleccionable,Identificable,Fillabl
     public void setNumeroComprobanteRetencion(String numeroComprobanteRetencion) {
         this.numeroComprobanteRetencion = numeroComprobanteRetencion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_comprobante_retencion", length=29)
-    public Date getFechaComprobanteRetencion() {
+    public LocalDateTime getFechaComprobanteRetencion() {
         return this.fechaComprobanteRetencion;
     }
     
-    public void setFechaComprobanteRetencion(Date fechaComprobanteRetencion) {
+    public void setFechaComprobanteRetencion(LocalDateTime fechaComprobanteRetencion) {
         this.fechaComprobanteRetencion = fechaComprobanteRetencion;
     }
     
@@ -607,13 +605,13 @@ public class Compras  implements Versionable,Seleccionable,Identificable,Fillabl
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_creacion", length=29)
-    public Date getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return this.fechaCreacion;
     }
     
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
     
@@ -625,13 +623,13 @@ public class Compras  implements Versionable,Seleccionable,Identificable,Fillabl
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name="fecha_modificacion", length=29)
-    public Date getFechaModificacion() {
+    public LocalDateTime getFechaModificacion() {
         return this.fechaModificacion;
     }
     
-    public void setFechaModificacion(Date fechaModificacion) {
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
 	@XmlTransient
