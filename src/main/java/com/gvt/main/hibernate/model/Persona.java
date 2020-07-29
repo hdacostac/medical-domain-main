@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 29-jul-2020 23:17:45 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -67,15 +67,13 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
  	
  	private OpcionSino opcionSinoByEsActiva;
  	
- 	private NivelEducativo nivelEducativo;
+ 	private CodigoPostal codigoPostal;
  	
- 	private UbicacionGeografica ubicacionGeograficaByIdCiudad;
+ 	private NivelEducativo nivelEducativo;
  	
  	private Nacionalidad nacionalidad;
  	
  	private UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaNacimiento;
- 	
- 	private UbicacionGeografica ubicacionGeograficaByIdEstado;
  	
  	private UbicacionGeografica ubicacionGeograficaByIdPais;
  	
@@ -235,7 +233,7 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
         this.telefonoFijoPersona = telefonoFijoPersona;
         this.direccionPersona = direccionPersona;
     }
-    public Persona(DistintivoPersona distintivoPersona, TipoPersona tipoPersona, EstadoCivil estadoCivil, Sexo sexo, OpcionSino opcionSinoByEsEmbarazada, Profesion profesion, TipoSangre tipoSangre, OpcionSino opcionSinoByEsActiva, NivelEducativo nivelEducativo, UbicacionGeografica ubicacionGeograficaByIdCiudad, Nacionalidad nacionalidad, UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaNacimiento, UbicacionGeografica ubicacionGeograficaByIdEstado, UbicacionGeografica ubicacionGeograficaByIdPais, OpcionSino opcionSinoByEsPublica, String codigoPersona, String cedulaPersona, String nombrePersona, String apellidoPersona, String rifPersona, String numeroMsas, LocalDate fechaNacimientoPersona, LocalDate fechaDefuncionPersona, LocalDate fechaVencimientoRif, String telefonoMovilPersona, String telefonoFijoPersona, String EMailPersona, String direccionPersona, String nombreContactoUno, String telefonoContactoUno, String telefonoMovilContactoUno, String emailContactoUno, String parentescoContactoUno, String nombreContactoDos, String telefonoContactoDos, String telefonoMovilContactoDos, String emailContactoDos, String parentescoContactoDos, Float edad, String url1, String url1FileName, Double url1FileSize, String comentariosAdicionales, String nombreDoctorReferencia, String telefonoContactoDoctorReferencia, String telefonoMovilDoctorReferencia, String emailDoctorReferencia, String lugarNacimientoOtro, String direccionPersonaCalleAvenida, String direccionPersonaEdificio, String direccionPersonaConsultorio, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<ConsultaMedicaFitnessNutricion> consultaMedicaFitnessNutricions, Set<PersonaAntecedentesObstetrica> personaAntecedentesObstetricas, Set<CalendarioIncidencias> calendarioIncidenciasesForIdPersona, Set<CitasPendientes> citasPendientesesForIdPersona, Set<Documento> documentos, Set<AusenciasMedico> ausenciasMedicos, Set<Gastos> gastoses, Set<ReporteContenido> reporteContenidos, Set<TimelineProtocoloCie10> timelineProtocoloCie10s, Set<Calendario> calendariosForIdDoctor, Set<TiempoEstimadoAtencion> tiempoEstimadoAtencions, Set<TimelineImagen> timelineImagens, Set<ConsultaMedicaObstetricia> consultaMedicaObstetricias, Set<HorarioExtra> horarioExtras, Set<Recipe> recipes, Set<CitasPendientes> citasPendientesesForIdDoctor, Set<ConsultaMedica> consultaMedicas, Set<HorarioMedico> horarioMedicos, Set<CartaAval> cartaAvals, Set<ReferenciaInstitucionPersona> referenciaInstitucionPersonas, Set<Timeline> timelines, Set<PersonaOrganizacion> personaOrganizacions, Set<UsuarioOrganizacion> usuarioOrganizacions, Set<PersonaAntecedentesFitnessNutricion> personaAntecedentesFitnessNutricions, Set<ConsultaMedicaCardiologia> consultaMedicaCardiologias, Set<CalendarioIncidencias> calendarioIncidenciasesForIdDoctor, Set<PersonaAntecedentesDermatoestetica> personaAntecedentesDermatoesteticas, Set<Calendario> calendariosForIdPersona, Set<ConsultaMedicaOdontologica> consultaMedicaOdontologicas, Set<PersonaAntecedentes> personaAntecedenteses, Set<ConsultaMedicaCirugiaPlasticaReconstructiva> consultaMedicaCirugiaPlasticaReconstructivas) {
+    public Persona(DistintivoPersona distintivoPersona, TipoPersona tipoPersona, EstadoCivil estadoCivil, Sexo sexo, OpcionSino opcionSinoByEsEmbarazada, Profesion profesion, TipoSangre tipoSangre, OpcionSino opcionSinoByEsActiva, CodigoPostal codigoPostal, NivelEducativo nivelEducativo, Nacionalidad nacionalidad, UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaNacimiento, UbicacionGeografica ubicacionGeograficaByIdPais, OpcionSino opcionSinoByEsPublica, String codigoPersona, String cedulaPersona, String nombrePersona, String apellidoPersona, String rifPersona, String numeroMsas, LocalDate fechaNacimientoPersona, LocalDate fechaDefuncionPersona, LocalDate fechaVencimientoRif, String telefonoMovilPersona, String telefonoFijoPersona, String EMailPersona, String direccionPersona, String nombreContactoUno, String telefonoContactoUno, String telefonoMovilContactoUno, String emailContactoUno, String parentescoContactoUno, String nombreContactoDos, String telefonoContactoDos, String telefonoMovilContactoDos, String emailContactoDos, String parentescoContactoDos, Float edad, String url1, String url1FileName, Double url1FileSize, String comentariosAdicionales, String nombreDoctorReferencia, String telefonoContactoDoctorReferencia, String telefonoMovilDoctorReferencia, String emailDoctorReferencia, String lugarNacimientoOtro, String direccionPersonaCalleAvenida, String direccionPersonaEdificio, String direccionPersonaConsultorio, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<ConsultaMedicaFitnessNutricion> consultaMedicaFitnessNutricions, Set<PersonaAntecedentesObstetrica> personaAntecedentesObstetricas, Set<CalendarioIncidencias> calendarioIncidenciasesForIdPersona, Set<CitasPendientes> citasPendientesesForIdPersona, Set<Documento> documentos, Set<AusenciasMedico> ausenciasMedicos, Set<Gastos> gastoses, Set<ReporteContenido> reporteContenidos, Set<TimelineProtocoloCie10> timelineProtocoloCie10s, Set<Calendario> calendariosForIdDoctor, Set<TiempoEstimadoAtencion> tiempoEstimadoAtencions, Set<TimelineImagen> timelineImagens, Set<ConsultaMedicaObstetricia> consultaMedicaObstetricias, Set<HorarioExtra> horarioExtras, Set<Recipe> recipes, Set<CitasPendientes> citasPendientesesForIdDoctor, Set<ConsultaMedica> consultaMedicas, Set<HorarioMedico> horarioMedicos, Set<CartaAval> cartaAvals, Set<ReferenciaInstitucionPersona> referenciaInstitucionPersonas, Set<Timeline> timelines, Set<PersonaOrganizacion> personaOrganizacions, Set<UsuarioOrganizacion> usuarioOrganizacions, Set<PersonaAntecedentesFitnessNutricion> personaAntecedentesFitnessNutricions, Set<ConsultaMedicaCardiologia> consultaMedicaCardiologias, Set<CalendarioIncidencias> calendarioIncidenciasesForIdDoctor, Set<PersonaAntecedentesDermatoestetica> personaAntecedentesDermatoesteticas, Set<Calendario> calendariosForIdPersona, Set<ConsultaMedicaOdontologica> consultaMedicaOdontologicas, Set<PersonaAntecedentes> personaAntecedenteses, Set<ConsultaMedicaCirugiaPlasticaReconstructiva> consultaMedicaCirugiaPlasticaReconstructivas) {
        this.distintivoPersona = distintivoPersona;
        this.tipoPersona = tipoPersona;
        this.estadoCivil = estadoCivil;
@@ -244,11 +242,10 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
        this.profesion = profesion;
        this.tipoSangre = tipoSangre;
        this.opcionSinoByEsActiva = opcionSinoByEsActiva;
+       this.codigoPostal = codigoPostal;
        this.nivelEducativo = nivelEducativo;
-       this.ubicacionGeograficaByIdCiudad = ubicacionGeograficaByIdCiudad;
        this.nacionalidad = nacionalidad;
        this.ubicacionGeograficaByIdUbicacionGeograficaNacimiento = ubicacionGeograficaByIdUbicacionGeograficaNacimiento;
-       this.ubicacionGeograficaByIdEstado = ubicacionGeograficaByIdEstado;
        this.ubicacionGeograficaByIdPais = ubicacionGeograficaByIdPais;
        this.opcionSinoByEsPublica = opcionSinoByEsPublica;
        this.codigoPersona = codigoPersona;
@@ -423,6 +420,15 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
         this.opcionSinoByEsActiva = opcionSinoByEsActiva;
     }
 @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="id_codigo_postal")
+    public CodigoPostal getCodigoPostal() {
+        return this.codigoPostal;
+    }
+    
+    public void setCodigoPostal(CodigoPostal codigoPostal) {
+        this.codigoPostal = codigoPostal;
+    }
+@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="id_nivel_educativo")
     public NivelEducativo getNivelEducativo() {
         return this.nivelEducativo;
@@ -430,15 +436,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
     
     public void setNivelEducativo(NivelEducativo nivelEducativo) {
         this.nivelEducativo = nivelEducativo;
-    }
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="id_ciudad")
-    public UbicacionGeografica getUbicacionGeograficaByIdCiudad() {
-        return this.ubicacionGeograficaByIdCiudad;
-    }
-    
-    public void setUbicacionGeograficaByIdCiudad(UbicacionGeografica ubicacionGeograficaByIdCiudad) {
-        this.ubicacionGeograficaByIdCiudad = ubicacionGeograficaByIdCiudad;
     }
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="id_nacionalidad")
@@ -457,15 +454,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
     
     public void setUbicacionGeograficaByIdUbicacionGeograficaNacimiento(UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaNacimiento) {
         this.ubicacionGeograficaByIdUbicacionGeograficaNacimiento = ubicacionGeograficaByIdUbicacionGeograficaNacimiento;
-    }
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="id_estado")
-    public UbicacionGeografica getUbicacionGeograficaByIdEstado() {
-        return this.ubicacionGeograficaByIdEstado;
-    }
-    
-    public void setUbicacionGeograficaByIdEstado(UbicacionGeografica ubicacionGeograficaByIdEstado) {
-        this.ubicacionGeograficaByIdEstado = ubicacionGeograficaByIdEstado;
     }
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="id_pais")
@@ -1175,11 +1163,10 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
       buffer.append("profesion").append("='").append(getProfesion()).append("' ");			
       buffer.append("tipoSangre").append("='").append(getTipoSangre()).append("' ");			
       buffer.append("opcionSinoByEsActiva").append("='").append(getOpcionSinoByEsActiva()).append("' ");			
+      buffer.append("codigoPostal").append("='").append(getCodigoPostal()).append("' ");			
       buffer.append("nivelEducativo").append("='").append(getNivelEducativo()).append("' ");			
-      buffer.append("ubicacionGeograficaByIdCiudad").append("='").append(getUbicacionGeograficaByIdCiudad()).append("' ");			
       buffer.append("nacionalidad").append("='").append(getNacionalidad()).append("' ");			
       buffer.append("ubicacionGeograficaByIdUbicacionGeograficaNacimiento").append("='").append(getUbicacionGeograficaByIdUbicacionGeograficaNacimiento()).append("' ");			
-      buffer.append("ubicacionGeograficaByIdEstado").append("='").append(getUbicacionGeograficaByIdEstado()).append("' ");			
       buffer.append("ubicacionGeograficaByIdPais").append("='").append(getUbicacionGeograficaByIdPais()).append("' ");			
       buffer.append("opcionSinoByEsPublica").append("='").append(getOpcionSinoByEsPublica()).append("' ");			
       buffer.append("codigoPersona").append("='").append(getCodigoPersona()).append("' ");			
@@ -1335,7 +1322,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
          
          
          
-         
          return result;
    }   
 
@@ -1395,13 +1381,13 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
 			(opcionSinoByEsActiva.getId() == null || this.opcionSinoByEsActiva.getId().longValue() == 0)) {
 			opcionSinoByEsActiva = null;
 		}
+		if(this.codigoPostal != null &&
+			(codigoPostal.getId() == null || this.codigoPostal.getId().longValue() == 0)) {
+			codigoPostal = null;
+		}
 		if(this.nivelEducativo != null &&
 			(nivelEducativo.getId() == null || this.nivelEducativo.getId().longValue() == 0)) {
 			nivelEducativo = null;
-		}
-		if(this.ubicacionGeograficaByIdCiudad != null &&
-			(ubicacionGeograficaByIdCiudad.getId() == null || this.ubicacionGeograficaByIdCiudad.getId().longValue() == 0)) {
-			ubicacionGeograficaByIdCiudad = null;
 		}
 		if(this.nacionalidad != null &&
 			(nacionalidad.getId() == null || this.nacionalidad.getId().longValue() == 0)) {
@@ -1410,10 +1396,6 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
 		if(this.ubicacionGeograficaByIdUbicacionGeograficaNacimiento != null &&
 			(ubicacionGeograficaByIdUbicacionGeograficaNacimiento.getId() == null || this.ubicacionGeograficaByIdUbicacionGeograficaNacimiento.getId().longValue() == 0)) {
 			ubicacionGeograficaByIdUbicacionGeograficaNacimiento = null;
-		}
-		if(this.ubicacionGeograficaByIdEstado != null &&
-			(ubicacionGeograficaByIdEstado.getId() == null || this.ubicacionGeograficaByIdEstado.getId().longValue() == 0)) {
-			ubicacionGeograficaByIdEstado = null;
 		}
 		if(this.ubicacionGeograficaByIdPais != null &&
 			(ubicacionGeograficaByIdPais.getId() == null || this.ubicacionGeograficaByIdPais.getId().longValue() == 0)) {
@@ -1450,20 +1432,17 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
 		if(this.opcionSinoByEsActiva == null) {
 			opcionSinoByEsActiva = new OpcionSino();
 		}
+		if(this.codigoPostal == null) {
+			codigoPostal = new CodigoPostal();
+		}
 		if(this.nivelEducativo == null) {
 			nivelEducativo = new NivelEducativo();
-		}
-		if(this.ubicacionGeograficaByIdCiudad == null) {
-			ubicacionGeograficaByIdCiudad = new UbicacionGeografica();
 		}
 		if(this.nacionalidad == null) {
 			nacionalidad = new Nacionalidad();
 		}
 		if(this.ubicacionGeograficaByIdUbicacionGeograficaNacimiento == null) {
 			ubicacionGeograficaByIdUbicacionGeograficaNacimiento = new UbicacionGeografica();
-		}
-		if(this.ubicacionGeograficaByIdEstado == null) {
-			ubicacionGeograficaByIdEstado = new UbicacionGeografica();
 		}
 		if(this.ubicacionGeograficaByIdPais == null) {
 			ubicacionGeograficaByIdPais = new UbicacionGeografica();

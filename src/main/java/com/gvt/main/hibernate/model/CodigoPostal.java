@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 29-jul-2020 23:17:45 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,6 +11,9 @@ import com.gvt.core.domain.types.Seleccionable;
 import com.gvt.core.domain.types.Versionable;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -19,6 +22,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlTransient;
@@ -61,12 +65,14 @@ public class CodigoPostal  implements Versionable,Seleccionable,Identificable,Fi
  	private String usuarioModificacion;
  	@LastModifiedDate
  	private LocalDateTime fechaModificacion;
+ 	
+ 	private Set<Persona> personas = new HashSet<Persona>(0);
 
     public CodigoPostal() {
     	// default constructor
     }
 
-    public CodigoPostal(Provincia provincia, Poblacion poblacion, UbicacionGeografica ubicacionGeografica, String codigoPostal, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion) {
+    public CodigoPostal(Provincia provincia, Poblacion poblacion, UbicacionGeografica ubicacionGeografica, String codigoPostal, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<Persona> personas) {
        this.provincia = provincia;
        this.poblacion = poblacion;
        this.ubicacionGeografica = ubicacionGeografica;
@@ -75,6 +81,7 @@ public class CodigoPostal  implements Versionable,Seleccionable,Identificable,Fi
        this.fechaCreacion = fechaCreacion;
        this.usuarioModificacion = usuarioModificacion;
        this.fechaModificacion = fechaModificacion;
+       this.personas = personas;
     }
    
   @GenericGenerator(name = "codigo_postal_seq_gen", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
@@ -175,6 +182,16 @@ public class CodigoPostal  implements Versionable,Seleccionable,Identificable,Fi
     public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
     }
+	@XmlTransient
+	@JsonIgnore
+@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="codigoPostal")
+    public Set<Persona> getPersonas() {
+        return this.personas;
+    }
+    
+    public void setPersonas(Set<Persona> personas) {
+        this.personas = personas;
+    }
 
     /**
      * toString
@@ -223,6 +240,7 @@ public class CodigoPostal  implements Versionable,Seleccionable,Identificable,Fi
          
          result = 37 * result + ( getId() == null ? 0 : this.getId().hashCode() );
          result = 37 * result + (int) this.getVersion();
+         
          
          
          

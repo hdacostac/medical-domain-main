@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 24-may-2020 17:36:56 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 29-jul-2020 23:17:45 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -80,15 +80,11 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
  	
  	private Set<CodigoPostal> codigoPostals = new HashSet<CodigoPostal>(0);
  	
- 	private Set<Persona> personasForIdEstado = new HashSet<Persona>(0);
- 	
  	private Set<Persona> personasForIdPais = new HashSet<Persona>(0);
  	
  	private Set<Persona> personasForIdUbicacionGeograficaNacimiento = new HashSet<Persona>(0);
  	
  	private Set<Usuario> usuarios = new HashSet<Usuario>(0);
- 	
- 	private Set<Persona> personasForIdCiudad = new HashSet<Persona>(0);
  	
  	private Set<Organizacion> organizacionsForIdUbicacionGeograficaPais = new HashSet<Organizacion>(0);
  	
@@ -104,7 +100,7 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
         this.nombreUbicacionGeografica = nombreUbicacionGeografica;
         this.nombreAbreviadoUbicacionGeografica = nombreAbreviadoUbicacionGeografica;
     }
-    public UbicacionGeografica(UbicacionGeografica ubicacionGeografica, String codigoUbicacionGeografica, String nombreUbicacionGeografica, String nombreAbreviadoUbicacionGeografica, String zonaHorariaUbicacionGeografica, String codigoTelefonoUbicacionGeografica, String formatoTelefonoUbicacionGeografica, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, String language, Set<UbicacionGeografica> ubicacionGeograficas, Set<CodigoPostal> codigoPostals, Set<Persona> personasForIdEstado, Set<Persona> personasForIdPais, Set<Persona> personasForIdUbicacionGeograficaNacimiento, Set<Usuario> usuarios, Set<Persona> personasForIdCiudad, Set<Organizacion> organizacionsForIdUbicacionGeograficaPais, Set<Organizacion> organizacionsForIdUbicacionGeograficaEstado) {
+    public UbicacionGeografica(UbicacionGeografica ubicacionGeografica, String codigoUbicacionGeografica, String nombreUbicacionGeografica, String nombreAbreviadoUbicacionGeografica, String zonaHorariaUbicacionGeografica, String codigoTelefonoUbicacionGeografica, String formatoTelefonoUbicacionGeografica, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, String language, Set<UbicacionGeografica> ubicacionGeograficas, Set<CodigoPostal> codigoPostals, Set<Persona> personasForIdPais, Set<Persona> personasForIdUbicacionGeograficaNacimiento, Set<Usuario> usuarios, Set<Organizacion> organizacionsForIdUbicacionGeograficaPais, Set<Organizacion> organizacionsForIdUbicacionGeograficaEstado) {
        this.ubicacionGeografica = ubicacionGeografica;
        this.codigoUbicacionGeografica = codigoUbicacionGeografica;
        this.nombreUbicacionGeografica = nombreUbicacionGeografica;
@@ -119,11 +115,9 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
        this.language = language;
        this.ubicacionGeograficas = ubicacionGeograficas;
        this.codigoPostals = codigoPostals;
-       this.personasForIdEstado = personasForIdEstado;
        this.personasForIdPais = personasForIdPais;
        this.personasForIdUbicacionGeograficaNacimiento = personasForIdUbicacionGeograficaNacimiento;
        this.usuarios = usuarios;
-       this.personasForIdCiudad = personasForIdCiudad;
        this.organizacionsForIdUbicacionGeograficaPais = organizacionsForIdUbicacionGeograficaPais;
        this.organizacionsForIdUbicacionGeograficaEstado = organizacionsForIdUbicacionGeograficaEstado;
     }
@@ -284,16 +278,6 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
     }
 	@XmlTransient
 	@JsonIgnore
-@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="ubicacionGeograficaByIdEstado")
-    public Set<Persona> getPersonasForIdEstado() {
-        return this.personasForIdEstado;
-    }
-    
-    public void setPersonasForIdEstado(Set<Persona> personasForIdEstado) {
-        this.personasForIdEstado = personasForIdEstado;
-    }
-	@XmlTransient
-	@JsonIgnore
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="ubicacionGeograficaByIdPais")
     public Set<Persona> getPersonasForIdPais() {
         return this.personasForIdPais;
@@ -321,16 +305,6 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
     
     public void setUsuarios(Set<Usuario> usuarios) {
         this.usuarios = usuarios;
-    }
-	@XmlTransient
-	@JsonIgnore
-@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="ubicacionGeograficaByIdCiudad")
-    public Set<Persona> getPersonasForIdCiudad() {
-        return this.personasForIdCiudad;
-    }
-    
-    public void setPersonasForIdCiudad(Set<Persona> personasForIdCiudad) {
-        this.personasForIdCiudad = personasForIdCiudad;
     }
 	@XmlTransient
 	@JsonIgnore
@@ -404,8 +378,6 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
          
          result = 37 * result + ( getId() == null ? 0 : this.getId().hashCode() );
          result = 37 * result + (int) this.getVersion();
-         
-         
          
          
          
