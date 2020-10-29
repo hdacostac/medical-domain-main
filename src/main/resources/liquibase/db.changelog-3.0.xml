@@ -225,6 +225,102 @@
         	onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="codigo_postal" 
         	validate="true"/>
     </changeSet>
+    
+    <changeSet author="harold (generated)" id="29102020-1">
+        <createTable tableName="tipo_documento_identificacion">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="pk_tipo_documento_identificacion"/>
+            </column>
+            <column name="codigo_tipo_documento_identificacion" type="VARCHAR(16)">
+                <constraints nullable="false"/>
+            </column>
+             <column name="nombre_tipo_documento_identificacion" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_ubicacion_geografica" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="&quot;current_user&quot;()" name="usuario_creacion" type="VARCHAR(64)"/>
+            <column defaultValueComputed="now()" name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_modificacion" type="VARCHAR(64)"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column defaultValueNumeric="0" name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="id_ubicacion_geografica" baseTableName="tipo_documento_identificacion" 
+        	constraintName="fk_id_ubicacion_geografica_from_tipo_documento_identificacion" deferrable="false" initiallyDeferred="false" 
+        	onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="ubicacion_geografica" 
+        	validate="true"/>
+        <addColumn tableName="persona">
+			<column name="id_tipo_documento_identificacion" type="BIGINT" />	
+		</addColumn>
+        <addForeignKeyConstraint baseColumnNames="id_tipo_documento_identificacion" baseTableName="persona" 
+        	constraintName="fk_id_tipo_documento_identificacion_from_persona" deferrable="false" initiallyDeferred="false" 
+        	onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="tipo_documento_identificacion" 
+        	validate="true"/>
+    </changeSet>
+    
+    <changeSet author="hdacostac" id="29102020-2">
+	    <insert tableName="tipo_documento_identificacion">
+            <column name="id" valueNumeric="1"/>
+            <column name="codigo_tipo_documento_identificacion" value="td001"/>
+            <column name="nombre_tipo_documento_identificacion" value="DNI"/>
+            <column name="id_ubicacion_geografica" value="12"/>
+            <column name="usuario_creacion" value="postgres"/>
+            <column name="fecha_creacion" valueDate="2020-10-28T00:00:00"/>
+            <column name="usuario_modificacion"/>
+            <column name="fecha_modificacion"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="tipo_documento_identificacion">
+            <column name="id" valueNumeric="2"/>
+            <column name="codigo_tipo_documento_identificacion" value="td002"/>
+            <column name="nombre_tipo_documento_identificacion" value="NIE"/>
+            <column name="id_ubicacion_geografica" value="12"/>
+            <column name="usuario_creacion" value="postgres"/>
+            <column name="fecha_creacion" valueDate="2020-10-28T00:00:00"/>
+            <column name="usuario_modificacion"/>
+            <column name="fecha_modificacion"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="tipo_documento_identificacion">
+            <column name="id" valueNumeric="3"/>
+            <column name="codigo_tipo_documento_identificacion" value="td003"/>
+            <column name="nombre_tipo_documento_identificacion" value="Carnet conducir"/>
+            <column name="id_ubicacion_geografica" value="12"/>
+            <column name="usuario_creacion" value="postgres"/>
+            <column name="fecha_creacion" valueDate="2020-10-28T00:00:00"/>
+            <column name="usuario_modificacion"/>
+            <column name="fecha_modificacion"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="tipo_documento_identificacion">
+            <column name="id" valueNumeric="4"/>
+            <column name="codigo_tipo_documento_identificacion" value="td004"/>
+            <column name="nombre_tipo_documento_identificacion" value="Pasaporte"/>
+            <column name="id_ubicacion_geografica" value="12"/>
+            <column name="usuario_creacion" value="postgres"/>
+            <column name="fecha_creacion" valueDate="2020-10-28T00:00:00"/>
+            <column name="usuario_modificacion"/>
+            <column name="fecha_modificacion"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+	</changeSet>
+	
+	<changeSet author="hdacostac" id="29102020-3">
+		<insert tableName="tipo_documento_identificacion">
+            <column name="id" valueNumeric="10"/>
+            <column name="codigo_tipo_documento_identificacion" value="td010"/>
+            <column name="nombre_tipo_documento_identificacion" value="CNI"/>
+            <column name="id_ubicacion_geografica" value="27"/>
+            <column name="usuario_creacion" value="postgres"/>
+            <column name="fecha_creacion" valueDate="2020-10-28T00:00:00"/>
+            <column name="usuario_modificacion"/>
+            <column name="fecha_modificacion"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+	</changeSet>
 	
 <!-- 	<changeSet author="hdacostac" id="turn-on-module-pg_trgm"> -->
 <!-- 	    <sql dbms="postgresql" -->

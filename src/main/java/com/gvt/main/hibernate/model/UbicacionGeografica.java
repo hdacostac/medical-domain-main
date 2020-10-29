@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 29-jul-2020 23:17:45 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 29-oct-2020 13:48:51 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -84,6 +84,8 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
  	
  	private Set<Persona> personasForIdUbicacionGeograficaNacimiento = new HashSet<Persona>(0);
  	
+ 	private Set<TipoDocumentoIdentificacion> tipoDocumentoIdentificacions = new HashSet<TipoDocumentoIdentificacion>(0);
+ 	
  	private Set<Usuario> usuarios = new HashSet<Usuario>(0);
  	
  	private Set<Organizacion> organizacionsForIdUbicacionGeograficaPais = new HashSet<Organizacion>(0);
@@ -100,7 +102,7 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
         this.nombreUbicacionGeografica = nombreUbicacionGeografica;
         this.nombreAbreviadoUbicacionGeografica = nombreAbreviadoUbicacionGeografica;
     }
-    public UbicacionGeografica(UbicacionGeografica ubicacionGeografica, String codigoUbicacionGeografica, String nombreUbicacionGeografica, String nombreAbreviadoUbicacionGeografica, String zonaHorariaUbicacionGeografica, String codigoTelefonoUbicacionGeografica, String formatoTelefonoUbicacionGeografica, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, String language, Set<UbicacionGeografica> ubicacionGeograficas, Set<CodigoPostal> codigoPostals, Set<Persona> personasForIdPais, Set<Persona> personasForIdUbicacionGeograficaNacimiento, Set<Usuario> usuarios, Set<Organizacion> organizacionsForIdUbicacionGeograficaPais, Set<Organizacion> organizacionsForIdUbicacionGeograficaEstado) {
+    public UbicacionGeografica(UbicacionGeografica ubicacionGeografica, String codigoUbicacionGeografica, String nombreUbicacionGeografica, String nombreAbreviadoUbicacionGeografica, String zonaHorariaUbicacionGeografica, String codigoTelefonoUbicacionGeografica, String formatoTelefonoUbicacionGeografica, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, String language, Set<UbicacionGeografica> ubicacionGeograficas, Set<CodigoPostal> codigoPostals, Set<Persona> personasForIdPais, Set<Persona> personasForIdUbicacionGeograficaNacimiento, Set<TipoDocumentoIdentificacion> tipoDocumentoIdentificacions, Set<Usuario> usuarios, Set<Organizacion> organizacionsForIdUbicacionGeograficaPais, Set<Organizacion> organizacionsForIdUbicacionGeograficaEstado) {
        this.ubicacionGeografica = ubicacionGeografica;
        this.codigoUbicacionGeografica = codigoUbicacionGeografica;
        this.nombreUbicacionGeografica = nombreUbicacionGeografica;
@@ -117,6 +119,7 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
        this.codigoPostals = codigoPostals;
        this.personasForIdPais = personasForIdPais;
        this.personasForIdUbicacionGeograficaNacimiento = personasForIdUbicacionGeograficaNacimiento;
+       this.tipoDocumentoIdentificacions = tipoDocumentoIdentificacions;
        this.usuarios = usuarios;
        this.organizacionsForIdUbicacionGeograficaPais = organizacionsForIdUbicacionGeograficaPais;
        this.organizacionsForIdUbicacionGeograficaEstado = organizacionsForIdUbicacionGeograficaEstado;
@@ -299,6 +302,16 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
 	@XmlTransient
 	@JsonIgnore
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="ubicacionGeografica")
+    public Set<TipoDocumentoIdentificacion> getTipoDocumentoIdentificacions() {
+        return this.tipoDocumentoIdentificacions;
+    }
+    
+    public void setTipoDocumentoIdentificacions(Set<TipoDocumentoIdentificacion> tipoDocumentoIdentificacions) {
+        this.tipoDocumentoIdentificacions = tipoDocumentoIdentificacions;
+    }
+	@XmlTransient
+	@JsonIgnore
+@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="ubicacionGeografica")
     public Set<Usuario> getUsuarios() {
         return this.usuarios;
     }
@@ -378,6 +391,7 @@ public class UbicacionGeografica  implements Versionable,Seleccionable,Identific
          
          result = 37 * result + ( getId() == null ? 0 : this.getId().hashCode() );
          result = 37 * result + (int) this.getVersion();
+         
          
          
          

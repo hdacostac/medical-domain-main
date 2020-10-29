@@ -1,5 +1,5 @@
 package com.gvt.main.hibernate.model;
-// Generated 29-jul-2020 23:17:45 by Hibernate Tools 3.2.2.GA and Assent Architecture
+// Generated 29-oct-2020 13:48:51 by Hibernate Tools 3.2.2.GA and Assent Architecture
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -66,6 +66,8 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
  	private TipoSangre tipoSangre;
  	
  	private OpcionSino opcionSinoByEsActiva;
+ 	
+ 	private TipoDocumentoIdentificacion tipoDocumentoIdentificacion;
  	
  	private CodigoPostal codigoPostal;
  	
@@ -233,7 +235,7 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
         this.telefonoFijoPersona = telefonoFijoPersona;
         this.direccionPersona = direccionPersona;
     }
-    public Persona(DistintivoPersona distintivoPersona, TipoPersona tipoPersona, EstadoCivil estadoCivil, Sexo sexo, OpcionSino opcionSinoByEsEmbarazada, Profesion profesion, TipoSangre tipoSangre, OpcionSino opcionSinoByEsActiva, CodigoPostal codigoPostal, NivelEducativo nivelEducativo, Nacionalidad nacionalidad, UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaNacimiento, UbicacionGeografica ubicacionGeograficaByIdPais, OpcionSino opcionSinoByEsPublica, String codigoPersona, String cedulaPersona, String nombrePersona, String apellidoPersona, String rifPersona, String numeroMsas, LocalDate fechaNacimientoPersona, LocalDate fechaDefuncionPersona, LocalDate fechaVencimientoRif, String telefonoMovilPersona, String telefonoFijoPersona, String EMailPersona, String direccionPersona, String nombreContactoUno, String telefonoContactoUno, String telefonoMovilContactoUno, String emailContactoUno, String parentescoContactoUno, String nombreContactoDos, String telefonoContactoDos, String telefonoMovilContactoDos, String emailContactoDos, String parentescoContactoDos, Float edad, String url1, String url1FileName, Double url1FileSize, String comentariosAdicionales, String nombreDoctorReferencia, String telefonoContactoDoctorReferencia, String telefonoMovilDoctorReferencia, String emailDoctorReferencia, String lugarNacimientoOtro, String direccionPersonaCalleAvenida, String direccionPersonaEdificio, String direccionPersonaConsultorio, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<ConsultaMedicaFitnessNutricion> consultaMedicaFitnessNutricions, Set<PersonaAntecedentesObstetrica> personaAntecedentesObstetricas, Set<CalendarioIncidencias> calendarioIncidenciasesForIdPersona, Set<CitasPendientes> citasPendientesesForIdPersona, Set<Documento> documentos, Set<AusenciasMedico> ausenciasMedicos, Set<Gastos> gastoses, Set<ReporteContenido> reporteContenidos, Set<TimelineProtocoloCie10> timelineProtocoloCie10s, Set<Calendario> calendariosForIdDoctor, Set<TiempoEstimadoAtencion> tiempoEstimadoAtencions, Set<TimelineImagen> timelineImagens, Set<ConsultaMedicaObstetricia> consultaMedicaObstetricias, Set<HorarioExtra> horarioExtras, Set<Recipe> recipes, Set<CitasPendientes> citasPendientesesForIdDoctor, Set<ConsultaMedica> consultaMedicas, Set<HorarioMedico> horarioMedicos, Set<CartaAval> cartaAvals, Set<ReferenciaInstitucionPersona> referenciaInstitucionPersonas, Set<Timeline> timelines, Set<PersonaOrganizacion> personaOrganizacions, Set<UsuarioOrganizacion> usuarioOrganizacions, Set<PersonaAntecedentesFitnessNutricion> personaAntecedentesFitnessNutricions, Set<ConsultaMedicaCardiologia> consultaMedicaCardiologias, Set<CalendarioIncidencias> calendarioIncidenciasesForIdDoctor, Set<PersonaAntecedentesDermatoestetica> personaAntecedentesDermatoesteticas, Set<Calendario> calendariosForIdPersona, Set<ConsultaMedicaOdontologica> consultaMedicaOdontologicas, Set<PersonaAntecedentes> personaAntecedenteses, Set<ConsultaMedicaCirugiaPlasticaReconstructiva> consultaMedicaCirugiaPlasticaReconstructivas) {
+    public Persona(DistintivoPersona distintivoPersona, TipoPersona tipoPersona, EstadoCivil estadoCivil, Sexo sexo, OpcionSino opcionSinoByEsEmbarazada, Profesion profesion, TipoSangre tipoSangre, OpcionSino opcionSinoByEsActiva, TipoDocumentoIdentificacion tipoDocumentoIdentificacion, CodigoPostal codigoPostal, NivelEducativo nivelEducativo, Nacionalidad nacionalidad, UbicacionGeografica ubicacionGeograficaByIdUbicacionGeograficaNacimiento, UbicacionGeografica ubicacionGeograficaByIdPais, OpcionSino opcionSinoByEsPublica, String codigoPersona, String cedulaPersona, String nombrePersona, String apellidoPersona, String rifPersona, String numeroMsas, LocalDate fechaNacimientoPersona, LocalDate fechaDefuncionPersona, LocalDate fechaVencimientoRif, String telefonoMovilPersona, String telefonoFijoPersona, String EMailPersona, String direccionPersona, String nombreContactoUno, String telefonoContactoUno, String telefonoMovilContactoUno, String emailContactoUno, String parentescoContactoUno, String nombreContactoDos, String telefonoContactoDos, String telefonoMovilContactoDos, String emailContactoDos, String parentescoContactoDos, Float edad, String url1, String url1FileName, Double url1FileSize, String comentariosAdicionales, String nombreDoctorReferencia, String telefonoContactoDoctorReferencia, String telefonoMovilDoctorReferencia, String emailDoctorReferencia, String lugarNacimientoOtro, String direccionPersonaCalleAvenida, String direccionPersonaEdificio, String direccionPersonaConsultorio, String usuarioCreacion, LocalDateTime fechaCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, Set<ConsultaMedicaFitnessNutricion> consultaMedicaFitnessNutricions, Set<PersonaAntecedentesObstetrica> personaAntecedentesObstetricas, Set<CalendarioIncidencias> calendarioIncidenciasesForIdPersona, Set<CitasPendientes> citasPendientesesForIdPersona, Set<Documento> documentos, Set<AusenciasMedico> ausenciasMedicos, Set<Gastos> gastoses, Set<ReporteContenido> reporteContenidos, Set<TimelineProtocoloCie10> timelineProtocoloCie10s, Set<Calendario> calendariosForIdDoctor, Set<TiempoEstimadoAtencion> tiempoEstimadoAtencions, Set<TimelineImagen> timelineImagens, Set<ConsultaMedicaObstetricia> consultaMedicaObstetricias, Set<HorarioExtra> horarioExtras, Set<Recipe> recipes, Set<CitasPendientes> citasPendientesesForIdDoctor, Set<ConsultaMedica> consultaMedicas, Set<HorarioMedico> horarioMedicos, Set<CartaAval> cartaAvals, Set<ReferenciaInstitucionPersona> referenciaInstitucionPersonas, Set<Timeline> timelines, Set<PersonaOrganizacion> personaOrganizacions, Set<UsuarioOrganizacion> usuarioOrganizacions, Set<PersonaAntecedentesFitnessNutricion> personaAntecedentesFitnessNutricions, Set<ConsultaMedicaCardiologia> consultaMedicaCardiologias, Set<CalendarioIncidencias> calendarioIncidenciasesForIdDoctor, Set<PersonaAntecedentesDermatoestetica> personaAntecedentesDermatoesteticas, Set<Calendario> calendariosForIdPersona, Set<ConsultaMedicaOdontologica> consultaMedicaOdontologicas, Set<PersonaAntecedentes> personaAntecedenteses, Set<ConsultaMedicaCirugiaPlasticaReconstructiva> consultaMedicaCirugiaPlasticaReconstructivas) {
        this.distintivoPersona = distintivoPersona;
        this.tipoPersona = tipoPersona;
        this.estadoCivil = estadoCivil;
@@ -242,6 +244,7 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
        this.profesion = profesion;
        this.tipoSangre = tipoSangre;
        this.opcionSinoByEsActiva = opcionSinoByEsActiva;
+       this.tipoDocumentoIdentificacion = tipoDocumentoIdentificacion;
        this.codigoPostal = codigoPostal;
        this.nivelEducativo = nivelEducativo;
        this.nacionalidad = nacionalidad;
@@ -418,6 +421,15 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
     
     public void setOpcionSinoByEsActiva(OpcionSino opcionSinoByEsActiva) {
         this.opcionSinoByEsActiva = opcionSinoByEsActiva;
+    }
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="id_tipo_documento_identificacion")
+    public TipoDocumentoIdentificacion getTipoDocumentoIdentificacion() {
+        return this.tipoDocumentoIdentificacion;
+    }
+    
+    public void setTipoDocumentoIdentificacion(TipoDocumentoIdentificacion tipoDocumentoIdentificacion) {
+        this.tipoDocumentoIdentificacion = tipoDocumentoIdentificacion;
     }
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="id_codigo_postal")
@@ -1163,6 +1175,7 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
       buffer.append("profesion").append("='").append(getProfesion()).append("' ");			
       buffer.append("tipoSangre").append("='").append(getTipoSangre()).append("' ");			
       buffer.append("opcionSinoByEsActiva").append("='").append(getOpcionSinoByEsActiva()).append("' ");			
+      buffer.append("tipoDocumentoIdentificacion").append("='").append(getTipoDocumentoIdentificacion()).append("' ");			
       buffer.append("codigoPostal").append("='").append(getCodigoPostal()).append("' ");			
       buffer.append("nivelEducativo").append("='").append(getNivelEducativo()).append("' ");			
       buffer.append("nacionalidad").append("='").append(getNacionalidad()).append("' ");			
@@ -1322,6 +1335,7 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
          
          
          
+         
          return result;
    }   
 
@@ -1381,6 +1395,10 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
 			(opcionSinoByEsActiva.getId() == null || this.opcionSinoByEsActiva.getId().longValue() == 0)) {
 			opcionSinoByEsActiva = null;
 		}
+		if(this.tipoDocumentoIdentificacion != null &&
+			(tipoDocumentoIdentificacion.getId() == null || this.tipoDocumentoIdentificacion.getId().longValue() == 0)) {
+			tipoDocumentoIdentificacion = null;
+		}
 		if(this.codigoPostal != null &&
 			(codigoPostal.getId() == null || this.codigoPostal.getId().longValue() == 0)) {
 			codigoPostal = null;
@@ -1431,6 +1449,9 @@ public class Persona  implements Versionable,Seleccionable,Identificable,Fillabl
 		}
 		if(this.opcionSinoByEsActiva == null) {
 			opcionSinoByEsActiva = new OpcionSino();
+		}
+		if(this.tipoDocumentoIdentificacion == null) {
+			tipoDocumentoIdentificacion = new TipoDocumentoIdentificacion();
 		}
 		if(this.codigoPostal == null) {
 			codigoPostal = new CodigoPostal();
