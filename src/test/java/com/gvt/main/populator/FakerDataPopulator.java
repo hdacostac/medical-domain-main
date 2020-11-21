@@ -15,10 +15,10 @@ import com.github.javafaker.Faker;
 
 public class FakerDataPopulator implements Runnable {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(FakerDataPopulator.class);
+	private static final Logger logger = LoggerFactory.getLogger(FakerDataPopulator.class);
 
 	public static void main(String[] args) {
-		LOGGER.info("Populating with fake data");
+		logger.info("Populating with fake data");
 
 		FakerDataPopulator fakeDataPopulator = new FakerDataPopulator();
 
@@ -58,7 +58,7 @@ public class FakerDataPopulator implements Runnable {
 						new Date(faker.date().birthday(18, 64).getTime()), faker.phoneNumber().cellPhone(),
 						StringUtils.stripAccents(StringUtils.deleteWhitespace(faker.internet().emailAddress())));
 			} catch (SQLException sqle) {
-				LOGGER.error("error", sqle);
+				logger.error("error", sqle);
 			}
 
 			prevPercentDone = printPercentDone(prevPercentDone, x, total);
@@ -69,7 +69,7 @@ public class FakerDataPopulator implements Runnable {
 		int percentDone = (x * 100) / total;
 
 		if (percentDone % 5 == 0 && percentDone != prevPercentDone) {
-			LOGGER.info("Done...{}%", percentDone);
+			logger.info("Done...{}%", percentDone);
 		}
 
 		return percentDone;

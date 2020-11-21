@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 public class CustomReverseStrategy extends DelegatingReverseEngineeringStrategy {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(CustomReverseStrategy.class);
+	private static final Logger logger = LoggerFactory.getLogger(CustomReverseStrategy.class);
 
 	private static final String OWN_TYPES = "own types";
 
@@ -50,7 +50,7 @@ public class CustomReverseStrategy extends DelegatingReverseEngineeringStrategy 
 	public Properties getTableIdentifierProperties(TableIdentifier tableIdentifier) {
 		final String tableName = tableIdentifier.getName();
 
-		LOGGER.info("Executing getTableIdentifier:" + tableName);
+		logger.info("Executing getTableIdentifier:" + tableName);
 
 		Properties properties = super.getTableIdentifierProperties(tableIdentifier);
 
@@ -71,7 +71,7 @@ public class CustomReverseStrategy extends DelegatingReverseEngineeringStrategy 
 	public Map<String, MetaAttribute> columnToMetaAttributes(TableIdentifier tableIdentifier, String column) {
 		final String tableName = tableIdentifier.getName();
 
-		LOGGER.info("Executing columnToMetaAttributes:" + tableName + " column:" + column);
+		logger.info("Executing columnToMetaAttributes:" + tableName + " column:" + column);
 
 		Map<String, MetaAttribute> map = new HashMap<>();
 
@@ -94,7 +94,7 @@ public class CustomReverseStrategy extends DelegatingReverseEngineeringStrategy 
 	public Map<String, MetaAttribute> tableToMetaAttributes(TableIdentifier tableIdentifier) {
 		final String tableName = tableIdentifier.getName();
 
-		LOGGER.debug("Executing tableToMetaAttributes:" + tableName);
+		logger.debug("Executing tableToMetaAttributes:" + tableName);
 
 		Map<String, MetaAttribute> map = new HashMap<>();
 
