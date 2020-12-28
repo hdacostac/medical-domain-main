@@ -6,8 +6,7 @@
 	<parent>
 		<groupId>swf.assent</groupId>
 		<artifactId>swf-rest-services-project</artifactId>
-		<version>2.2.2-SNAPSHOT</version>
-		<relativePath></relativePath>
+		<version>2.2.4</version>
 	</parent>
 
 	<groupId>com.gvt</groupId>
