@@ -19,7 +19,7 @@
 		<commons-collections.version>3.2.2</commons-collections.version>
 
 		<properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
-		<liquibase-maven-plugin.version>3.6.2</liquibase-maven-plugin.version>
+		<liquibase-maven-plugin.version>4.2.2</liquibase-maven-plugin.version>
 
 		<sonar.projectName>domain-main</sonar.projectName>
 		<sonar.exclusions>
@@ -53,6 +53,7 @@
 						<version>${liquibase-maven-plugin.version}</version>
 						<configuration>
 							<propertyFile>src/main/resources/liquibase-create.properties</propertyFile>
+							<diffIncludeObjects>table:codigo_postal</diffIncludeObjects>
 						</configuration>
 						<executions>
 							<execution>
